@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Solanum2.exe"/>
+    <OBJFILES value="Solanum2.obj clases\Report.obj clases\ManageDataPotato.obj ULogo.obj 
+      UMenu.obj UMainPG.obj clases\Climate.obj clases\Crop.obj 
+      clases\FileUtility.obj clases\Nitrogen.obj clases\Plant.obj 
+      clases\Simulation.obj clases\Soil.obj clases\TimeSimulation.obj 
+      clases\Tuber.obj UMainNS.obj clases\UReportGraphMenuTwoSeries.obj 
+      UReportTXTMenu.obj UReportTXT.obj USimulationTime.obj UAbout.obj 
+      UCampo.obj UCalcSoilTemp.obj UCropParameterPG.obj UGraph1PG.obj 
+      UGraph2PG.obj UGraph3PG.obj UGraph4PG.obj UGraph5PG.obj UGraph6PG.obj 
+      UReportGraphMenuAM.obj USoilDS.obj UClimateDS.obj UCropParameterNS.obj 
+      UNitrogenAM.obj UGraph6TwoSeries.obj UGraph1AM.obj UGraph2TwoSeries.obj 
+      UGraph3TwoSeries.obj UGraph4TwoSeries.obj UGraph5AM.obj UMainFS.obj 
+      UCropParameterAM.obj UMainDS.obj UMainAM.obj USoilAM.obj UGraph6AM.obj 
+      UGraph4AM.obj UGraph2AM.obj UGraph3AM.obj UReportGraphMenuPG.obj 
+      UCalcET0.obj UClimatePG.obj UClimateAM.obj clases\Solanum.obj 
+      UGraphBoxPlot.obj UClimate.obj UCalcParam.obj UEstadistico.obj 
+      UImportCropParameter.obj"/>
+    <RESFILES value="Solanum2.res"/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ULogo.dfm UMenu.dfm UMainPG.dfm UMainNS.dfm 
+      clases\UReportGraphMenuTwoSeries.dfm UReportTXTMenu.dfm UReportTXT.dfm 
+      USimulationTime.dfm UAbout.dfm UCampo.dfm UCalcSoilTemp.dfm 
+      UCropParameterPG.dfm UGraph1PG.dfm UGraph2PG.dfm UGraph3PG.dfm 
+      UGraph4PG.dfm UGraph5PG.dfm UGraph6PG.dfm UReportGraphMenuAM.dfm 
+      USoilDS.dfm UClimateDS.dfm UCropParameterNS.dfm UNitrogenAM.dfm 
+      UGraph6TwoSeries.dfm UGraph1AM.dfm UGraph2TwoSeries.dfm 
+      UGraph3TwoSeries.dfm UGraph4TwoSeries.dfm UGraph5AM.dfm UMainFS.dfm 
+      UCropParameterAM.dfm UMainDS.dfm UMainAM.dfm USoilAM.dfm UGraph6AM.dfm 
+      UGraph4AM.dfm UGraph2AM.dfm UGraph3AM.dfm UReportGraphMenuPG.dfm 
+      UCalcET0.dfm UClimatePG.dfm UClimateAM.dfm UGraphBoxPlot.dfm UClimate.dfm 
+      UCalcParam.dfm UEstadistico.dfm UImportCropParameter.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="TeePro7C6.lib TeeUI7C6.lib Tee7C6.lib bdertl.lib vclx.lib dbrtl.lib 
+      vcldb.lib vcldbx.lib rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib vcldbx.lib vcldb.lib dbrtl.lib vclx.lib bdertl.lib 
+      Tee7C6.lib TeeUI7C6.lib TeePro7C6.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi adortl.bpi vcldb.bpi 
+      qrpt.bpi bdertl.bpi vcldbx.bpi dsnap.bpi cds.bpi bdecds.bpi ibxpress.bpi 
+      visualclx.bpi visualdbclx.bpi vclie.bpi xmlrtl.bpi inet.bpi inetdbbde.bpi 
+      inetdbxpress.bpi inetdb.bpi nmfast.bpi bcbie.bpi soaprtl.bpi dclocx.bpi 
+      dbexpress.bpi dbxcds.bpi indy.bpi bcb2kaxserver.bpi TeeDB7C6.bpi 
+      Tee7C6.bpi TeeUI7C6.bpi TeeGL7C6.bpi TeeQR7C6.bpi TeeImage7C6.bpi 
+      TeeLanguage7C6.bpi TeePro7C6.bpi Package1.bpi"/>
+    <PATHCPP value=".;clases;clases;clases;clases;clases;clases;clases;clases;clases;clases;clases;clases;clases"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT"/>
+    <MAINSOURCE value="Solanum2.cpp"/>
+    <INCLUDEPATH value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;clases;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;$(BCB)\Projects\Lib;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;clases;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -w- -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Solanum2.res" FORMNAME="" UNITNAME="Solanum2.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Solanum2.cpp" FORMNAME="" UNITNAME="Solanum2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Report.cpp" FORMNAME="" UNITNAME="Report.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\ManageDataPotato.cpp" FORMNAME="" UNITNAME="ManageDataPotato.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="ULogo.cpp" FORMNAME="frmLogo" UNITNAME="ULogo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMenu.cpp" FORMNAME="frmMenu" UNITNAME="UMenu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMainPG.cpp" FORMNAME="frmMainPG" UNITNAME="UMainPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Climate.cpp" FORMNAME="" UNITNAME="Climate.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Crop.cpp" FORMNAME="" UNITNAME="Crop.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\FileUtility.cpp" FORMNAME="" UNITNAME="FileUtility.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Nitrogen.cpp" FORMNAME="" UNITNAME="Nitrogen.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Plant.cpp" FORMNAME="" UNITNAME="Plant.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Simulation.cpp" FORMNAME="" UNITNAME="Simulation.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Soil.cpp" FORMNAME="" UNITNAME="Soil.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\TimeSimulation.cpp" FORMNAME="" UNITNAME="TimeSimulation.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Tuber.cpp" FORMNAME="" UNITNAME="Tuber.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMainNS.cpp" FORMNAME="frmMainNS" UNITNAME="UMainNS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\UReportGraphMenuTwoSeries.cpp" FORMNAME="frmReportGraphMenuTwoSeries" UNITNAME="UReportGraphMenuTwoSeries" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportTXTMenu.cpp" FORMNAME="frmReportTXTMenu" UNITNAME="UReportTXTMenu" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportTXT.cpp" FORMNAME="frmReportTXT" UNITNAME="UReportTXT" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="USimulationTime.cpp" FORMNAME="frmSimulationTime" UNITNAME="USimulationTime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UAbout.cpp" FORMNAME="frmAbout" UNITNAME="UAbout" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCampo.cpp" FORMNAME="frmCampo" UNITNAME="UCampo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCalcSoilTemp.cpp" FORMNAME="frmCalcSoilTemp" UNITNAME="UCalcSoilTemp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCropParameterPG.cpp" FORMNAME="frmCropParameterPG" UNITNAME="UCropParameterPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph1PG.cpp" FORMNAME="frmGraph1PG" UNITNAME="UGraph1PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph2PG.cpp" FORMNAME="frmGraph2PG" UNITNAME="UGraph2PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph3PG.cpp" FORMNAME="frmGraph3PG" UNITNAME="UGraph3PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph4PG.cpp" FORMNAME="frmGraph4PG" UNITNAME="UGraph4PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph5PG.cpp" FORMNAME="frmGraph5PG" UNITNAME="UGraph5PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph6PG.cpp" FORMNAME="frmGraph6PG" UNITNAME="UGraph6PG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportGraphMenuAM.cpp" FORMNAME="frmReportGraphMenuAM" UNITNAME="UReportGraphMenuAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="USoilDS.cpp" FORMNAME="frmSoilDS" UNITNAME="USoilDS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UClimateDS.cpp" FORMNAME="frmClimateDS" UNITNAME="UClimateDS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCropParameterNS.cpp" FORMNAME="frmCropParameterNS" UNITNAME="UCropParameterNS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UNitrogenAM.cpp" FORMNAME="frmNitrogenAM" UNITNAME="UNitrogenAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph6TwoSeries.cpp" FORMNAME="frmGraph6TwoSeries" UNITNAME="UGraph6TwoSeries" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph1AM.cpp" FORMNAME="frmGraph1AM" UNITNAME="UGraph1AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph2TwoSeries.cpp" FORMNAME="frmGraph2TwoSeries" UNITNAME="UGraph2TwoSeries" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph3TwoSeries.cpp" FORMNAME="frmGraph3TwoSeries" UNITNAME="UGraph3TwoSeries" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph4TwoSeries.cpp" FORMNAME="frmGraph4TwoSeries" UNITNAME="UGraph4TwoSeries" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph5AM.cpp" FORMNAME="frmGraph5AM" UNITNAME="UGraph5AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMainFS.cpp" FORMNAME="frmMainFS" UNITNAME="UMainFS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCropParameterAM.cpp" FORMNAME="frmCropParameterAM" UNITNAME="UCropParameterAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMainDS.cpp" FORMNAME="frmMainDS" UNITNAME="UMainDS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UMainAM.cpp" FORMNAME="frmMainAM" UNITNAME="UMainAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="USoilAM.cpp" FORMNAME="frmSoilAM" UNITNAME="USoilAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph6AM.cpp" FORMNAME="frmGraph6AM" UNITNAME="UGraph6AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph4AM.cpp" FORMNAME="frmGraph4AM" UNITNAME="UGraph4AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph2AM.cpp" FORMNAME="frmGraph2AM" UNITNAME="UGraph2AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraph3AM.cpp" FORMNAME="frmGraph3AM" UNITNAME="UGraph3AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportGraphMenuPG.cpp" FORMNAME="frmReportGraphMenuPG" UNITNAME="UReportGraphMenuPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCalcET0.cpp" FORMNAME="frmCalcET0" UNITNAME="UCalcET0" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UClimatePG.cpp" FORMNAME="frmClimatePG" UNITNAME="UClimatePG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UClimateAM.cpp" FORMNAME="frmClimateAM" UNITNAME="UClimateAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Solanum.cpp" FORMNAME="" UNITNAME="Solanum" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlot.cpp" FORMNAME="frmGraphBoxPlot" UNITNAME="UGraphBoxPlot" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UClimate.cpp" FORMNAME="frmClimate" UNITNAME="UClimate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCalcParam.cpp" FORMNAME="frmCalcParam" UNITNAME="UCalcParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UEstadistico.cpp" FORMNAME="frmEstadistico" UNITNAME="UEstadistico" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UImportCropParameter.cpp" FORMNAME="frmImportCropParameter" UNITNAME="UImportCropParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=C:\Program Files (x86)\Borland\CBuilder6\Projects;clases;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item1=clases;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item2=C:\Program Files\Borland\CBuilder6\Projects;clases;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item3=C:\Program Files\Borland\CBuilder6\Projects;..\ProjPotato\Nuevo;clases;D:\TrabajoCIP\ProjPotatoBruno2013;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item4=..\ProjPotato\Nuevo;clases;D:\TrabajoCIP\ProjPotatoBruno2013;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item5=clases;D:\TrabajoCIP\ProjPotatoBruno2013;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Include;$(BCB)\include;$(BCB)\include\vcl
+Item6=clases;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotatoBruno2013;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=8
+Item0=C:\Program Files (x86)\Borland\CBuilder6\Projects;$(BCB)\Projects\Lib;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;$(BCB)\lib\obj;$(BCB)\lib
+Item1=$(BCB)\Projects\Lib;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;$(BCB)\lib\obj;$(BCB)\lib
+Item2=C:\Program Files\Borland\CBuilder6\Projects;$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;$(BCB)\lib\obj;$(BCB)\lib
+Item3=$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;$(BCB)\lib\obj;$(BCB)\lib
+Item4=C:\Program Files\Borland\CBuilder6\Projects;..\ProjPotato\Nuevo;$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;D:\TrabajoCIP\ProjPotatoBruno2013;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\ProjPotato\Nuevo;$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;D:\TrabajoCIP\ProjPotatoBruno2013;$(BCB)\lib\obj;$(BCB)\lib
+Item6=$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;D:\TrabajoCIP\ProjPotatoBruno2013;$(BCB)\lib\obj;$(BCB)\lib
+Item7=$(BCB)\Projects\Lib;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;clases;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjPotatoBruno2013;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

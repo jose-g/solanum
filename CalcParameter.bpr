@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="CalcParameter.exe"/>
+    <OBJFILES value="CalcParameter.obj UCalcParameter.obj clases\Climate.obj UCampo.obj 
+      clases\FileUtility.obj"/>
+    <RESFILES value="CalcParameter.res"/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) UCalcParameter.dfm UCampo.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value="vcl.lib rtl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi vclx.bpi bcbsmp.bpi dbrtl.bpi adortl.bpi vcldb.bpi 
+      qrpt.bpi bdertl.bpi vcldbx.bpi dsnap.bpi cds.bpi bdecds.bpi ibxpress.bpi 
+      visualclx.bpi visualdbclx.bpi vclie.bpi xmlrtl.bpi inet.bpi inetdbbde.bpi 
+      inetdbxpress.bpi inetdb.bpi nmfast.bpi bcbie.bpi soaprtl.bpi dclocx.bpi 
+      dbexpress.bpi dbxcds.bpi indy.bpi bcb2kaxserver.bpi TeeDB7C6.bpi 
+      Tee7C6.bpi TeeUI7C6.bpi TeeGL7C6.bpi TeeQR7C6.bpi TeeImage7C6.bpi 
+      TeeLanguage7C6.bpi TeePro7C6.bpi Package1.bpi"/>
+    <PATHCPP value=".;clases;clases"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <MAINSOURCE value="CalcParameter.cpp"/>
+    <INCLUDEPATH value="clases;D:\TrabajoCIP\ProjSolanum2013V3\clases;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="clases;D:\TrabajoCIP\ProjSolanum2013V3\clases;&quot;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib&quot;;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$YD -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="CalcParameter.res" FORMNAME="" UNITNAME="CalcParameter.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="CalcParameter.cpp" FORMNAME="" UNITNAME="CalcParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCalcParameter.cpp" FORMNAME="frmCalcParameter" UNITNAME="UCalcParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\Climate.cpp" FORMNAME="" UNITNAME="Climate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UCampo.cpp" FORMNAME="frmCampo" UNITNAME="UCampo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="clases\FileUtility.cpp" FORMNAME="" UNITNAME="FileUtility" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=5
+Item0=D:\TrabajoCIP\ProjSolanum2013V3\clases;$(BCB)\include;$(BCB)\include\vcl
+Item1=..;D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;D:\TrabajoCIP\ProjSolanum2013V3;D:\TrabajoCIP\ProjSolanum2013V3\clases;$(BCB)\include;$(BCB)\include\vcl
+Item2=D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;D:\TrabajoCIP\ProjSolanum2013V3;D:\TrabajoCIP\ProjSolanum2013V3\clases;$(BCB)\include;$(BCB)\include\vcl
+Item3=D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;D:\TrabajoCIP\ProjSolanum2013V3;$(BCB)\include;$(BCB)\include\vcl
+Item4=C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=D:\TrabajoCIP\ProjSolanum2013V3\clases;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..;D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item2=D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item3=C:\Program Files\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;C:\Program Files\Borland\CBuilder6\Projects;D:\TrabajoCIP\ProjSolanum2013V3\CalculadorParametro;$(BCB)\Projects\Lib;..\..\..\Steema Software\TeeChart 705 for Builder 6\Builder6\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
