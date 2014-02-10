@@ -3,25 +3,25 @@ object frmSoilDS: TfrmSoilDS
   Top = 255
   BorderStyle = bsDialog
   Caption = 'Soil Parameter'
-  ClientHeight = 171
-  ClientWidth = 270
+  ClientHeight = 210
+  ClientWidth = 332
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object cmdCancel: TBitBtn
-    Left = 104
-    Top = 130
-    Width = 75
-    Height = 25
+    Left = 128
+    Top = 160
+    Width = 92
+    Height = 31
     Caption = '&Cancel'
     TabOrder = 2
     OnClick = cmdCancelClick
@@ -45,10 +45,10 @@ object frmSoilDS: TfrmSoilDS
     NumGlyphs = 2
   end
   object cmdApply: TBitBtn
-    Left = 184
-    Top = 130
-    Width = 75
-    Height = 25
+    Left = 226
+    Top = 160
+    Width = 93
+    Height = 31
     Caption = '&Apply'
     Default = True
     TabOrder = 3
@@ -73,25 +73,25 @@ object frmSoilDS: TfrmSoilDS
     NumGlyphs = 2
   end
   object cbSoilTexture: TComboBox
-    Left = 134
-    Top = 13
-    Width = 107
-    Height = 21
+    Left = 165
+    Top = 16
+    Width = 132
+    Height = 24
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 16
     TabOrder = 0
   end
   object RichEdit36: TRichEdit
-    Left = 8
-    Top = 13
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 16
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -102,16 +102,16 @@ object frmSoilDS: TfrmSoilDS
     TabOrder = 1
   end
   object RichEdit1: TRichEdit
-    Left = 8
-    Top = 45
-    Width = 121
-    Height = 33
+    Left = 10
+    Top = 55
+    Width = 149
+    Height = 41
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -122,24 +122,24 @@ object frmSoilDS: TfrmSoilDS
     TabOrder = 4
   end
   object edMoisture: TEdit
-    Left = 136
-    Top = 51
-    Width = 65
+    Left = 167
+    Top = 63
+    Width = 80
     Height = 21
     TabOrder = 5
   end
   object RichEdit2: TRichEdit
-    Left = 208
-    Top = 53
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 65
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -150,16 +150,16 @@ object frmSoilDS: TfrmSoilDS
     TabOrder = 6
   end
   object RichEdit5: TRichEdit
-    Left = 8
-    Top = 85
-    Width = 121
-    Height = 33
+    Left = 10
+    Top = 105
+    Width = 149
+    Height = 40
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -170,24 +170,24 @@ object frmSoilDS: TfrmSoilDS
     TabOrder = 7
   end
   object edSoilDepth: TEdit
-    Left = 136
-    Top = 91
-    Width = 65
+    Left = 167
+    Top = 112
+    Width = 80
     Height = 21
     TabOrder = 8
   end
   object RichEdit6: TRichEdit
-    Left = 208
-    Top = 93
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 114
+    Width = 60
+    Height = 28
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (

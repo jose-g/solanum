@@ -74,6 +74,7 @@ __published:	// IDE-managed Components
         TSpeedButton *sbEstadistico;
         TMenuItem *Calculatorofparameters1;
         TMenuItem *Statistics1;
+        TMenuItem *Boxplotting1;
         void __fastcall SpeedButton9Click(TObject *Sender);
         void __fastcall climate1Click(TObject *Sender);
         void __fastcall Getdemo1Click(TObject *Sender);
@@ -100,6 +101,7 @@ __published:	// IDE-managed Components
         void __fastcall sbMenuClick(TObject *Sender);
         void __fastcall sbEstadisticoClick(TObject *Sender);
         void __fastcall Calculatorofparameters1Click(TObject *Sender);
+        void __fastcall Boxplotting1Click(TObject *Sender);
 private:	// User declarations
         ManageDataPotato *cond;
         AnsiString ArchivoDato;

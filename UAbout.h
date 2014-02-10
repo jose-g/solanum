@@ -49,6 +49,7 @@ __published:	// IDE-managed Components
         TLabel *Label24;
         TLabel *Label26;
         TLabel *Label29;
+        TImage *Image3;
         void __fastcall SpeedButton4Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations

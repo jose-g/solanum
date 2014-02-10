@@ -56,6 +56,7 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit3;
         TRichEdit *RichEdit4;
         TSaveDialog *sdSave;
+        TLabel *Label8;
         void __fastcall SpeedButton4Click(TObject *Sender);
         void __fastcall chbCCClick(TObject *Sender);
         void __fastcall chbCCwClick(TObject *Sender);

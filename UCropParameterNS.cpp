@@ -12,7 +12,7 @@ __fastcall TfrmCropParameterNS::TfrmCropParameterNS(TComponent* Owner)
 {
    sgCrop->RowCount=3;
    sgCrop->Cells[0][1]="#";
-   sgCrop->Cells[1][0]="Crop name";
+   sgCrop->Cells[1][0]="Variety name";
    sgCrop->Cells[2][0]="Wmax";
    sgCrop->Cells[3][0]="tm";
    sgCrop->Cells[4][0]="te";
@@ -33,7 +33,7 @@ __fastcall TfrmCropParameterNS::TfrmCropParameterNS(TComponent* Owner)
    sgCrop->RowHeights[0]=18;
    sgCrop->RowHeights[1]=18;
    sgCrop->ColWidths[0]=30;
-   sgCrop->ColWidths[1]=80;
+   sgCrop->ColWidths[1]=100;
    sgCrop->ColWidths[2]=50;
    sgCrop->ColWidths[3]=50;
    sgCrop->ColWidths[4]=50;

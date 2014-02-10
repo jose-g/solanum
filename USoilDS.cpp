@@ -112,7 +112,7 @@ void __fastcall TfrmSoilDS::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 void TfrmSoilDS::PutValuesOnForm()
 {
-   cbSoilTexture->ItemIndex=cond->SelectedSoil-1;
+   cbSoilTexture->ItemIndex=cond->SelectedSoil;
    edMoisture->Text=cond->Moisture;
    edSoilDepth->Text=cond->SoilDepth;
 }

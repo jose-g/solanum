@@ -4,73 +4,73 @@ object frmCalcET0: TfrmCalcET0
   BorderIcons = [biHelp]
   BorderStyle = bsDialog
   Caption = 'Calculator ET0'
-  ClientHeight = 634
-  ClientWidth = 531
+  ClientHeight = 780
+  ClientWidth = 654
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object cmdMinTemp: TSpeedButton
-    Left = 481
-    Top = 56
-    Width = 23
-    Height = 22
+    Left = 592
+    Top = 69
+    Width = 28
+    Height = 27
     Caption = '...'
     OnClick = cmdMinTempClick
   end
   object cmdMaxTemp: TSpeedButton
-    Left = 481
-    Top = 80
-    Width = 23
-    Height = 22
+    Left = 592
+    Top = 98
+    Width = 28
+    Height = 28
     Caption = '...'
     OnClick = cmdMaxTempClick
   end
   object cmdRad: TSpeedButton
-    Left = 481
-    Top = 104
-    Width = 23
-    Height = 22
+    Left = 592
+    Top = 128
+    Width = 28
+    Height = 27
     Caption = '...'
     OnClick = cmdRadClick
   end
   object cmdSunshine: TSpeedButton
-    Left = 481
-    Top = 160
-    Width = 23
-    Height = 22
+    Left = 592
+    Top = 197
+    Width = 28
+    Height = 27
     Caption = '...'
     OnClick = cmdSunshineClick
   end
   object Label1: TLabel
-    Left = 8
-    Top = 8
-    Width = 337
-    Height = 13
+    Left = 10
+    Top = 10
+    Width = 411
+    Height = 16
     Caption = 
       '* If you want to open a new climate file, you can do it in the c' +
       'limate form'
   end
   object Label2: TLabel
-    Left = 480
-    Top = 34
-    Width = 10
-    Height = 13
+    Left = 591
+    Top = 42
+    Width = 13
+    Height = 16
     Caption = '(*)'
   end
   object cmdCancel: TBitBtn
-    Left = 360
-    Top = 592
-    Width = 75
-    Height = 25
+    Left = 443
+    Top = 729
+    Width = 92
+    Height = 30
     Caption = '&Cancel'
     TabOrder = 5
     OnClick = cmdCancelClick
@@ -94,10 +94,10 @@ object frmCalcET0: TfrmCalcET0
     NumGlyphs = 2
   end
   object cmdApply: TBitBtn
-    Left = 440
-    Top = 592
-    Width = 75
-    Height = 25
+    Left = 542
+    Top = 729
+    Width = 92
+    Height = 30
     Caption = '&Apply'
     Default = True
     TabOrder = 6
@@ -122,15 +122,15 @@ object frmCalcET0: TfrmCalcET0
     NumGlyphs = 2
   end
   object Edit2: TEdit
-    Left = 9
-    Top = 32
-    Width = 113
+    Left = 11
+    Top = 39
+    Width = 139
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -139,9 +139,9 @@ object frmCalcET0: TfrmCalcET0
     Text = 'Climate file (*)'
   end
   object edPathFile: TEdit
-    Left = 123
-    Top = 32
-    Width = 350
+    Left = 151
+    Top = 39
+    Width = 431
     Height = 21
     TabStop = False
     Color = 15395562
@@ -150,10 +150,10 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 0
   end
   object sgClimate: TStringGrid
-    Left = 34
-    Top = 192
-    Width = 464
-    Height = 185
+    Left = 42
+    Top = 236
+    Width = 571
+    Height = 228
     TabStop = False
     ColCount = 6
     RowCount = 367
@@ -529,15 +529,15 @@ object frmCalcET0: TfrmCalcET0
       24)
   end
   object Edit5: TEdit
-    Left = 9
-    Top = 56
-    Width = 113
+    Left = 11
+    Top = 69
+    Width = 139
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -546,15 +546,15 @@ object frmCalcET0: TfrmCalcET0
     Text = 'Minimum temperature'
   end
   object Edit6: TEdit
-    Left = 9
-    Top = 80
-    Width = 113
+    Left = 11
+    Top = 98
+    Width = 139
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -563,15 +563,15 @@ object frmCalcET0: TfrmCalcET0
     Text = 'Maximum temperature'
   end
   object Edit8: TEdit
-    Left = 9
-    Top = 104
-    Width = 113
+    Left = 11
+    Top = 128
+    Width = 139
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -580,9 +580,9 @@ object frmCalcET0: TfrmCalcET0
     Text = 'Radiation'
   end
   object edMinTemp: TEdit
-    Left = 123
-    Top = 56
-    Width = 350
+    Left = 151
+    Top = 69
+    Width = 431
     Height = 21
     TabStop = False
     Color = 15395562
@@ -590,9 +590,9 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 1
   end
   object edMaxTemp: TEdit
-    Left = 123
-    Top = 80
-    Width = 350
+    Left = 151
+    Top = 98
+    Width = 431
     Height = 21
     TabStop = False
     Color = 15395562
@@ -600,9 +600,9 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 2
   end
   object edRad: TEdit
-    Left = 123
-    Top = 104
-    Width = 350
+    Left = 151
+    Top = 128
+    Width = 431
     Height = 21
     TabStop = False
     Color = 15395562
@@ -610,15 +610,15 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 3
   end
   object Edit3: TEdit
-    Left = 9
-    Top = 160
-    Width = 113
+    Left = 11
+    Top = 197
+    Width = 139
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -627,9 +627,9 @@ object frmCalcET0: TfrmCalcET0
     Text = 'Sunshine'
   end
   object edSunshine: TEdit
-    Left = 123
-    Top = 160
-    Width = 350
+    Left = 151
+    Top = 197
+    Width = 431
     Height = 21
     TabStop = False
     Color = 15395562
@@ -637,16 +637,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 12
   end
   object RichEdit14: TRichEdit
-    Left = 8
-    Top = 406
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 500
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -657,24 +657,24 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 13
   end
   object edLatDegree: TEdit
-    Left = 136
-    Top = 406
-    Width = 65
+    Left = 167
+    Top = 500
+    Width = 80
     Height = 21
     TabOrder = 14
   end
   object RichEdit17: TRichEdit
-    Left = 208
-    Top = 405
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 498
+    Width = 60
+    Height = 28
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentBiDiMode = False
@@ -683,16 +683,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 15
   end
   object RichEdit1: TRichEdit
-    Left = 8
-    Top = 430
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 529
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -703,24 +703,24 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 16
   end
   object edLatMinutes: TEdit
-    Left = 136
-    Top = 430
-    Width = 65
+    Left = 167
+    Top = 529
+    Width = 80
     Height = 21
     TabOrder = 17
   end
   object RichEdit2: TRichEdit
-    Left = 208
-    Top = 429
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 528
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentBiDiMode = False
@@ -729,16 +729,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 18
   end
   object RichEdit3: TRichEdit
-    Left = 8
-    Top = 454
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 559
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -749,24 +749,24 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 19
   end
   object edLatSeconds: TEdit
-    Left = 136
-    Top = 454
-    Width = 65
+    Left = 167
+    Top = 559
+    Width = 80
     Height = 21
     TabOrder = 20
   end
   object RichEdit4: TRichEdit
-    Left = 208
-    Top = 453
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 558
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentBiDiMode = False
@@ -775,16 +775,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 21
   end
   object RichEdit5: TRichEdit
-    Left = 8
-    Top = 478
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 588
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -795,9 +795,9 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 22
   end
   object cbHemisphere: TComboBox
-    Left = 136
-    Top = 478
-    Width = 97
+    Left = 167
+    Top = 588
+    Width = 120
     Height = 22
     Style = csOwnerDrawVariable
     ItemHeight = 16
@@ -807,16 +807,16 @@ object frmCalcET0: TfrmCalcET0
       'Southern')
   end
   object RichEdit6: TRichEdit
-    Left = 8
-    Top = 502
-    Width = 121
-    Height = 35
+    Left = 10
+    Top = 618
+    Width = 149
+    Height = 43
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -828,24 +828,24 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 24
   end
   object edz: TEdit
-    Left = 136
-    Top = 509
-    Width = 65
+    Left = 167
+    Top = 626
+    Width = 80
     Height = 21
     TabOrder = 25
   end
   object RichEdit7: TRichEdit
-    Left = 208
-    Top = 509
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 626
+    Width = 60
+    Height = 28
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -856,16 +856,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 26
   end
   object RichEdit8: TRichEdit
-    Left = 8
-    Top = 542
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 667
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -874,26 +874,28 @@ object frmCalcET0: TfrmCalcET0
     ParentFont = False
     ReadOnly = True
     TabOrder = 27
+    Visible = False
   end
   object edG: TEdit
-    Left = 136
-    Top = 542
-    Width = 65
+    Left = 167
+    Top = 667
+    Width = 80
     Height = 21
     TabOrder = 28
+    Visible = False
   end
   object RichEdit9: TRichEdit
-    Left = 208
-    Top = 541
-    Width = 65
-    Height = 22
+    Left = 256
+    Top = 666
+    Width = 80
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -902,18 +904,19 @@ object frmCalcET0: TfrmCalcET0
     ParentFont = False
     ReadOnly = True
     TabOrder = 29
+    Visible = False
   end
   object RichEdit10: TRichEdit
-    Left = 8
-    Top = 566
-    Width = 121
-    Height = 21
+    Left = 10
+    Top = 697
+    Width = 149
+    Height = 25
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -924,24 +927,24 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 30
   end
   object edAlbedo: TEdit
-    Left = 136
-    Top = 566
-    Width = 65
+    Left = 167
+    Top = 697
+    Width = 80
     Height = 21
     TabOrder = 31
   end
   object RichEdit11: TRichEdit
-    Left = 208
-    Top = 565
-    Width = 49
-    Height = 22
+    Left = 256
+    Top = 695
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentBiDiMode = False
@@ -950,16 +953,16 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 32
   end
   object RichEdit12: TRichEdit
-    Left = 288
-    Top = 406
-    Width = 121
-    Height = 21
+    Left = 354
+    Top = 500
+    Width = 149
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -970,9 +973,9 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 33
   end
   object cbSelect_Wind_cat: TComboBox
-    Left = 416
-    Top = 406
-    Width = 97
+    Left = 512
+    Top = 500
+    Width = 119
     Height = 22
     Style = csOwnerDrawVariable
     ItemHeight = 16
@@ -984,46 +987,48 @@ object frmCalcET0: TfrmCalcET0
       'Calm')
   end
   object Edit9: TEdit
-    Left = 288
-    Top = 430
-    Width = 121
+    Left = 354
+    Top = 529
+    Width = 149
     Height = 21
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
     ReadOnly = True
     TabOrder = 35
     Text = 'Thermal conditions'
+    Visible = False
   end
   object cbThermalCond: TComboBox
-    Left = 416
-    Top = 430
-    Width = 97
+    Left = 512
+    Top = 529
+    Width = 119
     Height = 22
     Style = csOwnerDrawVariable
     ItemHeight = 16
     TabOrder = 36
+    Visible = False
     Items.Strings = (
       'Cold'
       'Temperate'
       'Warm')
   end
   object RichEdit13: TRichEdit
-    Left = 288
-    Top = 454
-    Width = 225
-    Height = 35
+    Left = 354
+    Top = 559
+    Width = 277
+    Height = 43
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -1035,47 +1040,45 @@ object frmCalcET0: TfrmCalcET0
     TabOrder = 37
   end
   object cbSelect_AP: TComboBox
-    Left = 288
-    Top = 494
-    Width = 225
+    Left = 354
+    Top = 608
+    Width = 277
     Height = 22
     Style = csOwnerDrawVariable
     ItemHeight = 16
     TabOrder = 38
     Items.Strings = (
-      'Andean region Frere et al 1975'
-      'A.Von Humbolt, Peru Baigorria et al 2004'
-      'Weberbaur,Peru Baigorria et al 2004'
-      'Huayao, Peru Baigorria et al 2004'
-      'Puno, Peru Baigorria et al 2004'
-      
-        'Patna, India (regression estimated) M. Akhlaque Ahmed et al., 20' +
-        '09'
-      'San Ramon, Peru Baigorria et al 2004')
+      'Andean region'
+      'A.Von Humbolt, Peru'
+      'Weberbaur,Peru'
+      'Huayao, Peru'
+      'Puno, Peru'
+      'Patna, India'
+      'San Ramon, Peru')
   end
   object butGenerateET0: TButton
-    Left = 304
-    Top = 536
-    Width = 193
-    Height = 33
+    Left = 374
+    Top = 660
+    Width = 238
+    Height = 40
     Caption = 'Generate ET0'
     TabOrder = 39
     OnClick = butGenerateET0Click
   end
   object chbSunshine: TCheckBox
-    Left = 8
-    Top = 136
-    Width = 177
-    Height = 17
+    Left = 10
+    Top = 167
+    Width = 218
+    Height = 21
     Caption = 'I have sunshine data'
     TabOrder = 40
     OnClick = chbSunshineClick
   end
   object butSaveET0: TButton
-    Left = 280
-    Top = 592
-    Width = 75
-    Height = 25
+    Left = 345
+    Top = 729
+    Width = 92
+    Height = 30
     Caption = 'Save ET0 ...'
     TabOrder = 41
     OnClick = butSaveET0Click

@@ -68,6 +68,7 @@ __published:	// IDE-managed Components
         TLabel *Label2;
         TLabel *Label3;
         TButton *butImport;
+        TRichEdit *RichEdit13;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);

@@ -954,7 +954,7 @@ void __fastcall TfrmCalcParam::butAddParDBClick(TObject *Sender)
   if(numcar<=0)
   {
     exitoso=false;
-    Application->MessageBox("Enter a name for the crop!", "Warning!", MB_OK);
+    Application->MessageBox("Enter a name for the variety!", "Warning!", MB_OK);
     edNameCrop->SetFocus();
   }
   }

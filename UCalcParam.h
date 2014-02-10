@@ -123,6 +123,7 @@ __published:	// IDE-managed Components
         TEdit *Edit16;
         TEdit *edtuberinit;
         TCheckBox *chkbtuberinit;
+        TRichEdit *RichEdit14;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);

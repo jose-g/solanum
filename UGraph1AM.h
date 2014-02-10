@@ -46,6 +46,7 @@ __published:	// IDE-managed Components
         TLabel *Label6;
         TEdit *Edit4;
         TLabel *Label7;
+        TLabel *Label8;
         void __fastcall SpeedButton4Click(TObject *Sender);
         void __fastcall chbTotalDMClick(TObject *Sender);
         void __fastcall chbTuberDMClick(TObject *Sender);

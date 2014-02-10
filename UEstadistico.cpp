@@ -32,7 +32,7 @@ void TfrmEstadistico::Initialize()
    sgFY->Cells[0][1]="#";
    sgFY->Cells[1][0]="Fresh yield";
    sgFY->Cells[2][0]="Fresh yield";
-   sgFY->Cells[1][1]="Estimated";
+   sgFY->Cells[1][1]="Simulated";
    sgFY->Cells[2][1]="Observed";
    sgFY->ColWidths[0]=30;
    sgFY->ColWidths[1]=84;
@@ -44,7 +44,7 @@ void TfrmEstadistico::Initialize()
    sgCC->Cells[0][1]="#";
    sgCC->Cells[1][0]="Canopy cover";
    sgCC->Cells[2][0]="Canopy cover";
-   sgCC->Cells[1][1]="Estimated";
+   sgCC->Cells[1][1]="Simulated";
    sgCC->Cells[2][1]="Observed";
    sgCC->ColWidths[0]=30;
    sgCC->ColWidths[1]=102;

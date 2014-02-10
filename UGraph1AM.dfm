@@ -3,24 +3,24 @@ object frmGraph1AM: TfrmGraph1AM
   Top = 164
   BorderStyle = bsDialog
   Caption = 'Graph : Total dry biomass'
-  ClientHeight = 460
-  ClientWidth = 738
+  ClientHeight = 566
+  ClientWidth = 908
   Color = 140
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object tch1: TChart
-    Left = 8
-    Top = 41
-    Width = 721
-    Height = 408
+    Left = 10
+    Top = 50
+    Width = 887
+    Height = 503
     BottomWall.Color = 8454143
     Legend.Bevel = bvRaised
     Legend.CheckBoxes = True
@@ -49,7 +49,6 @@ object frmGraph1AM: TfrmGraph1AM
     BottomAxis.LabelStyle = talValue
     BottomAxis.Title.Caption = 'days'
     BottomAxis.Title.Font.Color = clLime
-    BottomAxis.Title.Font.Height = -13
     BottomAxis.Title.Font.Style = [fsBold]
     LeftAxis.Automatic = False
     LeftAxis.AutomaticMaximum = False
@@ -59,7 +58,6 @@ object frmGraph1AM: TfrmGraph1AM
     LeftAxis.Maximum = 435
     LeftAxis.Title.Caption = 't / ha'
     LeftAxis.Title.Font.Color = clLime
-    LeftAxis.Title.Font.Height = -13
     LeftAxis.Title.Font.Style = [fsBold]
     View3D = False
     Zoom.Animated = True
@@ -71,15 +69,15 @@ object frmGraph1AM: TfrmGraph1AM
       15
       24)
     object Label1: TLabel
-      Left = 554
-      Top = 200
-      Width = 49
-      Height = 13
+      Left = 682
+      Top = 246
+      Width = 60
+      Height = 16
       Caption = 'Last day'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentColor = False
@@ -87,15 +85,15 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label2: TLabel
-      Left = 554
-      Top = 226
-      Width = 82
-      Height = 13
+      Left = 682
+      Top = 278
+      Width = 108
+      Height = 16
       Caption = 'Total dry biomass'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
@@ -103,15 +101,15 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label4: TLabel
-      Left = 689
-      Top = 226
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 278
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
@@ -119,15 +117,15 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label5: TLabel
-      Left = 689
-      Top = 252
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 310
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
@@ -135,15 +133,15 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label3: TLabel
-      Left = 554
-      Top = 252
-      Width = 67
-      Height = 13
+      Left = 682
+      Top = 310
+      Width = 86
+      Height = 16
       Caption = 'Dry tuber yield'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
@@ -151,15 +149,15 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label6: TLabel
-      Left = 554
-      Top = 276
-      Width = 77
-      Height = 13
+      Left = 682
+      Top = 340
+      Width = 99
+      Height = 16
       Caption = 'Fresh tuber yield'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
@@ -167,34 +165,50 @@ object frmGraph1AM: TfrmGraph1AM
       Visible = False
     end
     object Label7: TLabel
-      Left = 689
-      Top = 276
-      Width = 26
-      Height = 13
+      Left = 848
+      Top = 340
+      Width = 28
+      Height = 16
       Caption = 't / ha'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentColor = False
       ParentFont = False
       Visible = False
     end
+    object Label8: TLabel
+      Left = 762
+      Top = 22
+      Width = 94
+      Height = 16
+      Caption = 'Last scenario'
+      Color = 3421287
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
     object GroupBox1: TGroupBox
-      Left = 528
-      Top = 87
-      Width = 182
-      Height = 90
+      Left = 650
+      Top = 107
+      Width = 224
+      Height = 111
       Color = 3421287
       ParentColor = False
       TabOrder = 0
       object RichEdit7: TRichEdit
-        Left = 12
-        Top = 5
-        Width = 89
-        Height = 22
+        Left = 15
+        Top = 6
+        Width = 109
+        Height = 27
         TabStop = False
         Alignment = taCenter
         BiDiMode = bdLeftToRight
@@ -202,7 +216,7 @@ object frmGraph1AM: TfrmGraph1AM
         Color = clBlack
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMaroon
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentBiDiMode = False
@@ -211,17 +225,17 @@ object frmGraph1AM: TfrmGraph1AM
         TabOrder = 1
       end
       object RichEdit6: TRichEdit
-        Left = 8
+        Left = 10
         Top = 0
-        Width = 89
-        Height = 22
+        Width = 109
+        Height = 27
         TabStop = False
         Alignment = taCenter
         BiDiMode = bdLeftToRight
         Color = 12713983
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMaroon
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         Lines.Strings = (
@@ -232,14 +246,14 @@ object frmGraph1AM: TfrmGraph1AM
         TabOrder = 0
       end
       object chbTotalDM: TCheckBox
-        Left = 24
-        Top = 40
-        Width = 113
-        Height = 17
+        Left = 30
+        Top = 49
+        Width = 139
+        Height = 21
         Caption = 'Total dry biomass'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
@@ -247,14 +261,14 @@ object frmGraph1AM: TfrmGraph1AM
         OnClick = chbTotalDMClick
       end
       object chbTuberDM: TCheckBox
-        Left = 24
-        Top = 64
-        Width = 129
-        Height = 17
+        Left = 30
+        Top = 79
+        Width = 158
+        Height = 21
         Caption = 'Dry tuber yield'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWhite
-        Font.Height = -11
+        Font.Height = -15
         Font.Name = 'MS Sans Serif'
         Font.Style = [fsBold]
         ParentFont = False
@@ -263,40 +277,40 @@ object frmGraph1AM: TfrmGraph1AM
       end
     end
     object Edit1: TEdit
-      Left = 644
-      Top = 197
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 242
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 1
       Visible = False
     end
     object Edit2: TEdit
-      Left = 644
-      Top = 224
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 276
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 2
       Visible = False
     end
     object Edit3: TEdit
-      Left = 644
-      Top = 250
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 308
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 3
       Visible = False
     end
     object Edit4: TEdit
-      Left = 644
-      Top = 276
-      Width = 41
-      Height = 21
+      Left = 793
+      Top = 340
+      Width = 50
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 4
@@ -342,22 +356,22 @@ object frmGraph1AM: TfrmGraph1AM
     end
   end
   object GroupBox2: TGroupBox
-    Left = 640
-    Top = 360
-    Width = 78
-    Height = 75
+    Left = 788
+    Top = 443
+    Width = 96
+    Height = 92
     Caption = 'GroupBox2'
     Color = 3421287
     ParentColor = False
     TabOrder = 0
     object SpeedButton4: TSpeedButton
-      Left = 22
-      Top = 30
-      Width = 35
-      Height = 35
+      Left = 27
+      Top = 37
+      Width = 43
+      Height = 43
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Glyph.Data = {
@@ -378,10 +392,10 @@ object frmGraph1AM: TfrmGraph1AM
       OnClick = SpeedButton4Click
     end
     object RichEdit2: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 57
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -389,7 +403,7 @@ object frmGraph1AM: TfrmGraph1AM
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -398,17 +412,17 @@ object frmGraph1AM: TfrmGraph1AM
       TabOrder = 1
     end
     object RichEdit1: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 57
-      Height = 22
+      Width = 70
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -420,10 +434,10 @@ object frmGraph1AM: TfrmGraph1AM
     end
   end
   object tc1: TTeeCommander
-    Left = 8
-    Top = 8
-    Width = 721
-    Height = 33
+    Left = 10
+    Top = 10
+    Width = 887
+    Height = 40
     Panel = tch1
     Color = 4868757
     ParentShowHint = False

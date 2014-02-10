@@ -539,6 +539,27 @@ object frmCropParameterPG: TfrmCropParameterPG
       ReadOnly = True
       TabOrder = 10
     end
+    object RichEdit13: TRichEdit
+      Left = 276
+      Top = 163
+      Width = 60
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        #176'Cd')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 11
+    end
   end
   object GroupBox3: TGroupBox
     Left = 10
@@ -560,8 +581,8 @@ object frmCropParameterPG: TfrmCropParameterPG
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        'Average light use '
-        'efficiency')
+        'Average radiation use '
+        'efficiency (RUE)')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -577,7 +598,7 @@ object frmCropParameterPG: TfrmCropParameterPG
     object RichEdit17: TRichEdit
       Left = 276
       Top = 26
-      Width = 60
+      Width = 77
       Height = 27
       TabStop = False
       Alignment = taCenter
@@ -589,7 +610,7 @@ object frmCropParameterPG: TfrmCropParameterPG
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        'g/MJ')
+        'g/MJPAR')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True

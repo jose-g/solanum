@@ -1,10 +1,10 @@
 object frmEstadistico: TfrmEstadistico
-  Left = 824
-  Top = 234
+  Left = 486
+  Top = 291
   Width = 559
   Height = 549
   BorderIcons = [biSystemMenu]
-  Caption = 'Statistics'
+  Caption = 'Model assessment'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -70,7 +70,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 11
     Top = 10
     Width = 167
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -87,7 +87,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 181
     Top = 10
     Width = 293
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -97,7 +97,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 11
     Top = 39
     Width = 167
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -114,7 +114,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 11
     Top = 69
     Width = 167
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -131,7 +131,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 181
     Top = 69
     Width = 129
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -141,7 +141,7 @@ object frmEstadistico: TfrmEstadistico
     Left = 181
     Top = 39
     Width = 129
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True

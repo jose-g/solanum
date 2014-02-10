@@ -19,6 +19,7 @@
 #include "UClimateDS.h"
 #include "UCalcParam.h"
 #include "UEstadistico.h"
+#include "UGraphBoxPlot.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -404,6 +405,24 @@ void __fastcall TfrmMainDS::Calculatorofparameters1Click(TObject *Sender)
   frm->EnterInformation(cond,dbcultivo);
   frm->ShowModal();
   delete frm;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMainDS::Boxplotting1Click(TObject *Sender)
+{
+  int existe=access(cond->report->rBoxPlotfty, 0);
+  if(existe==-1) // el archivo no existe
+  {
+    Application->MessageBox("There is not information to show!!!","¡Warning!",MB_OK);
+    return;
+  }
+  else
+  {
+    TfrmGraphBoxPlot *frm = new TfrmGraphBoxPlot(this);
+    frm->EnterInformation(cond->report->rBoxPlotfty);
+    frm->ShowModal();
+    delete frm;
+  }        
 }
 //---------------------------------------------------------------------------
 

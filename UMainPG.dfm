@@ -9,7 +9,7 @@ object frmMainPG: TfrmMainPG
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Menu = MainMenu1
@@ -18,20 +18,20 @@ object frmMainPG: TfrmMainPG
   WindowState = wsMaximized
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 780
+    Width = 778
     Height = 2
     Align = alTop
   end
   object Image1: TImage
     Left = 0
-    Top = 45
-    Width = 780
-    Height = 433
+    Top = 55
+    Width = 778
+    Height = 411
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765CCCE0A00FFD8FFE000104A46494600010201004800
@@ -22174,16 +22174,16 @@ object frmMainPG: TfrmMainPG
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 780
-    Height = 43
+    Width = 778
+    Height = 53
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object sbNew: TSpeedButton
       Left = 2
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'New conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22211,10 +22211,10 @@ object frmMainPG: TfrmMainPG
       OnClick = New1Click
     end
     object sbOpen: TSpeedButton
-      Left = 45
+      Left = 55
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Open file of conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22243,10 +22243,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Open1Click
     end
     object sbSave: TSpeedButton
-      Left = 88
+      Left = 108
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Save conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22274,10 +22274,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Save1Click
     end
     object SpeedButton1: TSpeedButton
-      Left = 138
+      Left = 170
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 49
+      Height = 50
       Hint = 'Example conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22305,10 +22305,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Getdemo1Click
     end
     object SpeedButton2: TSpeedButton
-      Left = 188
+      Left = 231
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Climate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22336,10 +22336,10 @@ object frmMainPG: TfrmMainPG
       OnClick = climate1Click
     end
     object SpeedButton3: TSpeedButton
-      Left = 231
+      Left = 284
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Crop parameter'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22413,10 +22413,10 @@ object frmMainPG: TfrmMainPG
       OnClick = CropParameter1Click
     end
     object SpeedButton5: TSpeedButton
-      Left = 284
+      Left = 350
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 49
+      Height = 50
       Hint = 'Simulate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22444,10 +22444,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Simulate1Click
     end
     object SpeedButton6: TSpeedButton
-      Left = 374
+      Left = 460
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Text reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22475,10 +22475,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton6Click
     end
     object SpeedButton7: TSpeedButton
-      Left = 417
+      Left = 513
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 49
+      Height = 50
       Hint = 'Graph reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22506,10 +22506,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton7Click
     end
     object SpeedButton8: TSpeedButton
-      Left = 467
+      Left = 575
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 49
+      Height = 50
       Hint = 'Exit'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22583,10 +22583,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton8Click
     end
     object sbEstadistico: TSpeedButton
-      Left = 331
+      Left = 407
       Top = 2
-      Width = 40
-      Height = 40
+      Width = 50
+      Height = 50
       Hint = 'Statistics'
       Glyph.Data = {
         76070000424D76070000000000003600000028000000150000001D0000000100
@@ -22654,10 +22654,10 @@ object frmMainPG: TfrmMainPG
       OnClick = sbEstadisticoClick
     end
     object sbMenu: TSpeedButton
-      Left = 531
+      Left = 654
       Top = 2
-      Width = 86
-      Height = 40
+      Width = 105
+      Height = 50
       Hint = 'Exit'
       Caption = 'Modules'
       Glyph.Data = {
@@ -22713,10 +22713,10 @@ object frmMainPG: TfrmMainPG
       OnClick = sbMenuClick
     end
     object butAddScenario: TButton
-      Left = 712
-      Top = 8
-      Width = 75
-      Height = 25
+      Left = 876
+      Top = 10
+      Width = 93
+      Height = 31
       Caption = 'Add scenario'
       TabOrder = 0
       Visible = False
@@ -22725,8 +22725,8 @@ object frmMainPG: TfrmMainPG
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 478
-    Width = 780
+    Top = 466
+    Width = 778
     Height = 23
     Panels = <
       item
@@ -22826,7 +22826,7 @@ object frmMainPG: TfrmMainPG
         end
       end
       object Statistics1: TMenuItem
-        Caption = 'Statistics'
+        Caption = 'Model assessment'
         OnClick = sbEstadisticoClick
       end
       object N2: TMenuItem

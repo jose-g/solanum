@@ -137,6 +137,7 @@ object frmMenu: TfrmMenu
       Top = 142
       Width = 28
       Height = 27
+      Enabled = False
       Glyph.Data = {
         E6040000424DE604000000000000360000002800000014000000140000000100
         180000000000B0040000120B0000120B00000000000000000000D8E9ECD8E9EC
@@ -304,6 +305,7 @@ object frmMenu: TfrmMenu
       Width = 120
       Height = 21
       Caption = 'Nitrogen limited'
+      Enabled = False
       TabOrder = 2
     end
     object rbFS: TRadioButton

@@ -11,6 +11,7 @@
 #include <jpeg.hpp>
 #include "UMainPG.h"
 #include "UMenu.h"
+#include <ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TfrmLogo : public TForm
 {
@@ -22,10 +23,10 @@ __published:	// IDE-managed Components
         TLabel *Label3;
         TButton *cmdContinue;
         TImage *Image1;
-        TLabel *Label4;
-        TPanel *Panel1;
+        TGroupBox *GroupBox3;
         TImage *Image2;
-        TLabel *Label5;
+        TImage *Image3;
+        TLabel *Label4;
         void __fastcall cmdContinueClick(TObject *Sender);
 private:	// User declarations
         void CrearFormulariofrmMainPG();

@@ -73,5 +73,21 @@ object frmGraphBoxPlot: TfrmGraphBoxPlot
       24
       15
       24)
+    object Label8: TLabel
+      Left = 762
+      Top = 22
+      Width = 91
+      Height = 16
+      Caption = 'All scenarios'
+      Color = 3421287
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
   end
 end

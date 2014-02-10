@@ -3,8 +3,8 @@ object frmSimulationTime: TfrmSimulationTime
   Top = 230
   BorderStyle = bsDialog
   Caption = 'Simulation'
-  ClientHeight = 498
-  ClientWidth = 377
+  ClientHeight = 448
+  ClientWidth = 406
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object frmSimulationTime: TfrmSimulationTime
   object Panel1: TPanel
     Left = 10
     Top = 10
-    Width = 356
+    Width = 383
     Height = 375
     TabOrder = 0
     object Image1: TImage
@@ -117,8 +117,8 @@ object frmSimulationTime: TfrmSimulationTime
     object Edit1: TEdit
       Left = 20
       Top = 182
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -134,8 +134,8 @@ object frmSimulationTime: TfrmSimulationTime
     object Edit2: TEdit
       Left = 20
       Top = 277
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -149,14 +149,14 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Simulation time (1to 250 days)'
     end
     object edTime: TEdit
-      Left = 226
+      Left = 250
       Top = 277
       Width = 110
-      Height = 21
+      Height = 24
       TabOrder = 3
     end
     object cbMonth: TComboBox
-      Left = 226
+      Left = 250
       Top = 182
       Width = 110
       Height = 19
@@ -180,8 +180,8 @@ object frmSimulationTime: TfrmSimulationTime
     object Edit3: TEdit
       Left = 20
       Top = 230
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -192,20 +192,20 @@ object frmSimulationTime: TfrmSimulationTime
       ParentFont = False
       ReadOnly = True
       TabOrder = 6
-      Text = 'Day simulation starts'
+      Text = 'Day simulation starts (Planting date)'
     end
     object edDay: TEdit
-      Left = 226
+      Left = 250
       Top = 230
       Width = 110
-      Height = 21
+      Height = 24
       TabOrder = 1
     end
     object Edit4: TEdit
       Left = 20
       Top = 89
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -219,17 +219,17 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Location'
     end
     object edLocation: TEdit
-      Left = 226
+      Left = 250
       Top = 89
       Width = 110
-      Height = 21
+      Height = 24
       TabOrder = 0
     end
     object Edit5: TEdit
       Left = 20
       Top = 135
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -243,7 +243,7 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Year simulation starts'
     end
     object cbYear: TComboBox
-      Left = 226
+      Left = 250
       Top = 135
       Width = 110
       Height = 19
@@ -255,7 +255,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 20
       Top = 0
       Width = 198
-      Height = 21
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -284,17 +284,17 @@ object frmSimulationTime: TfrmSimulationTime
         'Warm')
     end
     object edNumSim: TEdit
-      Left = 226
+      Left = 250
       Top = 325
       Width = 110
-      Height = 21
+      Height = 24
       TabOrder = 12
     end
     object Edit8: TEdit
       Left = 20
       Top = 325
-      Width = 198
-      Height = 21
+      Width = 221
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -305,12 +305,12 @@ object frmSimulationTime: TfrmSimulationTime
       ParentFont = False
       ReadOnly = True
       TabOrder = 13
-      Text = 'Number of runs (min 20)'
+      Text = 'Number of runs (20 - 100)'
     end
   end
   object cmdCancel: TBitBtn
-    Left = 172
-    Top = 437
+    Left = 196
+    Top = 405
     Width = 93
     Height = 31
     Caption = '&Cancel'
@@ -336,8 +336,8 @@ object frmSimulationTime: TfrmSimulationTime
     NumGlyphs = 2
   end
   object cmdSimulate: TBitBtn
-    Left = 271
-    Top = 437
+    Left = 295
+    Top = 405
     Width = 92
     Height = 31
     Caption = '&Simulate'

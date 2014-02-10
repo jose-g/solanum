@@ -1998,7 +1998,7 @@ object frmCalcParam: TfrmCalcParam
     Width = 80
     Height = 24
     TabOrder = 23
-    Text = '75'
+    Text = '100'
   end
   object RichEdit13: TRichEdit
     Left = 1344
@@ -2038,6 +2038,27 @@ object frmCalcParam: TfrmCalcParam
     Caption = 'Use tuber initiation'
     TabOrder = 47
     OnClick = chkbtuberinitClick
+  end
+  object RichEdit14: TRichEdit
+    Left = 1448
+    Top = 86
+    Width = 60
+    Height = 27
+    TabStop = False
+    Alignment = taCenter
+    BiDiMode = bdLeftToRight
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    Lines.Strings = (
+      'dap')
+    ParentBiDiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 48
   end
   object odClimate: TOpenDialog
     Options = [ofHideReadOnly, ofNoChangeDir, ofEnableSizing]

@@ -21,6 +21,7 @@ class TfrmGraphBoxPlot : public TForm
 __published:	// IDE-managed Components
         TTeeCommander *tc1;
         TChart *tch1;
+        TLabel *Label8;
         void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
         char* filename;

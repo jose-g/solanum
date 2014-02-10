@@ -75,6 +75,7 @@ __published:	// IDE-managed Components
         TEdit *edTld;
         TEdit *edTrg;
         TButton *butExport;
+        TRichEdit *RichEdit23;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
