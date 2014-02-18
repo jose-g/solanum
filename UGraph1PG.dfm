@@ -29,9 +29,9 @@ object frmGraph1PG: TfrmGraph1PG
     Legend.Font.Style = [fsBold]
     Legend.FontSeriesColor = True
     Legend.Frame.Width = 2
-    Legend.Left = 510
+    Legend.Left = 650
     Legend.ResizeChart = False
-    Legend.Top = 41
+    Legend.Top = 55
     MarginLeft = 1
     MarginRight = 28
     Title.Brush.Color = clWhite
@@ -280,7 +280,7 @@ object frmGraph1PG: TfrmGraph1PG
       Left = 793
       Top = 242
       Width = 50
-      Height = 21
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 1
@@ -290,7 +290,7 @@ object frmGraph1PG: TfrmGraph1PG
       Left = 793
       Top = 276
       Width = 50
-      Height = 21
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 2
@@ -300,7 +300,7 @@ object frmGraph1PG: TfrmGraph1PG
       Left = 793
       Top = 308
       Width = 50
-      Height = 21
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 3
@@ -310,7 +310,7 @@ object frmGraph1PG: TfrmGraph1PG
       Left = 793
       Top = 340
       Width = 50
-      Height = 21
+      Height = 24
       TabStop = False
       ReadOnly = True
       TabOrder = 4

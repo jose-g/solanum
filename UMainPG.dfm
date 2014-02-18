@@ -1,8 +1,8 @@
 object frmMainPG: TfrmMainPG
-  Left = 408
-  Top = 275
-  Width = 796
-  Height = 559
+  Left = 522
+  Top = 201
+  Width = 915
+  Height = 649
   Caption = 
     'SOLANUM : A potato production simulation model (Potential growth' +
     ')'
@@ -23,15 +23,15 @@ object frmMainPG: TfrmMainPG
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 778
+    Width = 897
     Height = 2
     Align = alTop
   end
   object Image1: TImage
     Left = 0
     Top = 55
-    Width = 778
-    Height = 411
+    Width = 897
+    Height = 501
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765CCCE0A00FFD8FFE000104A46494600010201004800
@@ -22174,7 +22174,7 @@ object frmMainPG: TfrmMainPG
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 778
+    Width = 897
     Height = 53
     Align = alTop
     BevelOuter = bvNone
@@ -22725,8 +22725,8 @@ object frmMainPG: TfrmMainPG
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 466
-    Width = 778
+    Top = 556
+    Width = 897
     Height = 23
     Panels = <
       item

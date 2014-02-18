@@ -2291,7 +2291,6 @@ if (-2>=phase) {
 
 
 
-
 }; /* end(cond,-2>=phase) */
 
 if (-1>=phase) {
@@ -2537,8 +2536,6 @@ if (1>=phase) {
                                                                                                                                 Frost_limited_productionpointer_2->delayCC = Frost_limited_productionpointer_2->_array__for_delayCC[Frost_limited_productionpointer_2->ptr_for_delayCC-1];
                                                                                                                                 Frost_limited_productionpointer_2->dCC = Frost_limited_productionpointer_2->CC_0-Frost_limited_productionpointer_2->delayCC;
                                                                                                                                 Frost_limited_productionpointer_2->fay2 = (Frost_limited_productionpointer_2->dCC>0?Frost_limited_productionpointer_2->dCC*Frost_limited_productionpointer_2->REB:(double)(Frost_limited_productionpointer_2->dCC*1)/Frost_limited_productionpointer_2->REB);
-
-
 
 
 

@@ -29,9 +29,9 @@ object frmGraph2PG: TfrmGraph2PG
     Legend.Font.Style = [fsBold]
     Legend.FontSeriesColor = True
     Legend.Frame.Width = 2
-    Legend.Left = 535
+    Legend.Left = 670
     Legend.ResizeChart = False
-    Legend.Top = 41
+    Legend.Top = 50
     MarginLeft = 1
     MarginRight = 26
     Title.Brush.Color = clWhite

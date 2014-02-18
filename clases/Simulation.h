@@ -21,6 +21,7 @@
 
      int simulate();
      int Just_simulate();
+     int Just_simulate2();
      int CalculatesAfterSimulation();
 
      int Month(int);
