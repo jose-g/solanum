@@ -44,6 +44,7 @@ void TfrmClimate::Initialize()
    sgClimate->Cells[9][0]="ET";
    sgClimate->Cells[10][0]="Irrigation";
    sgClimate->Cells[11][0]="Soil Temp";
+   sgClimate->Cells[12][0]="Sunshine";
    sgClimate->Cells[5][1]="oC";
    sgClimate->Cells[6][1]="oC";
    sgClimate->Cells[7][1]="mm";
@@ -51,6 +52,7 @@ void TfrmClimate::Initialize()
    sgClimate->Cells[9][1]="mm";
    sgClimate->Cells[10][1]="mm";
    sgClimate->Cells[11][1]="oC";
+   sgClimate->Cells[12][1]="Falta unidad";
    sgClimate->RowHeights[0]=18;
    sgClimate->RowHeights[1]=18;
    sgClimate->ColWidths[0]=30;
@@ -65,6 +67,7 @@ void TfrmClimate::Initialize()
    sgClimate->ColWidths[9]=50;
    sgClimate->ColWidths[10]=90;
    sgClimate->ColWidths[11]=90;
+   sgClimate->ColWidths[12]=90;
 }
 //---------------------------------------------------------------------------
 void TfrmClimate::EnterInformation(ClimateFile *_cond)
@@ -155,6 +158,7 @@ void TfrmClimate::PutValuesOnForm()
    edET->Text=condTemp->TitET;
    edIrri->Text=condTemp->TitIrri;
    edSoilTemp->Text=condTemp->TitSoilTemp;
+   edSunshine->Text=condTemp->TitSunshine;
 
    if(condTemp->RecNum==0)
    {
@@ -178,6 +182,7 @@ void TfrmClimate::PutValuesOnForm()
      sgClimate->Cells[9][i+1]   = condTemp->ET[i-1];
      sgClimate->Cells[10][i+1]   = condTemp->Irri[i-1];
      sgClimate->Cells[11][i+1]   = condTemp->SoilTemp[i-1];
+     sgClimate->Cells[12][i+1]   = condTemp->Sunshine[i-1];
    }
 }
 //---------------------------------------------------------------------------
@@ -335,6 +340,7 @@ if(numTemp>0)
    edET      -> Text = "";
    edIrri      -> Text = "";
    edSoilTemp      -> Text = "";
+   edSunshine      -> Text = "";
    condTemp->CleanVectorClimate();
 
    if(odClimate->FilterIndex==1)
@@ -348,7 +354,7 @@ if(numTemp>0)
    sgClimate->RowCount=condTemp->RecNum+2;
    for(int i=2;i<=sgClimate->RowCount;i++)
    {
-     for(int j=1;j<=11;j++)
+     for(int j=1;j<=12;j++)
      {
        sgClimate->Cells[j][i]="";
      }
@@ -498,6 +504,25 @@ void __fastcall TfrmClimate::cmdSoilClick(TObject *Sender)
   delete frm;
 }
 //---------------------------------------------------------------------------
+void __fastcall TfrmClimate::cmdSunshineClick(TObject *Sender)
+{
+  TfrmCampo *frm = new TfrmCampo(this);
+  frm->EnterInformation(List,num,"Sunshine");
+  if(frm->ShowModal()==mrOk)
+  {
+    edSunshine->Text=frm->ReturnInformation();
+    strcpy(condTemp->TitSunshine, edSunshine->Text.c_str());
+    int numelem=condTemp->GetColumnData(condTemp->FileName,condTemp->TitSunshine,condTemp->Sunshine);
+    if(numelem==0)numelem=condTemp->GetColumnDataFromCSVFile(condTemp->FileName,condTemp->TitSunshine,condTemp->Sunshine);
+    sgClimate->RowCount=condTemp->RecNum+2;
+    for(int i=1;i<=condTemp->RecNum;i++)
+    {
+     sgClimate->Cells[12][i+1]=condTemp->Sunshine[i-1];
+    }
+  }
+  delete frm;
+}
+//---------------------------------------------------------------------------
 
 void __fastcall TfrmClimate::cmdDayClick(TObject *Sender)
 {
@@ -564,4 +589,5 @@ void __fastcall TfrmClimate::cmdYearClick(TObject *Sender)
   delete frm;
 }
 //---------------------------------------------------------------------------
+
 

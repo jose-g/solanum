@@ -114,7 +114,7 @@ void ManageDataPotato::DefaultCondition()
   strcpy(climate->TitET,"ETo");
   strcpy(climate->TitIrri,"Irri");
   strcpy(climate->TitSoilTemp,"Tsoi");
-  strcpy(climate->TitSunshine,"");
+  strcpy(climate->TitSunshine,"sunsh");
   climate->ThermalCond=2; // 1: Cold   2: Temperate     3: Warm
   climate->LoadClimateInformation();
   climate->Lat_Degrees=14;

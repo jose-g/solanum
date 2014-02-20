@@ -106,6 +106,14 @@ object frmClimate: TfrmClimate
     Caption = '...'
     OnClick = cmdYearClick
   end
+  object cmdSunshine: TSpeedButton
+    Left = 287
+    Top = 337
+    Width = 28
+    Height = 27
+    Caption = '...'
+    OnClick = cmdSunshineClick
+  end
   object cmdCancel: TBitBtn
     Left = 1024
     Top = 354
@@ -194,7 +202,7 @@ object frmClimate: TfrmClimate
     Width = 876
     Height = 287
     TabStop = False
-    ColCount = 12
+    ColCount = 13
     RowCount = 367
     FixedRows = 2
     TabOrder = 5
@@ -836,6 +844,33 @@ object frmClimate: TfrmClimate
     Color = 15395562
     ReadOnly = True
     TabOrder = 24
+  end
+  object Edit9: TEdit
+    Left = 11
+    Top = 337
+    Width = 139
+    Height = 24
+    TabStop = False
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 25
+    Text = 'Sunshine'
+  end
+  object edSunshine: TEdit
+    Left = 151
+    Top = 337
+    Width = 130
+    Height = 24
+    TabStop = False
+    Color = 15395562
+    ReadOnly = True
+    TabOrder = 26
   end
   object odClimate: TOpenDialog
     DefaultExt = 'csv'

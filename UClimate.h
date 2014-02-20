@@ -54,6 +54,9 @@ __published:	// IDE-managed Components
         TEdit *Edit13;
         TEdit *edYear;
         TSpeedButton *cmdYear;
+        TEdit *Edit9;
+        TEdit *edSunshine;
+        TSpeedButton *cmdSunshine;
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
@@ -69,6 +72,7 @@ __published:	// IDE-managed Components
         void __fastcall cmdDayClick(TObject *Sender);
         void __fastcall cmdMonthClick(TObject *Sender);
         void __fastcall cmdYearClick(TObject *Sender);
+        void __fastcall cmdSunshineClick(TObject *Sender);
 private:	// User declarations
         bool Validate();
         TEdit* FindDataError(int*);

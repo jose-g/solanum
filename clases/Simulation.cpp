@@ -110,15 +110,6 @@ void Simulation::CleanTitles()
   strcpy (TitObsCC, "");
 }
 //------------------------------------------------------------------------------
-int Simulation::simulate()
-{
-Just_simulate2();
-//NumberScenario++;
-CalculatesAfterSimulation();
-//SaveOutputs();
-return 0;
-}
-//------------------------------------------------------------------------------
 int Simulation::Just_simulate2()
 {
 randomize();
@@ -444,6 +435,7 @@ double dTDM;
 
 
 // asignaciones realizadas antes de incio de la simulacion
+
 DMINR = 8.3*pow(10,-5);
 DMOD = 1;
 _C = 60;
@@ -781,7 +773,7 @@ PDay=-1;
         PDay++;
         DAE = (PDay>=EDay?PDay-EDay:0);
         Te = (DAE<=0?0:(DAE>0&&Tav<Tb?0:(Tav>=Tb&&Tav<=Th?(Tav-Tb)*W:0)));
-        CC = (DAE<=0?0:(canopy1>0?canopy1:pow(10,-6)));
+        CC = (DAE<=0?0:(canopy1>0?canopy1:pow(10,-4)));
         Eo = ym*ETo*exp(-0.7*4*CC);
         To_0 = (CC==0?0.0001:(double)(1.1*ETo*(1-exp(-0.7*4*CC)))/(1-exp(-0.7*4*ym)));
         T = (s>CL?To_0:(s<WP?0:(double)(To_0*(WP-s))/(WP-CL)));
@@ -1982,6 +1974,844 @@ void Simulation::CleanVectorObserved()
   }
 }
 //------------------------------------------------------------------------------
+int Simulation::simulate()
+{
+Just_simulate3();
+//NumberScenario++;
+CalculatesAfterSimulation();
+//SaveOutputs();
+return 0;
+}
+//------------------------------------------------------------------------------
+int Simulation::Just_simulate3()
+{
+randomize();
+for(int isim=0;isim<time->repetitions;isim++)
+{ // begin for isim
+
+double MinTemp[365];
+double MaxTemp[365];
+double Rainfall[365];
+double Radiation[365];
+double PET[365];
+double Irrigation[365];
+double TT[365];
+double sunshine[365];
+
+// locate the record with start date
+  int reg=-1;
+  for(int i=0;i<climate->RecNum;i++)
+  {
+    if(climate->Day[i]==time->DayStart && climate->Month[i]==time->MonthStart && climate->Year[i]==time->YearStart)
+    {
+      reg=i; // get record
+      break;
+    }
+  }
+  if(reg==-1)
+  {
+    return 2; // start date does not exist
+  }
+
+//
+  int newItem=-1;
+//
+  int numdias=time->duration;
+  double* datTmin=new double[numdias];
+  double* datTmax=new double[numdias];
+
+  for(int i=reg;i<climate->RecNum;i++)
+  {
+      newItem++;
+      if(newItem<365)
+      {
+        if(newItem<time->duration)
+        {
+          datTmin[newItem]=climate->MinTemp[i];
+          datTmax[newItem]=climate->MaxTemp[i];
+        }
+        MinTemp[newItem]= climate->MinTemp[i];
+        MaxTemp[newItem]= climate->MaxTemp[i];
+        Rainfall[newItem]= climate->Precipit[i];
+        Radiation[newItem]= climate->Radiation[i];
+        PET[newItem]= climate->ET[i];
+        Irrigation[newItem]= climate->Irri[i];
+        sunshine[newItem]= climate->Sunshine[i];
+      }
+  }
+  CalcularTT(datTmin,datTmax);
+
+  delete []datTmin;
+  delete []datTmax;
+
+  for(int i=0;i<numdias;i++)
+  {
+      TT[i]   = climate->TT[i];
+  }
+
+//  ASIGNACION DE INPUTS
+
+  int EDay=crop->plant->EDay;
+  double v=crop->plant->v;
+  double wmax=crop->plant->fcl;
+  double N=crop->plant->N;
+  double te=crop->plant->R0;
+  double tm=crop->plant->F0;
+  double RUE=crop->plant->LUE;
+  double Tu_0=crop->tuber->A;
+  double DMcont=crop->tuber->DMCont;
+  double A_0=crop->tuber->M;
+  double b=crop->tuber->b;
+  double Tcr=crop->tuber->Tcr;
+  double Tld=crop->tuber->Tld;
+  double Trg=crop->tuber->Trg;
+  double RUE_0=crop->tuber->A;
+
+  int Type=nitrogen->SelectedOM;
+  int Fert=nitrogen->SelectedFert;
+  double amount=nitrogen->AmountFert;
+  double FOMi=nitrogen->FOMi;
+  int dd=1;
+  int mm=1;
+  double ISM=soil->Moisture;
+  double OM=soil->OM;
+  double Soil_depth=soil->SoilDepth;
+  int Soil_texture=soil->SelectedSoil;
+  double pH=soil->Ph;
+  double Dl=soil->MaxDepth;
+//  int Thermal_conditions=climate->ThermalCond;
+
+//  declaracion de variables  (Posibles constantes)
+double DMINR;  // humic frax decay rate
+double DMOD;  // (0-1) factor decrease to rate of mineralix special cases (volcanic soil: less than 1), virgin soils (more than 1)
+double _C;  //  % C org matt added Asumiendo como en la ecuacion que CN es 60
+double FOCi;
+double UREA;
+double NUREAi;
+double NH4_fert;
+double NH4am;
+double NO3fert;
+double NO3am;
+int PDate;
+double OC;
+double phn;
+double AK;
+double AKU;
+double Area;
+double D;
+double Soil_Vol;
+double RUEs;
+double RUEs_0;
+double GC0;
+double GC250;
+double hydric1;
+double hydric2;
+double hydric3;
+double hydric4;
+double hydric5;
+double hydric6;
+double hydric7;
+
+double k;
+double c;
+double cl;
+double CL;
+double FC;
+double WP;
+double fc;
+double wp;
+double BD;
+double Po;
+double SWeight;
+double OMw;
+double NHUMi;
+double CHUMi;
+
+double OM_CN1;
+double OM_CN2;
+
+double CN;
+
+double _N;
+// declaracion de variables
+
+double HUM;
+double NHUM;
+double CS;
+double NO3POOL;
+double NUREA;
+double FOM;
+double FPOOLCE;
+double FPOOLLI;
+double FPOOLCA;
+double RHMINacum;
+double Hum_decomp__acum;
+double NCE_acum;
+double NLI_acum;
+double acumGRNOM;
+double NCA_acum;
+double acumGRCOM;
+double comp2;
+double cd108;
+double N_lib_acum;
+double NH4POOL;
+double Tac;
+double rnd;
+double rdm;
+double TDMw;
+double TDM;
+double TDMf;
+double c1;
+double c2;
+double C3;
+double REB;
+double TDMn;
+
+double reba;
+double fccf;
+double ay2;
+double ay1;
+double Npc;
+double Npot;
+double verificar_densidad;
+double canopy;
+double canopy1;
+double DTY1;
+double DTY2;
+double Part;
+double DTYw;
+double FTYw;
+double DTY;
+double FTY;
+double DTYf;
+double FTYf;
+double DTYn;
+double FTYn;
+double NH4ppm;
+double var1;
+double FONi;
+double NO3ppm;
+double Nac;
+double NacNpot;
+double Ns;
+double TOTN;
+double CNR;
+double CNRF;
+double s;
+double WFD;
+double MF;
+double SWF;
+double MFU;
+int day;
+double Irri;
+double ETo;
+double Tmax;
+double Tmin;
+double tt;
+double Tav;
+double W;
+double Tl;
+double Stemp;
+double TF;
+double min;
+double min1;
+double RHMIN;
+double flow109;
+double flow105;
+double flow102;
+double flow103;
+double MFTF;
+double G1CA;
+double CA;
+double flow6;
+double G1CE;
+double CE;
+double flow1;
+double G1LI;
+double LI;
+double flow2;
+double GRCOM;
+double grcom;
+double flow108;
+double TFF;
+double TFU;
+double UHYDR;
+double flow1_0;
+double flow2_0;
+double NH4u;
+double var13;
+double Tmin_0;
+double CCRF;
+double Reb;
+double CCL;
+double Rain;
+double PAR;
+int month;
+int PDay;
+int DAE;
+double Tb;
+double Tbasal_completar_mediana;
+int Tmin10;
+int fTo;
+double iTo;
+double Tu;
+double Te;
+double CC;
+double Eo;
+double To;
+double T;
+double S;
+double Ws;
+double RUEw;
+double dW;
+double CC_0;
+double CCf;
+double dTDM_0;
+double CCn;
+double dTDM_1;
+
+double delayCCf;
+double fay1;
+double delayCC;
+double dCC;
+double fay2;
+
+double CWs;
+double FON;
+
+double REST;
+double RNACp;
+double RNAC;
+double rnac;
+double GRNOMCE;
+double flow3;
+double GRNOMLI;
+double flow4;
+double GRNOMCA;
+double GRNOM;
+double flow110;
+double flow101;
+double grnom;
+double flow107;
+double NNOM;
+double NH4o;
+double var19;
+double SNH4;
+double SANC;
+double ELNC;
+double RP2;
+double RP22;
+double A;
+double bb;
+double RNTRF;
+double dNO3;
+double flow2_1;
+double flow205;
+double flow4_0;
+double flow102_0;
+double flow7;
+double CCw;
+double dTDM;
+// Photoperiod and temperature effect on TIO
+double Tb_0;
+double To_0;
+double Tu_1;
+double a;
+double w;
+double Pc;
+double Tu_cTII;
+double cTII;
+double Part_cTII;
+double HI_cTII;
+double Tindex;
+double Pindex;
+double TII;
+
+// asignaciones realizadas antes de incio de la simulacion
+// -2>=phase
+DMINR = 8.3*pow(10,-5);
+DMOD = 1;
+_C = 60;
+FOCi = FOMi*_C/100.0;
+UREA = (Fert==1?amount:0);
+NUREAi = UREA;
+NH4_fert = (Fert==2?0.225:(Fert==3?0.15:0));
+NH4am = NH4_fert*amount;
+NO3fert = (Fert==2?0.775:0);
+NO3am = NO3fert*amount;
+Tbasal_completar_mediana = 2;
+fTo = 24;
+Tb = 0;
+iTo = 12;
+Tu = 35;
+PDate = (mm==1?dd:(mm==2?dd+31:(mm==3?dd+59:(mm==4?dd+90:(mm==5?dd+120:(mm==6?dd+151:(mm==7?dd+181:(mm==8?dd+212:(mm==9?dd+243:(mm==10?dd+273:(mm==11?dd+304:dd+334)))))))))));
+OC = 0.58*OM;
+phn = pH*0.05;
+AK = -1.12+1.31*OC+0.203*pH-0.155*OC*pH;
+AKU = (AK<0.25?0.25:AK);
+Area = 10000;
+D = Soil_depth*100;
+Soil_Vol = Area*Soil_depth;
+RUEs = 1;
+RUEs_0 = RUEs;
+verificar_densidad = 4.17;
+GC0 = 0.6;
+GC250 = 1;
+Tb_0 = 4;
+To_0 = 15;
+Tu_1 = 28;
+a = (double)(log(2))/log((double)(Tu_1-Tb_0)/(To_0-Tb_0));
+w = 0.2;
+Pc = 18;
+Tu_cTII = 0.9;
+switch (Soil_texture)
+{
+    case 1:
+      hydric1=1.24;
+      hydric2=54;
+      hydric3=50;
+      hydric4=32;
+      hydric5=15;
+      hydric6=10.9;
+      hydric7=3845.3;
+      break;
+    case 2:
+      hydric1=1.30;
+      hydric2=52;
+      hydric3=44;
+      hydric4=23;
+      hydric5=120;
+      hydric6=6.4;
+      hydric7=3862.5;
+      break;
+    case 3:
+      hydric1=1.36;
+      hydric2=55;
+      hydric3=54;
+      hydric4=39;
+      hydric5=2;
+      hydric6=11;
+      hydric7=4567.7;
+      break;
+    case 4:
+      hydric1=1.37;
+      hydric2=43;
+      hydric3=33;
+      hydric4=9;
+      hydric5=50;
+      hydric6=1.4;
+      hydric7=3404.6;
+      break;
+    case 5:
+      hydric1=1.37;
+      hydric2=46;
+      hydric3=33;
+      hydric4=13;
+      hydric5=150;
+      hydric6=1.4;
+      hydric7=3404.6;
+      break;
+    case 6:
+      hydric1=1.40;
+      hydric2=50;
+      hydric3=39;
+      hydric4=23;
+      hydric5=100;
+      hydric6=7;
+      hydric7=3863.0;
+      break;
+    case 7:
+      hydric1=1.42;
+      hydric2=36;
+      hydric3=13;
+      hydric4=6;
+      hydric5=1500;
+      hydric6=1.8;
+      hydric7=2390.6;
+      break;
+    case 8:
+      hydric1=1.44;
+      hydric2=46;
+      hydric3=31;
+      hydric4=15;
+      hydric5=250;
+      hydric6=2.8;
+      hydric7=3533.1;
+      break;
+    case 9:
+      hydric1=1.44;
+      hydric2=38;
+      hydric3=16;
+      hydric4=8;
+      hydric5=800;
+      hydric6=1.8;
+      hydric7=2627.0;
+      break;
+    case 10:
+      hydric1=1.46;
+      hydric2=41;
+      hydric3=22;
+      hydric4=10;
+      hydric5=500;
+      hydric6=1.7;
+      hydric7=3052.8;
+      break;
+    case 11:
+      hydric1=1.48;
+      hydric2=50;
+      hydric3=39;
+      hydric4=27;
+      hydric5=75;
+      hydric6=10.6;
+      hydric7=4172.3;
+      break;
+    default:
+      hydric1=1.51;
+      hydric2=47;
+      hydric3=32;
+      hydric4=20;
+      hydric5=125;
+      hydric6=5.7;
+      hydric7=3847.3;
+}
+k = hydric5;
+c = hydric6;
+cl = hydric3-0.5*(hydric3-hydric4);
+CL = (double)(Soil_Vol*cl)/1000;
+FC = (double)(Soil_Vol*hydric3)/1000;
+WP = (double)(Soil_Vol*hydric4)/1000;
+fc = hydric3;
+wp = hydric4;
+BD = hydric1*1000;
+Po = (double)(100*(2.65-(double)(BD)/1000))/2.65;
+SWeight = (double)(Soil_Vol*BD)/1000;
+OMw = (double)(OM)/100*SWeight;
+NHUMi = (double)(OMw*1000)/10;
+CHUMi = OMw*1000;
+switch (Type)
+{
+    case 1:
+      OM_CN1=10;
+      OM_CN2=1;
+      break;
+    case 2:
+      OM_CN1=18;
+      OM_CN2=1;
+      break;
+    case 3:
+      OM_CN1=19;
+      OM_CN2=1;
+      break;
+    case 4:
+      OM_CN1=20;
+      OM_CN2=1;
+      break;
+    case 5:
+      OM_CN1=60;
+      OM_CN2=1;
+      break;
+    case 6:
+      OM_CN1=80;
+      OM_CN2=1;
+      break;
+    case 7:
+      OM_CN1=90;
+      OM_CN2=1;
+      break;
+    case 8:
+      OM_CN1=134;
+      OM_CN2=1;
+      break;
+    default:
+      OM_CN1=170;
+      OM_CN2=1;
+}
+CN = OM_CN1;
+_N = (double)(_C)/CN;
+// FIN de -2>=phase
+
+//  0 >= phase
+
+	HUM = CHUMi;
+	NHUM = NHUMi;
+	CS = ISM;
+	NO3POOL = NO3am;
+	NUREA = NUREAi;
+	FOM = FOMi;
+	FPOOLCE = FOMi*0.7;
+	FPOOLLI = FOMi*0.1;
+	FPOOLCA = FOMi*0.2;
+	RHMINacum = 0;
+	Hum_decomp__acum = 0;
+	NCE_acum = 0;
+	NLI_acum = 0;
+	acumGRNOM = 0;
+	NCA_acum = 0;
+	acumGRCOM = 0;
+	comp2 = 0;
+	cd108 = 0;
+	N_lib_acum = 0;
+	NH4POOL = 0;
+	Tac = 1.0E-05;
+	rnd=random(5001);
+	rnd=rnd/5000;
+	rdm = (double)(log((double)(1+rnd)/(1-rnd)))/1.82; // log: es logaritmo natural
+	TDMw = 0;
+	TDM = 1.0E-37;
+	TDMf = 0;
+	c1 = 0;
+	c2 = 0;
+	C3 = 0.00368;
+	REB = 1;
+	TDMn = 0;
+	cTII = 0;
+
+//  FIN de 0 >= phase
+
+//  INICIO DE LAS ITERACIONES
+day=PDate-1;
+PDay=-1;
+
+  for(int i=0;i<time->duration;i++)
+  { // begin for i
+        day++;
+        if(day==366) day=1;
+    /* modelo matematico  */
+// 1>=phase
+	reba = REB;
+	fccf = C3;
+	ay2 = c2;
+	ay1 = c1;
+	Npc = 1.35+4.05*exp(-0.26*TDM);
+	Npot = (double)(Npc*TDM)/100;
+	canopy = wmax*exp(-((double)(te)/(Tac*verificar_densidad)))*(1+(double)(te-Tac)/(te-tm))*pow((double)(Tac)/te,(double)(te)/(te-tm));
+	canopy1 = rdm*v*canopy+canopy;
+	Part = A_0*exp(-(exp((double)(-(Tac-Tu_0))/b)));
+	DTYw = TDMw*Part;
+	FTYw = (double)(DTYw)/DMcont;
+	DTY1 = TDM*Part;
+	DTYf = TDMf*Part;
+	FTYf = (double)(DTYf)/DMcont;
+	DTYn = TDMn*Part;
+	FTYn = (double)(DTYn)/DMcont;
+	Part_cTII = A_0*exp(-(exp((double)(-(Tac-Tu_0*Tu_cTII))/b)));
+	HI_cTII = (cTII<=20?0:Part_cTII);
+	DTY2 = TDM*HI_cTII;
+	DTY = (Tu_cTII<1?DTY1:DTY2);
+	FTY = (double)(DTY)/DMcont;
+	NH4ppm = (double)(NH4POOL)/SWeight*1000;
+	var1 = (FOM<5?0:FOM);
+	FONi = (double)(FOM*_N)/100;
+	NO3ppm = (double)(NO3POOL)/SWeight*1000;
+	Nac = (double)(NO3POOL)/1000;
+	NacNpot = (double)(Nac)/Npot;
+	Ns = (NacNpot>1?1:(GC250-GC0)*NacNpot+GC0);
+	TOTN = (NO3POOL>0?NO3POOL:0);
+	CNR = (double)(FOCi)/(TOTN+FONi);
+	CNRF = exp((double)(-0.963*(CNR-25))/25);
+	s = CS;
+	WFD = 1-(double)(s-FC)/(Po-FC);
+	MF = (s>FC?(double)(s-FC)/(Po-FC):(s<=FC&&s>WP?1-0.5*((double)(s-WP)/(FC-WP)):0));
+	SWF = MF+0.2;
+	MFU = (SWF>1?1:(SWF<0?0:SWF));
+	//day = fmod(glob_element(ts, 1)+PDate-1,365)+1;  // OBSERVACION : averiguar su funcion y traducir
+	Irri = Irrigation[i];  // OBSERVACION : verificar que los datos de clima esten cargado la informacion adecuada
+	ETo = PET[i];
+	Tmax = MaxTemp[i];
+	Tmin = MinTemp[i];
+	Tmin10 = (Tmin<10.0?0.0:1.0);
+	tt = TT[i];
+	Tav = (double)(Tmax+Tmin)/2;
+	Tac = tt;
+	W = (Tav>=Tb&&Tav<=iTo?Tav*((double)(1)/(iTo-Tb)):(Tav>iTo&&Tav<fTo?1:(Tav>=fTo&&Tav<=Tu?(double)(Tav*1)/(fTo-Tu)-(double)(1)/(fTo-Tu)*35:0)));
+	Tl = 1.25*Tav;
+	Stemp = (double)(2)/3.1416*(Tav-Tl)*exp((double)(-((double)(k)/(BD*c))*pow(3.1416,2)*1.0E+10)/pow(Dl,2))*sin((double)(3.1416*D)/Dl)+Tav+(double)(Tl-Tav)/Dl*D;
+	TF = (Stemp<5?0:(Stemp>35?1:(double)(Stemp-5)/30));
+	min = std::min(WFD,TF);
+	min1 = std::min(min,phn);
+	RHMIN = NHUM*DMINR*TF*MF*DMOD;
+	flow109 = RHMIN;
+	flow105 = RHMIN;
+	flow102 = RHMIN*10;
+	flow103 = flow102;
+	MFTF = MF*TF;
+	G1CA = CNRF*MFTF*0.8;
+	CA = G1CA*FPOOLCA;
+	flow6 = CA;
+	G1CE = CNRF*MFTF*0.05;
+	CE = G1CE*FPOOLCE;
+	flow1 = CE;
+	G1LI = CNRF*MFTF*0.0095;
+	LI = G1LI*FPOOLLI;
+	flow2 = LI;
+	GRCOM = CA+CE+LI;
+	grcom = GRCOM;
+	flow108 = GRCOM;
+	TFF = (double)(Stemp)/40+0.2;
+	TFU = (TFF<0?0:TFF);
+	UHYDR = AKU*std::min(MFU,TFU)*NUREA*0.01;
+	flow1_0 = UHYDR;
+	flow2_0 = flow1_0;
+	NH4u = flow1_0;
+	var13 = (double)(AKU*std::min(MFU,TFU)*NUREAi)/100;
+	Tindex = (Tav<Tb_0?0:(Tav>Tu_1?0:(double)(2*pow(Tav-Tb_0,a)*pow(To_0-Tb_0,a)-pow(Tav-Tb_0,2*a))/pow(To_0-Tb_0,2*a)));
+	Tmin_0 = Tmin;
+	CCRF = (Tmin_0<Tcr?(Tmin_0>Trg?(double)(Trg-Tmin_0)/(Trg-Tcr):0):1);
+	Reb = (CCRF<REB?CCRF:REB);
+	CCL = (Tmin_0<Tld?1:(Tmin_0<Tcr?1-(double)(Tld-Tmin_0)/(Tld-Tcr):0));
+	Rain = Rainfall[i];
+	PAR = Radiation[i]*0.5;
+	N = sunshine[i];
+	Pindex = (N>Pc?exp(-(w*(N-Pc))):1);
+	TII = Tindex*Pindex;
+	month = (day<=31?1:(day>31&&day<=59?2:(day>59&&day<=90?3:(day>90&&day<=120?4:(day>120&&day<=151?5:(day>151&&day<=181?6:(day>181&&day<=212?7:(day>212&&day<=243?8:(day>243&&day<=273?9:(day>273&&day<=304?10:(day>304&&day<=334?11:12)))))))))));
+	PDay++;
+	DAE = (PDay>=EDay?PDay-EDay:0);
+	Te = (DAE<=0?0:(DAE>0&&Tav<Tb?0:(Tav>=Tb&&Tav<=Tu?(Tav-Tbasal_completar_mediana)*W:0)));
+	CC = (DAE<=0?0:(canopy1>0?canopy1:pow(10,-6)));
+	Eo = wmax*ETo*exp(-0.7*4*CC);
+	To = (CC==0?0.0001:(double)(1.1*ETo*(1-exp(-0.7*4*CC)))/(1-exp(-0.7*4*wmax)));
+	T = (s>CL?To:(s<WP?0:(double)(To*(WP-s))/(WP-CL)));
+	S = (Rain+Irri+CS-Eo-T<=0.9*WP?0.9*WP:(Rain+Irri+CS-Eo-T>=FC?FC:Rain+Irri+CS-Eo-T));
+	Ws = (1-(double)(T)/To-0.8<0?0:1-(double)(T)/To-0.8);
+	RUEw = ((double)(RUEs*(0.8-Ws))/0.8<0?0:(double)(RUEs*(0.8-Ws))/0.8);
+	dW = (double)(RUE*CC*PAR)/100;
+	CC_0 = CC;
+	CCf = (CC_0+ay2-ay1>0?CC_0+ay2-ay1:0);
+	dTDM_0 = (double)(CCf*PAR*RUEs_0)/100;
+	CCn = CC*Ns;
+	dTDM_1 = (double)(CCn*PAR*RUE_0)/100;
+	
+	delayCCf = CCf;
+	fay1 = (CCL>0?delayCCf*CCL:0);
+	delayCC = CC;
+	dCC = CC_0-delayCC;
+	fay2 = (dCC>0?dCC*REB:(double)(dCC*1)/REB);
+
+// FIN de 1>=phase
+
+// 0>=phase
+        if(i==0)
+        {
+          CWs = Ws;
+          FON = FONi;
+        }
+// FIN de 0>=phase
+
+// 1>=phase
+        REST = (var1>0?GRCOM*(0.02-(double)(FON)/var1):0);
+        RNACp = std::min(REST,TOTN);
+        RNAC = (RNACp<0?0:RNACp);
+        rnac = RNAC;
+        GRNOMCE = (FOM>=5?(double)(CE*FON)/FOM:0);
+        flow3 = GRNOMCE;
+        GRNOMLI = (FOM>=5?(double)(LI*FON)/FOM:0);
+        flow4 = GRNOMLI;
+        GRNOMCA = (FOM>=5?(double)(CA*FON)/FOM:0);
+        GRNOM = GRNOMCA+GRNOMCE+GRNOMLI;
+        flow110 = GRNOM*0.2;
+        flow101 = (double)(GRNOM*0.2)/0.04;
+        grnom = GRNOM;
+        flow107 = GRNOM;
+        NNOM = 0.8*GRNOM+RHMIN-RNAC;
+        NH4o = NNOM;
+        var19 = NH4o+NH4u+NH4am;
+        SNH4 = var19;
+        SANC = 1-exp(-0.01363*SNH4);
+        ELNC = std::min(min,SANC);
+        RP2 = exp(2.302*ELNC);
+        RP22 = (RP2<0.05?0.05:(RP2>1?1:RP2));
+        A = std::min(RP22,min1);
+        bb = (double)(A*40*NH4ppm)/(NH4ppm+90);
+        RNTRF = (bb>0.8?0.8:bb);
+        dNO3 = RNTRF;
+        flow2_1 = RNTRF;
+        flow205 = RNTRF;
+        flow4_0 = var19;
+        flow102_0 = NNOM;
+        flow7 = GRNOMCA;
+        CCw = (CWs>75?0:(double)(75-CWs)/75*CC);
+        dTDM = (double)(RUEw*CCw*PAR)/100;
+
+// FIN de 1>=phase
+
+    /*    SALIDAS    */
+    tdm[isim][i]=TDM;
+    tdmw[isim][i]=TDMw;
+    tdmn[isim][i]=TDMn;
+    tdmf[isim][i]=TDMf;
+
+    dty[isim][i]=DTY;
+    dtyw[isim][i]=DTYw;
+    dtyn[isim][i]=DTYn;
+    dtyf[isim][i]=DTYf;
+
+    fty[isim][i]=FTY;
+    ftyw[isim][i]=FTYw;
+    ftyn[isim][i]=FTYn;
+    ftyf[isim][i]=FTYf;
+
+    cc[isim][i]=CC;
+    ccw[isim][i]=CCw;
+    ccn[isim][i]=CCn;
+    ccf[isim][i]=CCf;
+
+    /* fin de modelo matematico */
+//  updatemodel(0, 1)    1>=phase
+        NO3POOL = NO3POOL+dNO3;
+        NHUM = NHUM+flow110-flow109;
+        RHMINacum = RHMINacum+flow105;
+        HUM = HUM+flow101-flow102;
+        Hum_decomp__acum = Hum_decomp__acum+flow103;
+        FOM = FOM-grcom;
+        FON = FON+rnac-grnom;
+        FPOOLCE = FPOOLCE-flow1;
+        FPOOLLI = FPOOLLI-flow2;
+        NCE_acum = NCE_acum+flow3;
+        NLI_acum = NLI_acum+flow4;
+        FPOOLCA = FPOOLCA-flow6;
+        acumGRNOM = acumGRNOM+flow107;
+        NCA_acum = NCA_acum+flow7;
+        acumGRCOM = acumGRCOM+flow108;
+        NUREA = NUREA-flow1_0;
+        comp2 = comp2+flow2_0;
+        cd108 = cd108+flow205;
+        N_lib_acum = N_lib_acum+flow102_0;
+        NH4POOL = NH4POOL+flow4_0-flow2_1;
+        //Thermal_timepointer->Tac = Thermal_timepointer->Tac+stage_incr(&(Thermal_timepointer->anon_19), 1, Thermal_timepointer->Te);
+        //Thermal_timepointer->Tac = Weatherpointer->tt;
+        CS = CS+S-s;
+        CWs = CWs+Ws;
+        TDMw = TDMw+dTDM;
+        TDM = TDM+dW;
+        TDMf = TDMf+dTDM_0;
+        c1 = c1+fay1-ay1;
+        c2 = c2+fay2-ay2;
+        C3 = C3+CCf-fccf;
+        REB = REB+Reb-reba;
+        TDMn = TDMn+dTDM_1;
+        cTII = cTII+TII;
+//  FIN de updatemodel(0, 1)    1>=phase
+  } // end for i
+      switch (idModel)  // 1: Potential Growth , 2:Drought , 3:Nitrogen Stress , 4:Frost
+      {
+        case 1 : ult_fty[isim]=fty[isim][time->duration-1];
+        break;
+        case 2 : ult_fty[isim]=ftyw[isim][time->duration-1];
+        break;
+        case 3 : ult_fty[isim]=ftyn[isim][time->duration-1];
+        break;
+        case 4 : ult_fty[isim]=ftyf[isim][time->duration-1];
+      }
+} // end for isim
+}
+//------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
 

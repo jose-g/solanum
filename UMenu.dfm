@@ -1,6 +1,6 @@
 object frmMenu: TfrmMenu
-  Left = 489
-  Top = 324
+  Left = 490
+  Top = 325
   BorderStyle = bsDialog
   Caption = 'Solanum'
   ClientHeight = 369

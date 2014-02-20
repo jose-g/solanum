@@ -1,3 +1,10 @@
+Thursday, February 20, 2014
+Solanum v2.2
+
+* Mathematical model updated with module "Photoperiod and temperature effect on TIO"
+* climate form updated, mathematical model require sunshine data, user can enter sunshine data from his database through climate form.
+
+
 Tuesday, February 18, 2014
 
 * Mathematical model changed.  Implemented for simulation class.
