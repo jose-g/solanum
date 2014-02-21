@@ -52,7 +52,7 @@ void TfrmClimate::Initialize()
    sgClimate->Cells[9][1]="mm";
    sgClimate->Cells[10][1]="mm";
    sgClimate->Cells[11][1]="oC";
-   sgClimate->Cells[12][1]="Falta unidad";
+   sgClimate->Cells[12][1]="Hours";
    sgClimate->RowHeights[0]=18;
    sgClimate->RowHeights[1]=18;
    sgClimate->ColWidths[0]=30;

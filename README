@@ -1,4 +1,10 @@
 Friday, February 21, 2014
+Solanum v2.3.1
+
+* fix simulation error in Just_simulate3
+* change unit for sunshine data into climate form
+
+Friday, February 21, 2014
 Solanum v2.3
 
 * dynamics data member “Photoperiod sensitivity” and “Critical photoperiod” 

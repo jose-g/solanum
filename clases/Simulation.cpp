@@ -1985,6 +1985,7 @@ return 0;
 //------------------------------------------------------------------------------
 int Simulation::Just_simulate3()
 {
+
 randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 { // begin for isim
@@ -2575,9 +2576,8 @@ _N = (double)(_C)/CN;
 //  INICIO DE LAS ITERACIONES
 day=PDate-1;
 PDay=-1;
-bool*error;
-*error=false;
-t50 = bisection(te, te + 1000,wmax,te,tm,error);
+bool error=false;
+t50 = bisection(te, te + 1000,wmax,te,tm,&error);
 d=t50-te;
   for(int i=0;i<time->duration;i++)
   { // begin for i
@@ -2838,6 +2838,7 @@ d=t50-te;
         break;
         case 4 : ult_fty[isim]=ftyf[isim][time->duration-1];
       }
+
 } // end for isim
 }
 //------------------------------------------------------------------------------
@@ -2874,22 +2875,5 @@ double Simulation::bisection(double a, double b,double Wmax,double te, double tm
     }
     return x;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
 
