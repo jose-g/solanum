@@ -128,6 +128,8 @@ void TfrmCalcParam::backup_values()
    back_DMCont=cond->crop->tuber->DMCont;
    back_LUE=cond->crop->plant->LUE;
    back_EDay=cond->crop->plant->EDay;
+   back_w=cond->crop->tuber->w;
+   back_Pc=cond->crop->tuber->Pc;
 
    back_YearStart=cond->time->YearStart;
    back_MonthStart=cond->time->MonthStart;
@@ -202,6 +204,8 @@ void TfrmCalcParam::PutValuesOnForm()
    edA->Text=cond->crop->tuber->M;
    edRUE->Text=cond->crop->plant->LUE;
    edDMC->Text=cond->crop->tuber->DMCont;
+   edPhotoSen->Text=cond->crop->tuber->w;
+   edPhotoCrit->Text=cond->crop->tuber->Pc;
 
    AnsiString fecha=AnsiString(cond->time->MonthStart) + "/";
    fecha=fecha + AnsiString(cond->time->DayStart) + "/";
@@ -897,6 +901,8 @@ void TfrmCalcParam::simular()
    cond->crop->tuber->Tld=-5;
    cond->crop->tuber->Trg=-8;
    cond->crop->plant->EDay=edEmDay->Text.ToInt();
+   cond->crop->tuber->w=edPhotoSen->Text.ToDouble();;
+   cond->crop->tuber->Pc=edPhotoCrit->Text.ToDouble();;
 
   TDateTime pd = dtpPlantingDate->Date;
   TDateTime hd = dtpHarvestDate->Date;
@@ -974,6 +980,8 @@ void __fastcall TfrmCalcParam::butAddParDBClick(TObject *Sender)
   dbcultivo->Item[dbcultivo->numreg].tuber->Tld= cond->crop->tuber->Tld;
   dbcultivo->Item[dbcultivo->numreg].tuber->Trg= cond->crop->tuber->Trg;
   dbcultivo->Item[dbcultivo->numreg].plant->EDay=cond->crop->plant->EDay;
+  dbcultivo->Item[dbcultivo->numreg].tuber->w= cond->crop->tuber->w;
+  dbcultivo->Item[dbcultivo->numreg].tuber->Pc= cond->crop->tuber->Pc;
   dbcultivo->numreg++;
   dbcultivo->saveAllParameters(dbcultivo->DBName);
   Application->MessageBox("the parameters were added to the database !!!", "Successful!", MB_OK);
@@ -994,6 +1002,8 @@ void TfrmCalcParam::GuardarDatos()
    cond->crop->tuber->Tld=-5;
    cond->crop->tuber->Trg=-8;
    cond->crop->plant->EDay=edEmDay->Text.ToInt();
+   cond->crop->tuber->w=edPhotoSen->Text.ToDouble();
+   cond->crop->tuber->Pc=edPhotoCrit->Text.ToDouble();
 }
 //---------------------------------------------------------------------------
 //
@@ -1089,6 +1099,8 @@ void TfrmCalcParam::restoreValues()
    cond->crop->tuber->DMCont=back_DMCont;
    cond->crop->plant->LUE=back_LUE;
    cond->crop->plant->EDay=back_EDay;
+   cond->crop->tuber->w=back_w;
+   cond->crop->tuber->Pc=back_Pc;
 
    cond->time->YearStart=back_YearStart;
    cond->time->MonthStart=back_MonthStart;
@@ -1524,6 +1536,25 @@ TEdit* TfrmCalcParam::FindDataError(int* _cod)
     *_cod=1; // 1: No es un valor entero
     return edtm;
   }
+  try
+  {
+    datod=edPhotoSen->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edPhotoSen;
+  }
+  try
+  {
+    datod=edPhotoCrit->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edPhotoCrit;
+  }
+
   return edEmDay;
 }
 //---------------------------------------------------------------------------

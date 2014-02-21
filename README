@@ -1,3 +1,11 @@
+Friday, February 21, 2014
+Solanum v2.3
+
+* dynamics data member “Photoperiod sensitivity” and “Critical photoperiod” 
+* climate database updated with calculated sunshine
+* crop database updated with 18 crops
+* Manage of two new attributes for crops “Photoperiod sensitivity” and “Critical photoperiod”
+
 Thursday, February 20, 2014
 Solanum v2.2
 

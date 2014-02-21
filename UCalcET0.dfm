@@ -1,6 +1,6 @@
 object frmCalcET0: TfrmCalcET0
-  Left = 360
-  Top = 169
+  Left = 1043
+  Top = 198
   BorderIcons = [biHelp]
   BorderStyle = bsDialog
   Caption = 'Calculator ET0'
@@ -125,7 +125,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 11
     Top = 39
     Width = 139
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -142,7 +142,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 151
     Top = 39
     Width = 431
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     Enabled = False
@@ -532,7 +532,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 11
     Top = 69
     Width = 139
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -549,7 +549,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 11
     Top = 98
     Width = 139
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -566,7 +566,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 11
     Top = 128
     Width = 139
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -583,7 +583,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 151
     Top = 69
     Width = 431
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -593,7 +593,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 151
     Top = 98
     Width = 431
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -603,7 +603,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 151
     Top = 128
     Width = 431
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -613,7 +613,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 11
     Top = 197
     Width = 139
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
@@ -630,7 +630,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 151
     Top = 197
     Width = 431
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 15395562
     ReadOnly = True
@@ -660,7 +660,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 500
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 14
   end
   object RichEdit17: TRichEdit
@@ -706,7 +706,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 529
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 17
   end
   object RichEdit2: TRichEdit
@@ -752,7 +752,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 559
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 20
   end
   object RichEdit4: TRichEdit
@@ -831,7 +831,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 626
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 25
   end
   object RichEdit7: TRichEdit
@@ -880,7 +880,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 667
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 28
     Visible = False
   end
@@ -930,7 +930,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 167
     Top = 697
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 31
   end
   object RichEdit11: TRichEdit
@@ -990,7 +990,7 @@ object frmCalcET0: TfrmCalcET0
     Left = 354
     Top = 529
     Width = 149
-    Height = 21
+    Height = 24
     TabStop = False
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET

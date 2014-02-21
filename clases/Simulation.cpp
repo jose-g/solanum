@@ -1988,7 +1988,6 @@ int Simulation::Just_simulate3()
 randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 { // begin for isim
-
 double MinTemp[365];
 double MaxTemp[365];
 double Rainfall[365];
@@ -1997,7 +1996,6 @@ double PET[365];
 double Irrigation[365];
 double TT[365];
 double sunshine[365];
-
 // locate the record with start date
   int reg=-1;
   for(int i=0;i<climate->RecNum;i++)
@@ -2012,7 +2010,6 @@ double sunshine[365];
   {
     return 2; // start date does not exist
   }
-
 //
   int newItem=-1;
 //
@@ -2079,6 +2076,7 @@ double sunshine[365];
   int Soil_texture=soil->SelectedSoil;
   double pH=soil->Ph;
   double Dl=soil->MaxDepth;
+  
 //  int Thermal_conditions=climate->ThermalCond;
 
 //  declaracion de variables  (Posibles constantes)
@@ -2175,6 +2173,8 @@ double Npc;
 double Npot;
 double verificar_densidad;
 double canopy;
+double t50;
+double d;
 double canopy1;
 double DTY1;
 double DTY2;
@@ -2326,6 +2326,8 @@ double HI_cTII;
 double Tindex;
 double Pindex;
 double TII;
+double tt_fixed;
+bool bsearch_tt;
 
 // asignaciones realizadas antes de incio de la simulacion
 // -2>=phase
@@ -2352,7 +2354,6 @@ AKU = (AK<0.25?0.25:AK);
 Area = 10000;
 D = Soil_depth*100;
 Soil_Vol = Area*Soil_depth;
-RUEs = 1;
 RUEs_0 = RUEs;
 verificar_densidad = 4.17;
 GC0 = 0.6;
@@ -2363,7 +2364,10 @@ Tu_1 = 28;
 a = (double)(log(2))/log((double)(Tu_1-Tb_0)/(To_0-Tb_0));
 w = 0.2;
 Pc = 18;
-Tu_cTII = 0.9;
+//  Tu_cTII = 0.9;
+tt_fixed=0.0;
+bsearch_tt=true;
+
 switch (Soil_texture)
 {
     case 1:
@@ -2571,7 +2575,10 @@ _N = (double)(_C)/CN;
 //  INICIO DE LAS ITERACIONES
 day=PDate-1;
 PDay=-1;
-
+bool*error;
+*error=false;
+t50 = bisection(te, te + 1000,wmax,te,tm,error);
+d=t50-te;
   for(int i=0;i<time->duration;i++)
   { // begin for i
         day++;
@@ -2584,7 +2591,7 @@ PDay=-1;
 	ay1 = c1;
 	Npc = 1.35+4.05*exp(-0.26*TDM);
 	Npot = (double)(Npc*TDM)/100;
-	canopy = wmax*exp(-((double)(te)/(Tac*verificar_densidad)))*(1+(double)(te-Tac)/(te-tm))*pow((double)(Tac)/te,(double)(te)/(te-tm));
+	canopy = wmax*exp(-((double)(tm)/(Tac*verificar_densidad)))*(1+(double)(te-Tac)/(te-tm))*pow((double)(Tac)/te,(double)(te)/(te-tm));
 	canopy1 = rdm*v*canopy+canopy;
 	Part = A_0*exp(-(exp((double)(-(Tac-Tu_0))/b)));
 	DTYw = TDMw*Part;
@@ -2594,10 +2601,29 @@ PDay=-1;
 	FTYf = (double)(DTYf)/DMcont;
 	DTYn = TDMn*Part;
 	FTYn = (double)(DTYn)/DMcont;
+
+        if(cTII>20.0 && bsearch_tt)
+        {
+          tt_fixed=tt;
+          bsearch_tt=false;
+        }
+        else
+        {
+          tt_fixed=0;
+        }
+        if(bsearch_tt)
+        {
+          Tu_cTII=1.0;
+        }
+        else
+        {
+          Tu_cTII=(tt_fixed+b)/Tu_0;
+        }
+//        Tu_cTII=
 	Part_cTII = A_0*exp(-(exp((double)(-(Tac-Tu_0*Tu_cTII))/b)));
 	HI_cTII = (cTII<=20?0:Part_cTII);
 	DTY2 = TDM*HI_cTII;
-	DTY = (Tu_cTII<1?DTY1:DTY2);
+	DTY = (Tu_cTII<=1?DTY1:DTY2);
 	FTY = (double)(DTY)/DMcont;
 	NH4ppm = (double)(NH4POOL)/SWeight*1000;
 	var1 = (FOM<5?0:FOM);
@@ -2674,6 +2700,15 @@ PDay=-1;
 	T = (s>CL?To:(s<WP?0:(double)(To*(WP-s))/(WP-CL)));
 	S = (Rain+Irri+CS-Eo-T<=0.9*WP?0.9*WP:(Rain+Irri+CS-Eo-T>=FC?FC:Rain+Irri+CS-Eo-T));
 	Ws = (1-(double)(T)/To-0.8<0?0:1-(double)(T)/To-0.8);
+        if(tt<t50-0*d)
+        {
+           RUEs = RUE;
+        }
+        else
+        {
+           RUEs=RUE*(1-(tt-t50+0*d)/(2*d));
+        }
+
 	RUEw = ((double)(RUEs*(0.8-Ws))/0.8<0?0:(double)(RUEs*(0.8-Ws))/0.8);
 	dW = (double)(RUE*CC*PAR)/100;
 	CC_0 = CC;
@@ -2806,7 +2841,39 @@ PDay=-1;
 } // end for isim
 }
 //------------------------------------------------------------------------------
+double Simulation::Fx50(double x,double Wmax, double te,double tm,bool* error)
+{
+    if(te==0.0) *error=true;
+    if(te-tm==0.0) *error=true;
+    if((x/te)==0 && (te/(te - tm))<=0.0) *error=true;
+    if(*error) return 0.0;
 
+    return 0.5 - Wmax * (1 + (te - x)/(te - tm)) * pow((x/te),(te/(te - tm)));
+}
+//---------------------------------------------------------------------------
+double Simulation::bisection(double a, double b,double Wmax,double te, double tm,bool* error)
+{
+    double x = b;
+    double d = (a + b)/2.0;
+    double valor1;
+    double valor2;
+    while (fabs(x-d)/fabs(x) > 0.000000000001)
+    {
+        if (Fx50(x,Wmax,te,tm,error) == 0) break;
+        valor1=Fx50(x,Wmax,te,tm,error);
+        if(*error) break;
+        valor2=Fx50(a,Wmax,te,tm,error);
+        if(*error) break;
+        if (valor1 * valor2 < 0)
+            b = x;
+        else {
+            a = x;
+        }
+        d = x;
+        x = (a + b)/2.0;
+    }
+    return x;
+}
 
 
 

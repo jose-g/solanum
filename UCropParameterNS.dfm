@@ -1,9 +1,9 @@
 object frmCropParameterNS: TfrmCropParameterNS
-  Left = 791
-  Top = 189
+  Left = 575
+  Top = 41
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
-  ClientHeight = 817
+  ClientHeight = 902
   ClientWidth = 762
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -43,7 +43,7 @@ object frmCropParameterNS: TfrmCropParameterNS
   end
   object cmdCancel: TBitBtn
     Left = 561
-    Top = 770
+    Top = 858
     Width = 93
     Height = 31
     Caption = '&Cancel'
@@ -70,7 +70,7 @@ object frmCropParameterNS: TfrmCropParameterNS
   end
   object cmdApply: TBitBtn
     Left = 660
-    Top = 770
+    Top = 858
     Width = 92
     Height = 31
     Caption = '&Apply'
@@ -608,7 +608,7 @@ object frmCropParameterNS: TfrmCropParameterNS
   end
   object GroupBox3: TGroupBox
     Left = 10
-    Top = 640
+    Top = 728
     Width = 740
     Height = 119
     TabOrder = 2
@@ -797,7 +797,7 @@ object frmCropParameterNS: TfrmCropParameterNS
     Width = 671
     Height = 239
     TabStop = False
-    ColCount = 10
+    ColCount = 12
     RowCount = 3
     FixedRows = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goRowSelect]
@@ -897,6 +897,105 @@ object frmCropParameterNS: TfrmCropParameterNS
     Caption = 'Export database'
     TabOrder = 14
     OnClick = butExportClick
+  end
+  object GroupBox4: TGroupBox
+    Left = 10
+    Top = 636
+    Width = 740
+    Height = 80
+    TabOrder = 15
+    object RichEdit25: TRichEdit
+      Left = 30
+      Top = 26
+      Width = 148
+      Height = 27
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Photoperiod sensitivity')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edPhotoSen: TEdit
+      Left = 187
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 1
+    end
+    object RichEdit26: TRichEdit
+      Left = 276
+      Top = 26
+      Width = 77
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object RichEdit27: TRichEdit
+      Left = 404
+      Top = 26
+      Width = 149
+      Height = 27
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Critical photoperiod')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edPhotoCrit: TEdit
+      Left = 561
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 2
+    end
+    object RichEdit28: TRichEdit
+      Left = 650
+      Top = 26
+      Width = 60
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
   end
   object sdResult: TSaveDialog
     DefaultExt = 'csv'

@@ -17,6 +17,8 @@ void Tuber::CleanVariables()
   Tcr = -3;
   Tld = -5;
   Trg = -8;
+  w=0.0;
+  Pc=0.0;
 }
 void Tuber::Clone(Tuber* other)
 {
@@ -27,5 +29,7 @@ void Tuber::Clone(Tuber* other)
   other->Tcr = Tcr;
   other->Tld = Tld;
   other->Trg = Trg;
+  other->w = w;
+  other->Pc = Pc;
 }
 #endif

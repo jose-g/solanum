@@ -12,6 +12,8 @@
      double Tcr;
      double Tld;
      double Trg;
+     double w;
+     double Pc;
      void CleanVariables();
      void Clone(Tuber*);
   };

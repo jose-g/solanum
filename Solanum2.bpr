@@ -53,7 +53,7 @@
     <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
-    <USERDEFINES value="_DEBUG"/>
+    <USERDEFINES value=""/>
     <SYSDEFINES value="_RTLDLL;NO_STRICT"/>
     <MAINSOURCE value="Solanum2.cpp"/>
     <INCLUDEPATH value="&quot;C:\Program Files (x86)\Borland\CBuilder6\Projects&quot;;clases;&quot;C:\Program Files (x86)\Steema Software\TeeChart 705 for Builder 6\Builder6\Include&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
@@ -62,12 +62,11 @@
     <OTHERFILES value=""/>
   </MACROS>
   <OPTIONS>
-    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -w- -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- 
-      -c -tW -tWM"/>
-    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl60.csm -Hc -w- -Vx -Ve -X- -a8 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
     <RFLAGS value=""/>
-    <AFLAGS value="/mx /w2 /zi"/>
-    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn"/>
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>

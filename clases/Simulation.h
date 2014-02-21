@@ -123,6 +123,9 @@
   int DeterminePositionFromCSVFile(char*,char*);
   void CleanVectorObserved();
   int SaveOutputs();
+  double Fx50(double,double,double,double,bool*);
+  double bisection(double,double,double,double,double,bool*);
+
 
   };
 #endif

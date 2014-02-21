@@ -1,6 +1,6 @@
 object frmClimate: TfrmClimate
-  Left = 132
-  Top = 238
+  Left = 390
+  Top = 294
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Climate database'

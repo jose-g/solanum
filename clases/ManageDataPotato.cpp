@@ -87,7 +87,7 @@ void ManageDataPotato::DefaultCondition()
   time->MonthStart  = 7;
   time->duration    = 144;
   time->repetitions    = 20;
-  time->YearStart   = 2012;
+  time->YearStart   = 1995;
   time->idYear=0;
   strcpy(time->location,"Lima-Peru");
   char ObsFile[255];

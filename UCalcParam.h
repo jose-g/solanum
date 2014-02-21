@@ -124,6 +124,12 @@ __published:	// IDE-managed Components
         TEdit *edtuberinit;
         TCheckBox *chkbtuberinit;
         TRichEdit *RichEdit14;
+        TRichEdit *RichEdit25;
+        TEdit *edPhotoSen;
+        TRichEdit *RichEdit26;
+        TRichEdit *RichEdit27;
+        TEdit *edPhotoCrit;
+        TRichEdit *RichEdit28;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);
@@ -202,6 +208,8 @@ private:	// User declarations
    double back_b;
    double back_DMCont;
    double back_LUE;
+   double back_w;
+   double back_Pc;
    int back_EDay;
 
    int back_YearStart;

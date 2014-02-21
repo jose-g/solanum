@@ -52,6 +52,8 @@ void __fastcall TfrmImportCropParameter::butImportClick(TObject *Sender)
           dbcultivo->Item[indice].tuber->Tld=dbcultivoTemp->Item[i].tuber->Tld;
           dbcultivo->Item[indice].tuber->Trg=dbcultivoTemp->Item[i].tuber->Trg;
           dbcultivo->Item[indice].plant->EDay=dbcultivoTemp->Item[i].plant->EDay;
+          dbcultivo->Item[indice].tuber->w=dbcultivoTemp->Item[i].tuber->w;
+          dbcultivo->Item[indice].tuber->Pc=dbcultivoTemp->Item[i].tuber->Pc;
           dbcultivo->numreg++;
         }
       }
@@ -118,6 +120,8 @@ void __fastcall TfrmImportCropParameter::butImportClick(TObject *Sender)
                 dbcultivoTemp->Item[indice].tuber->Tld=dbcultivo->Item[i].tuber->Tld;
                 dbcultivoTemp->Item[indice].tuber->Trg=dbcultivo->Item[i].tuber->Trg;
                 dbcultivoTemp->Item[indice].plant->EDay=dbcultivo->Item[i].plant->EDay;
+                dbcultivoTemp->Item[indice].tuber->w=dbcultivo->Item[i].tuber->w;
+                dbcultivoTemp->Item[indice].tuber->Pc=dbcultivo->Item[i].tuber->Pc;
                 dbcultivoTemp->numreg++;
              }
            }

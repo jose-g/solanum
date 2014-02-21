@@ -22,6 +22,8 @@ __fastcall TfrmCropParameterPG::TfrmCropParameterPG(TComponent* Owner)
    sgCrop->Cells[7][0]="b";
    sgCrop->Cells[8][0]="DMC";
    sgCrop->Cells[9][0]="RUE";
+   sgCrop->Cells[10][0]="w";
+   sgCrop->Cells[11][0]="Pc";
    sgCrop->Cells[1][1]="";
    sgCrop->Cells[2][1]="";
    sgCrop->Cells[3][1]="";
@@ -31,6 +33,8 @@ __fastcall TfrmCropParameterPG::TfrmCropParameterPG(TComponent* Owner)
    sgCrop->Cells[7][1]="";
    sgCrop->Cells[8][1]="";
    sgCrop->Cells[9][1]="";
+   sgCrop->Cells[10][1]="";
+   sgCrop->Cells[11][1]="";
    sgCrop->RowHeights[0]=18;
    sgCrop->RowHeights[1]=18;
    sgCrop->ColWidths[0]=30;
@@ -43,6 +47,8 @@ __fastcall TfrmCropParameterPG::TfrmCropParameterPG(TComponent* Owner)
    sgCrop->ColWidths[7]=50;
    sgCrop->ColWidths[8]=50;
    sgCrop->ColWidths[9]=50;
+   sgCrop->ColWidths[10]=50;
+   sgCrop->ColWidths[11]=50;
 }
 //---------------------------------------------------------------------------
 void TfrmCropParameterPG::EnterInformation(Crop* _cond,DBCultivo* _dbcultivo)
@@ -81,6 +87,8 @@ void TfrmCropParameterPG::PoblarGrilla()
     sgCrop->Cells[7][i+2]=dbcultivo->Item[i].tuber->b;
     sgCrop->Cells[8][i+2]=dbcultivo->Item[i].tuber->DMCont;
     sgCrop->Cells[9][i+2]=dbcultivo->Item[i].plant->LUE;
+    sgCrop->Cells[10][i+2]=dbcultivo->Item[i].tuber->w;
+    sgCrop->Cells[11][i+2]=dbcultivo->Item[i].tuber->Pc;
   }
 }
 //---------------------------------------------------------------------------
@@ -113,6 +121,9 @@ void TfrmCropParameterPG::PutValuesOnForm()
    edDurLeaf->Text=cond->plant->d;
    edThermal->Text=cond->plant->t50;
 
+   edPhotoSen->Text=cond->tuber->w;
+   edPhotoCrit->Text=cond->tuber->Pc;
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmCropParameterPG::sgCropSelectCell(TObject *Sender,
@@ -133,6 +144,8 @@ void __fastcall TfrmCropParameterPG::sgCropSelectCell(TObject *Sender,
    edTld->Text=dbcultivo->Item[ARow-2].tuber->Tld;
    edTrg->Text=dbcultivo->Item[ARow-2].tuber->Trg;
    edEmDay->Text=dbcultivo->Item[ARow-2].plant->EDay;
+   edPhotoSen->Text=dbcultivo->Item[ARow-2].tuber->w;
+   edPhotoCrit->Text=dbcultivo->Item[ARow-2].tuber->Pc;
   }
 }
 //---------------------------------------------------------------------------
@@ -159,7 +172,7 @@ void __fastcall TfrmCropParameterPG::butAddClick(TObject *Sender)
 void __fastcall TfrmCropParameterPG::butUpdateClick(TObject *Sender)
 {
   int reg=sgCrop->Row-2;
-  if(reg>=8)
+  if(reg>=18)
   {
     bool exitoso=false;
     exitoso=Validate();
@@ -195,12 +208,14 @@ void TfrmCropParameterPG::SaveInDB(int reg)
    dbcultivo->Item[numreg].tuber->Tld=edTld->Text.ToDouble();
    dbcultivo->Item[numreg].tuber->Trg=edTrg->Text.ToDouble();
    dbcultivo->Item[numreg].plant->EDay=edEmDay->Text.ToInt();
+   dbcultivo->Item[numreg].tuber->w=edPhotoSen->Text.ToDouble();
+   dbcultivo->Item[numreg].tuber->Pc=edPhotoCrit->Text.ToDouble();
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmCropParameterPG::butDeleteClick(TObject *Sender)
 {
   int reg=sgCrop->Row-2;
-  if(reg>=8)
+  if(reg>=18)
   {
     if(Application->MessageBox("Are you sure that you want to delete the parameter?", "Warning!", MB_YESNO)==IDYES)
     {
@@ -227,20 +242,6 @@ void __fastcall TfrmCropParameterPG::butExportClick(TObject *Sender)
     Application->MessageBox("The selected crop parameters were exported!", "Successful!", MB_OK);
   }
   delete frm;
-
-/*
-  AnsiString NomArchivo;
-  bool exito=false;
-  if(sdResult->Execute())
-  {
-    NomArchivo=sdResult->FileName;
-    exito=dbcultivo->saveAllParameters(NomArchivo.c_str());
-    if(exito)
-    {
-      Application->MessageBox("The database of parameters was exported!", "Successful!", MB_OK);
-    }
-  }
-*/
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmCropParameterPG::cmdApplyClick(TObject *Sender)
@@ -401,6 +402,24 @@ TEdit* TfrmCropParameterPG::FindDataError(int* _cod)
     *_cod=2; // 2: No es un valor real
     return edTrg;
   }
+  try
+  {
+    datod=edPhotoSen->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edPhotoSen;
+  }
+  try
+  {
+    datod=edPhotoCrit->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edPhotoCrit;
+  }
   return edMaxgc;
 }
 //---------------------------------------------------------------------------
@@ -434,6 +453,8 @@ void TfrmCropParameterPG::SaveData()
    cond->plant->EDay=edEmDay->Text.ToInt();
    cond->plant->d=edDurLeaf->Text.ToDouble();
    cond->plant->t50=edThermal->Text.ToDouble();
+   cond->tuber->w=edPhotoSen->Text.ToDouble();
+   cond->tuber->Pc=edPhotoCrit->Text.ToDouble();
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmCropParameterPG::cmdCancelClick(TObject *Sender)

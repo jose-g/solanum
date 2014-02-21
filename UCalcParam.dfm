@@ -1,6 +1,6 @@
 object frmCalcParam: TfrmCalcParam
-  Left = 59
-  Top = 136
+  Left = -193
+  Top = 110
   Width = 1792
   Height = 1108
   BorderIcons = [biSystemMenu, biMaximize]
@@ -2059,6 +2059,98 @@ object frmCalcParam: TfrmCalcParam
     ParentFont = False
     ReadOnly = True
     TabOrder = 48
+  end
+  object RichEdit25: TRichEdit
+    Left = 1452
+    Top = 18
+    Width = 148
+    Height = 27
+    TabStop = False
+    BiDiMode = bdLeftToRight
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    Lines.Strings = (
+      'Photoperiod sensitivity')
+    ParentBiDiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 49
+  end
+  object edPhotoSen: TEdit
+    Left = 1609
+    Top = 19
+    Width = 80
+    Height = 24
+    TabOrder = 50
+  end
+  object RichEdit26: TRichEdit
+    Left = 1698
+    Top = 18
+    Width = 60
+    Height = 27
+    TabStop = False
+    Alignment = taCenter
+    BiDiMode = bdLeftToRight
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentBiDiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 51
+  end
+  object RichEdit27: TRichEdit
+    Left = 1452
+    Top = 50
+    Width = 149
+    Height = 27
+    TabStop = False
+    BiDiMode = bdLeftToRight
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    Lines.Strings = (
+      'Critical photoperiod')
+    ParentBiDiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 52
+  end
+  object edPhotoCrit: TEdit
+    Left = 1609
+    Top = 51
+    Width = 80
+    Height = 24
+    TabOrder = 53
+  end
+  object RichEdit28: TRichEdit
+    Left = 1698
+    Top = 50
+    Width = 60
+    Height = 27
+    TabStop = False
+    Alignment = taCenter
+    BiDiMode = bdLeftToRight
+    Color = 3696250
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentBiDiMode = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 54
   end
   object odClimate: TOpenDialog
     Options = [ofHideReadOnly, ofNoChangeDir, ofEnableSizing]

@@ -1,9 +1,9 @@
 object frmCropParameterPG: TfrmCropParameterPG
-  Left = 855
-  Top = 103
+  Left = 517
+  Top = 27
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
-  ClientHeight = 770
+  ClientHeight = 854
   ClientWidth = 763
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -43,7 +43,7 @@ object frmCropParameterPG: TfrmCropParameterPG
   end
   object cmdCancel: TBitBtn
     Left = 551
-    Top = 721
+    Top = 809
     Width = 93
     Height = 31
     Caption = '&Cancel'
@@ -70,7 +70,7 @@ object frmCropParameterPG: TfrmCropParameterPG
   end
   object cmdApply: TBitBtn
     Left = 650
-    Top = 721
+    Top = 809
     Width = 92
     Height = 31
     Caption = '&Apply'
@@ -561,117 +561,13 @@ object frmCropParameterPG: TfrmCropParameterPG
       TabOrder = 11
     end
   end
-  object GroupBox3: TGroupBox
-    Left = 10
-    Top = 620
-    Width = 740
-    Height = 80
-    TabOrder = 2
-    object RichEdit14: TRichEdit
-      Left = 30
-      Top = 20
-      Width = 148
-      Height = 40
-      TabStop = False
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        'Average radiation use '
-        'efficiency (RUE)')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 0
-    end
-    object edAveLight: TEdit
-      Left = 187
-      Top = 27
-      Width = 80
-      Height = 24
-      TabOrder = 1
-    end
-    object RichEdit17: TRichEdit
-      Left = 276
-      Top = 26
-      Width = 77
-      Height = 27
-      TabStop = False
-      Alignment = taCenter
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        'g/MJPAR')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 3
-    end
-    object RichEdit18: TRichEdit
-      Left = 404
-      Top = 20
-      Width = 149
-      Height = 40
-      TabStop = False
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        'Emergence day')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 4
-    end
-    object edEmDay: TEdit
-      Left = 561
-      Top = 27
-      Width = 80
-      Height = 24
-      TabOrder = 2
-    end
-    object RichEdit19: TRichEdit
-      Left = 650
-      Top = 26
-      Width = 60
-      Height = 27
-      TabStop = False
-      Alignment = taCenter
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        'day')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 5
-    end
-  end
   object sgCrop: TStringGrid
     Left = 47
     Top = 10
     Width = 671
     Height = 239
     TabStop = False
-    ColCount = 10
+    ColCount = 12
     RowCount = 3
     FixedRows = 2
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goDrawFocusSelected, goRowSelect]
@@ -780,6 +676,209 @@ object frmCropParameterPG: TfrmCropParameterPG
     Caption = 'Import database'
     TabOrder = 15
     OnClick = butImportClick
+  end
+  object GroupBox4: TGroupBox
+    Left = 10
+    Top = 620
+    Width = 740
+    Height = 80
+    TabOrder = 16
+    object RichEdit20: TRichEdit
+      Left = 30
+      Top = 26
+      Width = 148
+      Height = 27
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Photoperiod sensitivity')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edPhotoSen: TEdit
+      Left = 187
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 1
+    end
+    object RichEdit21: TRichEdit
+      Left = 276
+      Top = 26
+      Width = 77
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object RichEdit22: TRichEdit
+      Left = 404
+      Top = 26
+      Width = 149
+      Height = 27
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Critical photoperiod')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edPhotoCrit: TEdit
+      Left = 561
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 2
+    end
+    object RichEdit23: TRichEdit
+      Left = 650
+      Top = 26
+      Width = 60
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 10
+    Top = 708
+    Width = 740
+    Height = 80
+    TabOrder = 2
+    object RichEdit14: TRichEdit
+      Left = 30
+      Top = 20
+      Width = 148
+      Height = 40
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Average radiation use '
+        'efficiency (RUE)')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object edAveLight: TEdit
+      Left = 187
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 1
+    end
+    object RichEdit17: TRichEdit
+      Left = 276
+      Top = 26
+      Width = 77
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'g/MJPAR')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 3
+    end
+    object RichEdit18: TRichEdit
+      Left = 404
+      Top = 20
+      Width = 149
+      Height = 40
+      TabStop = False
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'Emergence day')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 4
+    end
+    object edEmDay: TEdit
+      Left = 561
+      Top = 27
+      Width = 80
+      Height = 24
+      TabOrder = 2
+    end
+    object RichEdit19: TRichEdit
+      Left = 650
+      Top = 26
+      Width = 60
+      Height = 27
+      TabStop = False
+      Alignment = taCenter
+      BiDiMode = bdLeftToRight
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Lines.Strings = (
+        'day')
+      ParentBiDiMode = False
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 5
+    end
   end
   object sdResult: TSaveDialog
     DefaultExt = 'csv'

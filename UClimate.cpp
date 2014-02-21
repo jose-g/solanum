@@ -182,7 +182,7 @@ void TfrmClimate::PutValuesOnForm()
      sgClimate->Cells[9][i+1]   = condTemp->ET[i-1];
      sgClimate->Cells[10][i+1]   = condTemp->Irri[i-1];
      sgClimate->Cells[11][i+1]   = condTemp->SoilTemp[i-1];
-     sgClimate->Cells[12][i+1]   = condTemp->Sunshine[i-1];
+     sgClimate->Cells[12][i+1]   = FormatFloat("00.00",condTemp->Sunshine[i-1]);
    }
 }
 //---------------------------------------------------------------------------

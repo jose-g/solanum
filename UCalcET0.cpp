@@ -448,7 +448,8 @@ void __fastcall TfrmCalcET0::butGenerateET0Click(TObject *Sender)
    sgClimate->RowCount=condTemp->RecNum+2;
    for(int i=1;i<=condTemp->RecNum;i++)
    {
-     sgClimate->Cells[5][i+1]=condTemp->ET[i-1];
+     sgClimate->Cells[5][i+1]=FormatFloat("00.00",condTemp->ET[i-1]);
+     sgClimate->Cells[4][i+1]=FormatFloat("00.00",condTemp->Sunshine[i-1]);
    }
    strcpy(condTemp->TitET,"Calculated using the tool 'Calculator ET0'");
 }

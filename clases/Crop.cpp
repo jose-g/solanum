@@ -60,18 +60,20 @@ void Crop::DefaultValuesForKindOfCrop(int key)
 // 10: Canchan
   if(key==0)
   {
-     SelectedCrop=2;
+     SelectedCrop=16;
      plant->fcl=0.89;
-     plant->F0=535.7;
-     plant->R0=1045.4;
-     tuber->M=0.8;
+     plant->F0=536;
+     plant->R0=1045;
+     tuber->M=0.77;
      tuber->A=880;
-     tuber->b=175.1;
-     tuber->DMCont=0.2;
-     plant->LUE=2.86;
+     tuber->b=175;
+     tuber->DMCont=0.21;
+     plant->LUE=2.8;
      tuber->Tcr=-3;
      tuber->Tld=-5;
      tuber->Trg=-8;
+     tuber->w=0.5;
+     tuber->Pc=15;
      strcpy(cropname,"Yungay");
   }
 /*
@@ -178,8 +180,8 @@ bool Crop::saveParameters(char* pnombre,int cover1p,int GrowthZero,int GrowthZer
   rewind(stream);
 //  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Emergence day","Maximun canopy cover index","Maximum harvest index","1% canopy cover","day at maximum canopy cover value","Tt at maximum tuber growth rate","Inversal rate at the maximum tuber growth","Tt at the end of the growth period","Tt at the maximum canopy cover growth rate","Average light use efficiency","Dry matter concentration");
 //  fprintf(stream,"%i,%lf,%lf,%i,%i,%lf,%lf,%lf,%lf,%lf,%lf\n",plant->EDay,plant->fcl,tuber->M,tuber->cover1p,tuber->GrowthZero,tuber->A,tuber->b,plant->R0,plant->F0,plant->LUE,tuber->DMCont);
-  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Name of the crop","Maximun canopy cover index","Tt at the maximum canopy cover growth rate","Tt at the maximum canopy cover value","Maximum harvest index","Tt at maximum tuber partition rate","TT just before the tuber initiation process","Dry matter concentration","Average light use efficiency","Tcr","Tld","Trg","Emergence day","1% canopy cover","day at maximum canopy cover value","day at maximum tuberization");
-  fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i,%i,%i,%i\n", cropname,plant->fcl, plant->F0, plant->R0, tuber->M, tuber->A, tuber->b, tuber->DMCont, plant->LUE,tuber->Tcr,tuber->Tld,tuber->Trg, plant->EDay,cover1p,GrowthZero,GrowthZero2);
+  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Name of the crop","Maximun canopy cover index","Tt at the maximum canopy cover growth rate","Tt at the maximum canopy cover value","Maximum harvest index","Tt at maximum tuber partition rate","TT just before the tuber initiation process","Dry matter concentration","Average light use efficiency","Tcr","Tld","Trg","Emergence day","1% canopy cover","day at maximum canopy cover value","day at maximum tuberization","Photoperiod sensitivity","Critical photoperiod");
+  fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i,%i,%i,%i,%lf,%lf\n", cropname,plant->fcl, plant->F0, plant->R0, tuber->M, tuber->A, tuber->b, tuber->DMCont, plant->LUE,tuber->Tcr,tuber->Tld,tuber->Trg, plant->EDay,cover1p,GrowthZero,GrowthZero2,tuber->w,tuber->Pc);
   fclose(stream);
   return true;
 }
@@ -324,6 +326,14 @@ int indice=-1;
       {
         Item[indice].plant->EDay=atoi(dato);
       }
+      if(cont==14)
+      {
+        Item[indice].tuber->w=atof(dato);
+      }
+      if(cont==15)
+      {
+        Item[indice].tuber->Pc=atof(dato);
+      }
     }
     }
   }
@@ -342,11 +352,11 @@ bool DBCultivo::saveAllParameters(char* pnombre)
      return false;
   }
   rewind(stream);
-  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Name of the crop","Maximun canopy cover index","Tt at the maximum canopy cover growth rate","Tt at the maximum canopy cover value","Maximum harvest index","Tt at maximum tuber partition rate","TT just before the tuber initiation process","Dry matter concentration","Average light use efficiency","Trc","Tld","Trg","Emergence day");
+  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Name of the crop","Maximun canopy cover index","Tt at the maximum canopy cover growth rate","Tt at the maximum canopy cover value","Maximum harvest index","Tt at maximum tuber partition rate","TT just before the tuber initiation process","Dry matter concentration","Average light use efficiency","Trc","Tld","Trg","Emergence day","Photoperiod sensitivity","Critical photoperiod");
   for(int i=0;i<numreg;i++)
   {
 //    fprintf(stream,"%s,%i,%lf,%lf,%i,%i,%lf,%lf,%lf,%lf,%lf,%lf\n",Item[i].cropname,Item[i].plant->EDay,plant->fcl,tuber->M,tuber->cover1p,tuber->GrowthZero,tuber->A,tuber->b,plant->R0,plant->F0,plant->LUE,tuber->DMCont);
-    fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i\n", Item[i].cropname,Item[i].plant->fcl, Item[i].plant->F0, Item[i].plant->R0, Item[i].tuber->M, Item[i].tuber->A, Item[i].tuber->b, Item[i].tuber->DMCont, Item[i].plant->LUE, Item[i].tuber->Tcr, Item[i].tuber->Tld, Item[i].tuber->Trg, Item[i].plant->EDay);
+    fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i,%lf,%lf\n", Item[i].cropname,Item[i].plant->fcl, Item[i].plant->F0, Item[i].plant->R0, Item[i].tuber->M, Item[i].tuber->A, Item[i].tuber->b, Item[i].tuber->DMCont, Item[i].plant->LUE, Item[i].tuber->Tcr, Item[i].tuber->Tld, Item[i].tuber->Trg, Item[i].plant->EDay, Item[i].tuber->w, Item[i].tuber->Pc);
   }
   fclose(stream);
   return true;
@@ -369,6 +379,8 @@ bool DBCultivo::deleteReg(int reg) // el valor de reg va desde cero, el primer r
     Item[reg].tuber->Tld=0.0;
     Item[reg].tuber->Trg=0.0;
     Item[reg].plant->EDay=0;
+    Item[reg].tuber->w=0;
+    Item[reg].tuber->Pc=0;
     numreg--;
   }
   else
@@ -389,6 +401,8 @@ bool DBCultivo::deleteReg(int reg) // el valor de reg va desde cero, el primer r
       Item[i].tuber->Tld=Item[i+1].tuber->Tld;
       Item[i].tuber->Trg=Item[i+1].tuber->Trg;
       Item[i].plant->EDay=Item[i+1].plant->EDay;
+      Item[i].tuber->w=Item[i+1].tuber->w;
+      Item[i].tuber->Pc=Item[i+1].tuber->Pc;
     }
     strcpy(Item[ultind].cropname,"");
     Item[ultind].plant->fcl=0.0;
@@ -403,6 +417,8 @@ bool DBCultivo::deleteReg(int reg) // el valor de reg va desde cero, el primer r
     Item[ultind].tuber->Tld=0.0;
     Item[ultind].tuber->Trg=0.0;
     Item[ultind].plant->EDay=0;
+    Item[ultind].tuber->w=0.0;
+    Item[ultind].tuber->Pc=0.0;
     numreg--;
 
   }

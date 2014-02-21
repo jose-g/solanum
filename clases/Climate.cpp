@@ -779,7 +779,6 @@ void Climate::CalcularET0()
     {
       W=-1*((Tx-Th)/(Th-To));  // verificar importante negativo
     }
-
     ea=0.6108*exp((17.27*dp)/(dp+237.3));
     eTx=0.6108*exp((17.27*Tmax)/(Tmax+237.3));
     eTm=0.6108*exp((17.27*Tmin)/(Tmin+237.3));
@@ -821,6 +820,7 @@ void Climate::CalcularET0()
     Rn=Rnoc-Rnol;
     double ET0=(0.408*S*(Rn-G)+PC*(900/(Tx+273))*u2*(es-ea))/(S+PC*(1+0.34*u2));
     ET[i] = floor(ET0 * 100.0 + 0.5) / 100.0;
+    Sunshine[i]=N;
   }
 }
 //------------------------------------------------------------------------------
