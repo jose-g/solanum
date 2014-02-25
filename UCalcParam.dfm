@@ -1,8 +1,8 @@
 object frmCalcParam: TfrmCalcParam
-  Left = -193
-  Top = 110
-  Width = 1792
-  Height = 1108
+  Left = -9
+  Top = -9
+  Width = 1938
+  Height = 1184
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Parameter Calculator'
   Color = clBtnFace

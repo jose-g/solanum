@@ -23,7 +23,7 @@
      void CleanVectorClimate();
      int RecNum;
      void CalcularET0();
-     bool saveET0(char*);
+     bool saveET0_N(char*);
      bool saveSoil(char*);
      int Hemisphere;
      double Lat_Degrees;

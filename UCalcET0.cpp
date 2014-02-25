@@ -23,7 +23,7 @@ __fastcall TfrmCalcET0::TfrmCalcET0(TComponent* Owner)
    sgClimate->Cells[1][1]="oC";
    sgClimate->Cells[2][1]="oC";
    sgClimate->Cells[3][1]="MJ/m2";
-   sgClimate->Cells[4][1]="";
+   sgClimate->Cells[4][1]="Hours";
    sgClimate->Cells[5][1]="mm";
    sgClimate->RowHeights[0]=18;
    sgClimate->RowHeights[1]=18;
@@ -469,7 +469,6 @@ void __fastcall TfrmCalcET0::chbSunshineClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TfrmCalcET0::butSaveET0Click(TObject *Sender)
 {
   AnsiString NomArchivo;
@@ -477,10 +476,10 @@ void __fastcall TfrmCalcET0::butSaveET0Click(TObject *Sender)
   if(sdResult->Execute())
   {
     NomArchivo=sdResult->FileName;
-    exito=condTemp->saveET0(NomArchivo.c_str());
+    exito=condTemp->saveET0_N(NomArchivo.c_str());
     if(exito)
     {
-    Application->MessageBox("Information about Evapotranspiration was saved!", "Successful!", MB_OK);
+    Application->MessageBox("Information about Evapotranspiration and Sunshine were saved!", "Successful!", MB_OK);
     }
   }
 }

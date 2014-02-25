@@ -1,9 +1,9 @@
 object frmCalcET0: TfrmCalcET0
-  Left = 1043
-  Top = 198
+  Left = 591
+  Top = 44
   BorderIcons = [biHelp]
   BorderStyle = bsDialog
-  Caption = 'Calculator ET0'
+  Caption = 'Calculator ET0 y Sunshine'
   ClientHeight = 780
   ClientWidth = 654
   Color = clBtnFace
@@ -1061,7 +1061,7 @@ object frmCalcET0: TfrmCalcET0
     Top = 660
     Width = 238
     Height = 40
-    Caption = 'Generate ET0'
+    Caption = 'Generate ET0 y Sunshine'
     TabOrder = 39
     OnClick = butGenerateET0Click
   end
@@ -1075,11 +1075,11 @@ object frmCalcET0: TfrmCalcET0
     OnClick = chbSunshineClick
   end
   object butSaveET0: TButton
-    Left = 345
+    Left = 248
     Top = 729
-    Width = 92
+    Width = 189
     Height = 30
-    Caption = 'Save ET0 ...'
+    Caption = 'Save ET0 y Sunshine ...'
     TabOrder = 41
     OnClick = butSaveET0Click
   end

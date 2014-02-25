@@ -2017,7 +2017,6 @@ double sunshine[365];
   int numdias=time->duration;
   double* datTmin=new double[numdias];
   double* datTmax=new double[numdias];
-
   for(int i=reg;i<climate->RecNum;i++)
   {
       newItem++;

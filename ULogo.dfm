@@ -1972,7 +1972,7 @@ object frmLogo: TfrmLogo
         Top = 59
         Width = 76
         Height = 16
-        Caption = 'Version 2.3.1'
+        Caption = 'Version 2.3.2'
       end
     end
     object cmdContinue: TButton

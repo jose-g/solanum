@@ -824,7 +824,7 @@ void Climate::CalcularET0()
   }
 }
 //------------------------------------------------------------------------------
-bool Climate::saveET0(char* pnombre)
+bool Climate::saveET0_N(char* pnombre)
 {
   FILE *stream=NULL;
   stream = fopen (pnombre,"w");
@@ -836,7 +836,7 @@ bool Climate::saveET0(char* pnombre)
   rewind(stream);
   for(int i=1;i<=RecNum;i++)
   {
-    fprintf(stream,"%lf\n",ET[i-1]);
+    fprintf(stream,"%lf %lf\n",ET[i-1],Sunshine[i-1]);
   }
   fclose(stream);
   return true;
