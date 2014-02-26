@@ -1,6 +1,6 @@
 object frmGraph6PG: TfrmGraph6PG
-  Left = 425
-  Top = 415
+  Left = 330
+  Top = 253
   BorderStyle = bsDialog
   Caption = 'Graph : Total dry bimass production (Potential Growth)'
   ClientHeight = 566

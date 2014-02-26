@@ -1,27 +1,27 @@
 object frmCropParameterAM: TfrmCropParameterAM
-  Left = 413
-  Top = 176
+  Left = 430
+  Top = 144
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
-  ClientHeight = 560
-  ClientWidth = 619
+  ClientHeight = 689
+  ClientWidth = 762
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object cmdCancel: TBitBtn
-    Left = 456
-    Top = 514
-    Width = 75
-    Height = 25
+    Left = 561
+    Top = 633
+    Width = 93
+    Height = 30
     Caption = '&Cancel'
     TabOrder = 5
     OnClick = cmdCancelClick
@@ -45,10 +45,10 @@ object frmCropParameterAM: TfrmCropParameterAM
     NumGlyphs = 2
   end
   object cmdApply: TBitBtn
-    Left = 536
-    Top = 514
-    Width = 75
-    Height = 25
+    Left = 660
+    Top = 633
+    Width = 92
+    Height = 30
     Caption = '&Apply'
     Default = True
     TabOrder = 6
@@ -73,27 +73,27 @@ object frmCropParameterAM: TfrmCropParameterAM
     NumGlyphs = 2
   end
   object cbCrop: TComboBox
-    Left = 94
-    Top = 45
-    Width = 107
-    Height = 21
+    Left = 116
+    Top = 55
+    Width = 131
+    Height = 24
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 16
     TabOrder = 0
     OnClick = cbCropClick
     OnEnter = cbCropEnter
   end
   object RichEdit36: TRichEdit
-    Left = 8
-    Top = 45
-    Width = 81
-    Height = 21
+    Left = 10
+    Top = 55
+    Width = 100
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -104,17 +104,17 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 1
   end
   object GroupBox1: TGroupBox
-    Left = 8
-    Top = 80
-    Width = 297
-    Height = 233
+    Left = 10
+    Top = 98
+    Width = 365
+    Height = 287
     Caption = '  Leaf Area  '
     TabOrder = 2
     object RichEdit7: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 169
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 208
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -122,7 +122,7 @@ object frmCropParameterAM: TfrmCropParameterAM
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -131,22 +131,22 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 11
     end
     object edPlantDensity: TEdit
-      Left = 152
-      Top = 46
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 57
+      Width = 80
+      Height = 24
       TabOrder = 1
     end
     object Edit3: TEdit
-      Left = 224
-      Top = 46
-      Width = 49
-      Height = 21
+      Left = 276
+      Top = 57
+      Width = 60
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -155,67 +155,67 @@ object frmCropParameterAM: TfrmCropParameterAM
       Text = '1/m2'
     end
     object Edit9: TEdit
-      Left = 224
-      Top = 123
-      Width = 49
-      Height = 21
+      Left = 276
+      Top = 151
+      Width = 60
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
       ReadOnly = True
       TabOrder = 7
-      Text = #176'C*d'
+      Text = 'oC*d'
     end
     object Edit15: TEdit
-      Left = 224
-      Top = 161
-      Width = 49
-      Height = 21
+      Left = 276
+      Top = 198
+      Width = 60
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
       ReadOnly = True
       TabOrder = 8
-      Text = #176'C*d'
+      Text = 'oC*d'
     end
     object Edit16: TEdit
-      Left = 224
-      Top = 200
-      Width = 49
-      Height = 21
+      Left = 276
+      Top = 246
+      Width = 60
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
       ReadOnly = True
       TabOrder = 9
-      Text = #176'C*d'
+      Text = 'oC*d'
       Visible = False
     end
     object Edit20: TEdit
-      Left = 224
-      Top = 238
-      Width = 49
-      Height = 21
+      Left = 276
+      Top = 293
+      Width = 60
+      Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -225,53 +225,53 @@ object frmCropParameterAM: TfrmCropParameterAM
       Visible = False
     end
     object edMaxgc: TEdit
-      Left = 152
-      Top = 83
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 102
+      Width = 80
+      Height = 24
       TabOrder = 2
     end
     object edIniLig: TEdit
-      Left = 152
-      Top = 123
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 151
+      Width = 80
+      Height = 24
       TabOrder = 3
     end
     object edIniGro: TEdit
-      Left = 152
-      Top = 161
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 198
+      Width = 80
+      Height = 24
       TabOrder = 4
     end
     object edDurLeaf: TEdit
-      Left = 152
-      Top = 200
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 246
+      Width = 80
+      Height = 24
       TabOrder = 5
       Visible = False
     end
     object edThermal: TEdit
-      Left = 152
-      Top = 238
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 293
+      Width = 80
+      Height = 24
       TabOrder = 6
       Visible = False
     end
     object RichEdit1: TRichEdit
-      Left = 16
-      Top = 40
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 49
+      Width = 158
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -283,16 +283,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 13
     end
     object RichEdit2: TRichEdit
-      Left = 16
-      Top = 117
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 144
+      Width = 158
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -304,16 +304,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 14
     end
     object RichEdit3: TRichEdit
-      Left = 16
-      Top = 155
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 191
+      Width = 158
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -325,16 +325,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 15
     end
     object RichEdit4: TRichEdit
-      Left = 16
-      Top = 194
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 239
+      Width = 158
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -347,16 +347,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       Visible = False
     end
     object RichEdit5: TRichEdit
-      Left = 16
-      Top = 232
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 286
+      Width = 158
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -369,17 +369,17 @@ object frmCropParameterAM: TfrmCropParameterAM
       Visible = False
     end
     object RichEdit6: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 169
-      Height = 22
+      Width = 208
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -390,16 +390,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 10
     end
     object RichEdit8: TRichEdit
-      Left = 16
-      Top = 77
-      Width = 129
-      Height = 33
+      Left = 20
+      Top = 95
+      Width = 158
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -412,17 +412,17 @@ object frmCropParameterAM: TfrmCropParameterAM
     end
   end
   object GroupBox2: TGroupBox
-    Left = 312
-    Top = 80
-    Width = 297
-    Height = 233
+    Left = 384
+    Top = 98
+    Width = 366
+    Height = 287
     Caption = '  Leaf Area  '
     TabOrder = 3
     object RichEdit9: TRichEdit
-      Left = 12
-      Top = 5
-      Width = 169
-      Height = 22
+      Left = 15
+      Top = 6
+      Width = 208
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -430,7 +430,7 @@ object frmCropParameterAM: TfrmCropParameterAM
       Color = clGray
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -439,44 +439,44 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 8
     end
     object edMaxHI: TEdit
-      Left = 152
-      Top = 48
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 59
+      Width = 80
+      Height = 24
       TabOrder = 1
     end
     object edAsyHI: TEdit
-      Left = 152
-      Top = 85
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 105
+      Width = 80
+      Height = 24
       TabOrder = 2
     end
     object edSlopeHI: TEdit
-      Left = 152
-      Top = 125
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 154
+      Width = 80
+      Height = 24
       TabOrder = 3
     end
     object edDMContent: TEdit
-      Left = 152
-      Top = 163
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 201
+      Width = 80
+      Height = 24
       TabOrder = 4
     end
     object RichEdit10: TRichEdit
-      Left = 24
-      Top = 42
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 52
+      Width = 148
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -487,16 +487,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 0
     end
     object RichEdit11: TRichEdit
-      Left = 24
-      Top = 119
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 146
+      Width = 148
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -508,16 +508,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 5
     end
     object RichEdit12: TRichEdit
-      Left = 24
-      Top = 157
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 193
+      Width = 148
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -529,17 +529,17 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 6
     end
     object RichEdit15: TRichEdit
-      Left = 8
+      Left = 10
       Top = 0
-      Width = 169
-      Height = 22
+      Width = 208
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -550,16 +550,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 7
     end
     object RichEdit16: TRichEdit
-      Left = 24
-      Top = 79
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 97
+      Width = 148
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -572,21 +572,21 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 9
     end
     object RichEdit24: TRichEdit
-      Left = 224
-      Top = 84
-      Width = 49
-      Height = 22
+      Left = 276
+      Top = 103
+      Width = 60
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'Cd')
+        'oCd')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -594,22 +594,22 @@ object frmCropParameterAM: TfrmCropParameterAM
     end
   end
   object GroupBox3: TGroupBox
-    Left = 8
-    Top = 320
-    Width = 601
-    Height = 97
+    Left = 10
+    Top = 394
+    Width = 740
+    Height = 119
     TabOrder = 4
     object RichEdit14: TRichEdit
-      Left = 24
-      Top = 16
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 20
+      Width = 148
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -621,16 +621,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 0
     end
     object RichEdit20: TRichEdit
-      Left = 24
-      Top = 53
-      Width = 121
-      Height = 33
+      Left = 30
+      Top = 65
+      Width = 148
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -641,31 +641,31 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 5
     end
     object edAveLight: TEdit
-      Left = 152
-      Top = 22
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 27
+      Width = 80
+      Height = 24
       TabOrder = 1
     end
     object edDMIVar: TEdit
-      Left = 152
-      Top = 59
-      Width = 65
-      Height = 21
+      Left = 187
+      Top = 73
+      Width = 80
+      Height = 24
       TabOrder = 2
     end
     object RichEdit17: TRichEdit
-      Left = 224
-      Top = 21
-      Width = 49
-      Height = 22
+      Left = 276
+      Top = 26
+      Width = 60
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -676,16 +676,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 6
     end
     object RichEdit18: TRichEdit
-      Left = 328
-      Top = 16
-      Width = 121
-      Height = 33
+      Left = 404
+      Top = 20
+      Width = 149
+      Height = 40
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -696,16 +696,16 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 7
     end
     object RichEdit21: TRichEdit
-      Left = 328
-      Top = 53
-      Width = 121
-      Height = 33
+      Left = 404
+      Top = 65
+      Width = 149
+      Height = 41
       TabStop = False
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -717,31 +717,31 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 8
     end
     object edBaseTemp: TEdit
-      Left = 456
-      Top = 59
-      Width = 65
-      Height = 21
+      Left = 561
+      Top = 73
+      Width = 80
+      Height = 24
       TabOrder = 4
     end
     object edEmDay: TEdit
-      Left = 456
-      Top = 22
-      Width = 65
-      Height = 21
+      Left = 561
+      Top = 27
+      Width = 80
+      Height = 24
       TabOrder = 3
     end
     object RichEdit19: TRichEdit
-      Left = 528
-      Top = 21
-      Width = 49
-      Height = 22
+      Left = 650
+      Top = 26
+      Width = 60
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
@@ -752,21 +752,21 @@ object frmCropParameterAM: TfrmCropParameterAM
       TabOrder = 9
     end
     object RichEdit22: TRichEdit
-      Left = 528
-      Top = 58
-      Width = 49
-      Height = 22
+      Left = 650
+      Top = 71
+      Width = 60
+      Height = 27
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -11
+      Font.Height = -15
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'C')
+        'oC')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -774,16 +774,16 @@ object frmCropParameterAM: TfrmCropParameterAM
     end
   end
   object RichEdit25: TRichEdit
-    Left = 32
-    Top = 429
-    Width = 121
-    Height = 33
+    Left = 39
+    Top = 528
+    Width = 149
+    Height = 41
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -794,16 +794,16 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 7
   end
   object RichEdit26: TRichEdit
-    Left = 32
-    Top = 469
-    Width = 121
-    Height = 33
+    Left = 39
+    Top = 577
+    Width = 149
+    Height = 41
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -815,16 +815,16 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 8
   end
   object RichEdit27: TRichEdit
-    Left = 32
-    Top = 509
-    Width = 121
-    Height = 33
+    Left = 39
+    Top = 626
+    Width = 149
+    Height = 41
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -835,38 +835,38 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 9
   end
   object edTcr: TEdit
-    Left = 160
-    Top = 435
-    Width = 65
-    Height = 21
+    Left = 197
+    Top = 535
+    Width = 80
+    Height = 24
     TabOrder = 10
   end
   object edTld: TEdit
-    Left = 160
-    Top = 475
-    Width = 65
-    Height = 21
+    Left = 197
+    Top = 585
+    Width = 80
+    Height = 24
     TabOrder = 11
   end
   object edTrg: TEdit
-    Left = 160
-    Top = 515
-    Width = 65
-    Height = 21
+    Left = 197
+    Top = 634
+    Width = 80
+    Height = 24
     TabOrder = 12
   end
   object RichEdit28: TRichEdit
-    Left = 232
-    Top = 437
-    Width = 49
-    Height = 22
+    Left = 286
+    Top = 538
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -877,17 +877,17 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 13
   end
   object RichEdit29: TRichEdit
-    Left = 232
-    Top = 477
-    Width = 49
-    Height = 22
+    Left = 286
+    Top = 587
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -898,17 +898,17 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 14
   end
   object RichEdit30: TRichEdit
-    Left = 232
-    Top = 517
-    Width = 49
-    Height = 22
+    Left = 286
+    Top = 636
+    Width = 60
+    Height = 27
     TabStop = False
     Alignment = taCenter
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -919,16 +919,16 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 15
   end
   object RichEdit13: TRichEdit
-    Left = 208
-    Top = 45
-    Width = 97
-    Height = 21
+    Left = 256
+    Top = 55
+    Width = 119
+    Height = 26
     TabStop = False
     BiDiMode = bdLeftToRight
     Color = 3696250
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
@@ -939,22 +939,22 @@ object frmCropParameterAM: TfrmCropParameterAM
     TabOrder = 16
   end
   object ComboBox1: TComboBox
-    Left = 312
-    Top = 45
-    Width = 107
-    Height = 21
+    Left = 384
+    Top = 55
+    Width = 132
+    Height = 24
     Style = csDropDownList
-    ItemHeight = 13
+    ItemHeight = 16
     TabOrder = 17
   end
   object edName: TEdit
-    Left = 208
-    Top = 13
-    Width = 97
-    Height = 21
+    Left = 256
+    Top = 16
+    Width = 119
+    Height = 24
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clGray
-    Font.Height = -11
+    Font.Height = -15
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
@@ -965,27 +965,27 @@ object frmCropParameterAM: TfrmCropParameterAM
     OnExit = edNameExit
   end
   object butAddCrop: TButton
-    Left = 312
-    Top = 11
-    Width = 145
-    Height = 25
+    Left = 384
+    Top = 14
+    Width = 178
+    Height = 30
     Caption = 'Add to your favority variety'
     TabOrder = 19
     OnClick = butAddCropClick
   end
   object Button2: TButton
-    Left = 464
-    Top = 11
-    Width = 75
-    Height = 25
+    Left = 571
+    Top = 14
+    Width = 92
+    Height = 30
     Caption = 'Delete'
     TabOrder = 20
   end
   object Button1: TButton
-    Left = 464
-    Top = 48
-    Width = 75
-    Height = 25
+    Left = 571
+    Top = 59
+    Width = 92
+    Height = 31
     Caption = 'Button1'
     TabOrder = 21
     OnClick = Button1Click

@@ -1,6 +1,6 @@
 object frmAbout: TfrmAbout
-  Left = 642
-  Top = 239
+  Left = 634
+  Top = 214
   BorderStyle = bsDialog
   Caption = 'About model'
   ClientHeight = 692
@@ -2028,7 +2028,7 @@ object frmAbout: TfrmAbout
       Top = 20
       Width = 187
       Height = 27
-      Caption = 'SOLANUM v2.3.2'
+      Caption = 'SOLANUM v2.3.4'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 4210816
       Font.Height = -23

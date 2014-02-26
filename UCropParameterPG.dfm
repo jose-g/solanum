@@ -1,6 +1,6 @@
 object frmCropParameterPG: TfrmCropParameterPG
-  Left = 517
-  Top = 27
+  Left = 312
+  Top = 30
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
   ClientHeight = 854
@@ -97,7 +97,7 @@ object frmCropParameterPG: TfrmCropParameterPG
     NumGlyphs = 2
   end
   object GroupBox1: TGroupBox
-    Left = 10
+    Left = 386
     Top = 345
     Width = 365
     Height = 267
@@ -138,7 +138,7 @@ object frmCropParameterPG: TfrmCropParameterPG
       ParentFont = False
       ReadOnly = True
       TabOrder = 5
-      Text = #176'Cd'
+      Text = 'oCd'
     end
     object Edit15: TEdit
       Left = 276
@@ -155,7 +155,7 @@ object frmCropParameterPG: TfrmCropParameterPG
       ParentFont = False
       ReadOnly = True
       TabOrder = 6
-      Text = #176'Cd'
+      Text = 'oCd'
     end
     object Edit16: TEdit
       Left = 276
@@ -172,7 +172,7 @@ object frmCropParameterPG: TfrmCropParameterPG
       ParentFont = False
       ReadOnly = True
       TabOrder = 7
-      Text = #176'Cd'
+      Text = 'oCd'
       Visible = False
     end
     object Edit20: TEdit
@@ -190,7 +190,7 @@ object frmCropParameterPG: TfrmCropParameterPG
       ParentFont = False
       ReadOnly = True
       TabOrder = 15
-      Text = #176'Cd'
+      Text = 'oCd'
       Visible = False
     end
     object edMaxgc: TEdit
@@ -360,7 +360,7 @@ object frmCropParameterPG: TfrmCropParameterPG
     end
   end
   object GroupBox2: TGroupBox
-    Left = 384
+    Left = 8
     Top = 345
     Width = 366
     Height = 267
@@ -518,27 +518,6 @@ object frmCropParameterPG: TfrmCropParameterPG
       ReadOnly = True
       TabOrder = 9
     end
-    object RichEdit24: TRichEdit
-      Left = 276
-      Top = 113
-      Width = 60
-      Height = 27
-      TabStop = False
-      Alignment = taCenter
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        #176'Cd')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 10
-    end
     object RichEdit13: TRichEdit
       Left = 276
       Top = 163
@@ -554,11 +533,11 @@ object frmCropParameterPG: TfrmCropParameterPG
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'Cd')
+        'oCd')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
-      TabOrder = 11
+      TabOrder = 10
     end
   end
   object sgCrop: TStringGrid

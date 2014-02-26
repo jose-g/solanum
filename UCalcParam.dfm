@@ -1,8 +1,8 @@
 object frmCalcParam: TfrmCalcParam
-  Left = -9
-  Top = -9
-  Width = 1938
-  Height = 1184
+  Left = -5
+  Top = 16
+  Width = 1918
+  Height = 1102
   BorderIcons = [biSystemMenu, biMaximize]
   Caption = 'Parameter Calculator'
   Color = clBtnFace
@@ -125,7 +125,7 @@ object frmCalcParam: TfrmCalcParam
   object RichEdit6: TRichEdit
     Left = 1631
     Top = 638
-    Width = 58
+    Width = 82
     Height = 27
     TabStop = False
     Alignment = taCenter
@@ -137,8 +137,7 @@ object frmCalcParam: TfrmCalcParam
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
-      'g/MJ '
-      'PAR')
+      'g/MJ PAR')
     ParentBiDiMode = False
     ParentFont = False
     ReadOnly = True
@@ -1285,26 +1284,6 @@ object frmCalcParam: TfrmCalcParam
       TabOrder = 1
       OnKeyPress = edtuKeyPress
     end
-    object RichEdit24: TRichEdit
-      Left = 345
-      Top = 54
-      Width = 60
-      Height = 27
-      TabStop = False
-      BiDiMode = bdLeftToRight
-      Color = 3696250
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -15
-      Font.Name = 'MS Sans Serif'
-      Font.Style = []
-      Lines.Strings = (
-        #176'Cd')
-      ParentBiDiMode = False
-      ParentFont = False
-      ReadOnly = True
-      TabOrder = 2
-    end
     object RichEdit11: TRichEdit
       Left = 89
       Top = 135
@@ -1324,14 +1303,14 @@ object frmCalcParam: TfrmCalcParam
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
-      TabOrder = 3
+      TabOrder = 2
     end
     object edb: TEdit
       Left = 256
       Top = 143
       Width = 80
       Height = 24
-      TabOrder = 4
+      TabOrder = 3
       OnKeyPress = edbKeyPress
     end
     object RichEdit3: TRichEdit
@@ -1353,14 +1332,14 @@ object frmCalcParam: TfrmCalcParam
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
-      TabOrder = 5
+      TabOrder = 4
     end
     object edte: TEdit
       Left = 256
       Top = 230
       Width = 80
       Height = 24
-      TabOrder = 6
+      TabOrder = 5
       OnKeyPress = edteKeyPress
     end
     object Edit15: TEdit
@@ -1377,8 +1356,8 @@ object frmCalcParam: TfrmCalcParam
       Font.Style = []
       ParentFont = False
       ReadOnly = True
-      TabOrder = 7
-      Text = #176'Cd'
+      TabOrder = 6
+      Text = 'oCd'
     end
     object RichEdit2: TRichEdit
       Left = 89
@@ -1399,14 +1378,14 @@ object frmCalcParam: TfrmCalcParam
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
-      TabOrder = 8
+      TabOrder = 7
     end
     object edtm: TEdit
       Left = 256
       Top = 319
       Width = 80
       Height = 24
-      TabOrder = 9
+      TabOrder = 8
       OnKeyPress = edtmKeyPress
     end
     object Edit1: TEdit
@@ -1423,8 +1402,8 @@ object frmCalcParam: TfrmCalcParam
       Font.Style = []
       ParentFont = False
       ReadOnly = True
-      TabOrder = 10
-      Text = #176'Cd'
+      TabOrder = 9
+      Text = 'oCd'
     end
     object butDoSimulation: TButton
       Left = 185
@@ -1432,7 +1411,7 @@ object frmCalcParam: TfrmCalcParam
       Width = 145
       Height = 31
       Caption = 'Adjust parameters'
-      TabOrder = 11
+      TabOrder = 10
       OnClick = butDoSimulationClick
     end
     object tb_tu: TTrackBar
@@ -1447,7 +1426,7 @@ object frmCalcParam: TfrmCalcParam
       Position = 0
       SelEnd = 0
       SelStart = 0
-      TabOrder = 12
+      TabOrder = 11
       TickMarks = tmBottomRight
       TickStyle = tsAuto
       OnChange = tb_tuChange
@@ -1465,7 +1444,7 @@ object frmCalcParam: TfrmCalcParam
       Position = 0
       SelEnd = 0
       SelStart = 0
-      TabOrder = 13
+      TabOrder = 12
       TickMarks = tmBottomRight
       TickStyle = tsAuto
       OnChange = tb_bChange
@@ -1483,7 +1462,7 @@ object frmCalcParam: TfrmCalcParam
       Position = 0
       SelEnd = 0
       SelStart = 0
-      TabOrder = 14
+      TabOrder = 13
       TickMarks = tmBottomRight
       TickStyle = tsAuto
       OnChange = tb_teChange
@@ -1501,7 +1480,7 @@ object frmCalcParam: TfrmCalcParam
       Position = 0
       SelEnd = 0
       SelStart = 0
-      TabOrder = 15
+      TabOrder = 14
       TickMarks = tmBottomRight
       TickStyle = tsAuto
       OnChange = tb_tmChange
@@ -1521,8 +1500,25 @@ object frmCalcParam: TfrmCalcParam
       Font.Style = []
       ParentFont = False
       ReadOnly = True
+      TabOrder = 15
+      Text = 'oCd'
+    end
+    object Edit18: TEdit
+      Left = 345
+      Top = 54
+      Width = 60
+      Height = 24
+      TabStop = False
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
       TabOrder = 16
-      Text = #176'Cd'
+      Text = 'oCd'
     end
   end
   object Edit3: TEdit

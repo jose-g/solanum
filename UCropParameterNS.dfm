@@ -1,6 +1,6 @@
 object frmCropParameterNS: TfrmCropParameterNS
-  Left = 575
-  Top = 41
+  Left = 419
+  Top = 13
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
   ClientHeight = 902
@@ -162,7 +162,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       ParentFont = False
       ReadOnly = True
       TabOrder = 7
-      Text = #176'Cd'
+      Text = 'oCd'
     end
     object Edit15: TEdit
       Left = 276
@@ -179,7 +179,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       ParentFont = False
       ReadOnly = True
       TabOrder = 8
-      Text = #176'Cd'
+      Text = 'oCd'
     end
     object Edit16: TEdit
       Left = 276
@@ -196,7 +196,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       ParentFont = False
       ReadOnly = True
       TabOrder = 9
-      Text = #176'Cd'
+      Text = 'oCd'
       Visible = False
     end
     object Edit20: TEdit
@@ -578,7 +578,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'Cd')
+        'oCd')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -599,7 +599,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'Cd')
+        'oCd')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -783,7 +783,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Lines.Strings = (
-        #176'C')
+        'oC')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True

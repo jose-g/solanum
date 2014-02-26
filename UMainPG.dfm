@@ -1,6 +1,6 @@
 object frmMainPG: TfrmMainPG
-  Left = 522
-  Top = 201
+  Left = 737
+  Top = 215
   Width = 915
   Height = 649
   Caption = 

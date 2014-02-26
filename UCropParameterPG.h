@@ -52,7 +52,6 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit18;
         TEdit *edEmDay;
         TRichEdit *RichEdit19;
-        TRichEdit *RichEdit24;
         TStringGrid *sgCrop;
         TButton *butAdd;
         TButton *butUpdate;

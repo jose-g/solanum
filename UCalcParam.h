@@ -65,7 +65,6 @@ __published:	// IDE-managed Components
         TEdit *edA;
         TRichEdit *RichEdit16;
         TEdit *edtu;
-        TRichEdit *RichEdit24;
         TRichEdit *RichEdit11;
         TEdit *edb;
         TRichEdit *RichEdit3;
@@ -130,6 +129,7 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit27;
         TEdit *edPhotoCrit;
         TRichEdit *RichEdit28;
+        TEdit *Edit18;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);

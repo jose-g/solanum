@@ -1,6 +1,6 @@
 object frmSoilDS: TfrmSoilDS
-  Left = 350
-  Top = 255
+  Left = 827
+  Top = 276
   BorderStyle = bsDialog
   Caption = 'Soil Parameter'
   ClientHeight = 210
@@ -115,7 +115,8 @@ object frmSoilDS: TfrmSoilDS
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     Lines.Strings = (
-      'Initial soil water moisture')
+      'Initial soil water '
+      'moisture')
     ParentBiDiMode = False
     ParentFont = False
     ReadOnly = True
@@ -125,7 +126,7 @@ object frmSoilDS: TfrmSoilDS
     Left = 167
     Top = 63
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 5
   end
   object RichEdit2: TRichEdit
@@ -173,7 +174,7 @@ object frmSoilDS: TfrmSoilDS
     Left = 167
     Top = 112
     Width = 80
-    Height = 21
+    Height = 24
     TabOrder = 8
   end
   object RichEdit6: TRichEdit

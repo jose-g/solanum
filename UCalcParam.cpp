@@ -324,9 +324,9 @@ void __fastcall TfrmCalcParam::butProcessClick(TObject *Sender)
 {
 // get user input
 // validamos inputs
+  double datod;
   if(chkbtuberinit->Checked)
   {
-    double datod;
     try
     {
       datod=edtuberinit->Text.ToDouble();
@@ -430,8 +430,15 @@ void __fastcall TfrmCalcParam::butProcessClick(TObject *Sender)
       Application->MessageBox("There were a error during the process, please check your data !!!", "Warning!", MB_OK);
       return;
     }
-
-    double TIOnset=thermalDAP2(TT,day,tm,ndays,&error);
+  double TIOnset=0;
+  if(chkbtuberinit->Checked)
+  {
+    TIOnset=datod;
+  }
+  else
+  {
+    TIOnset=thermalDAP2(TT,day,tm,ndays,&error);
+  }
     if(error)
     {
       butProcess->Enabled=true;
@@ -493,10 +500,12 @@ void __fastcall TfrmCalcParam::butProcessClick(TObject *Sender)
 
 // simulacion
 // graficos
+/*
   if(chkbtuberinit->Checked)
   {
     tm=edtuberinit->Text.ToDouble();
   }
+*/
 
    GraficoCanopyCover(Wmax,te,tm,Tu,b,A,&error);
    if(error)
