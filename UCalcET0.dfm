@@ -1,10 +1,10 @@
 object frmCalcET0: TfrmCalcET0
-  Left = 591
-  Top = 44
+  Left = 799
+  Top = 26
   BorderIcons = [biHelp]
   BorderStyle = bsDialog
   Caption = 'Calculator ET0 y Sunshine'
-  ClientHeight = 780
+  ClientHeight = 840
   ClientWidth = 654
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -68,7 +68,7 @@ object frmCalcET0: TfrmCalcET0
   end
   object cmdCancel: TBitBtn
     Left = 443
-    Top = 729
+    Top = 793
     Width = 92
     Height = 30
     Caption = '&Cancel'
@@ -95,7 +95,7 @@ object frmCalcET0: TfrmCalcET0
   end
   object cmdApply: TBitBtn
     Left = 542
-    Top = 729
+    Top = 793
     Width = 92
     Height = 30
     Caption = '&Apply'
@@ -1057,9 +1057,9 @@ object frmCalcET0: TfrmCalcET0
       'San Ramon, Peru')
   end
   object butGenerateET0: TButton
-    Left = 374
-    Top = 660
-    Width = 238
+    Left = 78
+    Top = 740
+    Width = 211
     Height = 40
     Caption = 'Generate ET0 y Sunshine'
     TabOrder = 39
@@ -1076,12 +1076,76 @@ object frmCalcET0: TfrmCalcET0
   end
   object butSaveET0: TButton
     Left = 248
-    Top = 729
+    Top = 793
     Width = 189
     Height = 30
     Caption = 'Save ET0 y Sunshine ...'
     TabOrder = 41
     OnClick = butSaveET0Click
+  end
+  object gbCoeff: TGroupBox
+    Left = 352
+    Top = 640
+    Width = 289
+    Height = 113
+    TabOrder = 42
+    object chbCoeff: TCheckBox
+      Left = 8
+      Top = 16
+      Width = 265
+      Height = 17
+      Caption = 'Do you have transmissivity coeffcients?'
+      TabOrder = 0
+      OnClick = chbCoeffClick
+    end
+    object Edit1: TEdit
+      Left = 54
+      Top = 41
+      Width = 94
+      Height = 24
+      TabStop = False
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 1
+      Text = 'a coeffcient'
+    end
+    object Edit4: TEdit
+      Left = 54
+      Top = 73
+      Width = 94
+      Height = 24
+      TabStop = False
+      Color = 3696250
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 2
+      Text = 'b coeffcient'
+    end
+    object edCoeffA: TEdit
+      Left = 154
+      Top = 41
+      Width = 80
+      Height = 24
+      TabOrder = 3
+    end
+    object edCoeffB: TEdit
+      Left = 154
+      Top = 73
+      Width = 80
+      Height = 24
+      TabOrder = 4
+    end
   end
   object odClimate: TOpenDialog
     Options = [ofHideReadOnly, ofNoChangeDir, ofEnableSizing]

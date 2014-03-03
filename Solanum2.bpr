@@ -17,9 +17,9 @@
       UGraph3TwoSeries.obj UGraph4TwoSeries.obj UGraph5AM.obj UMainFS.obj 
       UCropParameterAM.obj UMainDS.obj UMainAM.obj USoilAM.obj UGraph6AM.obj 
       UGraph4AM.obj UGraph2AM.obj UGraph3AM.obj UReportGraphMenuPG.obj 
-      UCalcET0.obj UClimatePG.obj UClimateAM.obj clases\Solanum.obj 
-      UGraphBoxPlot.obj UClimate.obj UCalcParam.obj UEstadistico.obj 
-      UImportCropParameter.obj"/>
+      UCalcET0.obj UClimatePG.obj UClimateAM.obj clases\Solanum.obj UClimate.obj 
+      UCalcParam.obj UEstadistico.obj UImportCropParameter.obj UGraphBoxPlot.obj 
+      UGraphBoxPlot_DS.obj"/>
     <RESFILES value="Solanum2.res"/>
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES) ULogo.dfm UMenu.dfm UMainPG.dfm UMainNS.dfm 
@@ -32,8 +32,9 @@
       UGraph3TwoSeries.dfm UGraph4TwoSeries.dfm UGraph5AM.dfm UMainFS.dfm 
       UCropParameterAM.dfm UMainDS.dfm UMainAM.dfm USoilAM.dfm UGraph6AM.dfm 
       UGraph4AM.dfm UGraph2AM.dfm UGraph3AM.dfm UReportGraphMenuPG.dfm 
-      UCalcET0.dfm UClimatePG.dfm UClimateAM.dfm UGraphBoxPlot.dfm UClimate.dfm 
-      UCalcParam.dfm UEstadistico.dfm UImportCropParameter.dfm"/>
+      UCalcET0.dfm UClimatePG.dfm UClimateAM.dfm UClimate.dfm UCalcParam.dfm 
+      UEstadistico.dfm UImportCropParameter.dfm UGraphBoxPlot.dfm 
+      UGraphBoxPlot_DS.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value="TeePro7C6.lib TeeUI7C6.lib Tee7C6.lib bdertl.lib vclx.lib dbrtl.lib 
       vcldb.lib vcldbx.lib rtl.lib vcl.lib"/>
@@ -132,11 +133,12 @@
       <FILE FILENAME="UClimatePG.cpp" FORMNAME="frmClimatePG" UNITNAME="UClimatePG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UClimateAM.cpp" FORMNAME="frmClimateAM" UNITNAME="UClimateAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="clases\Solanum.cpp" FORMNAME="" UNITNAME="Solanum" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UGraphBoxPlot.cpp" FORMNAME="frmGraphBoxPlot" UNITNAME="UGraphBoxPlot" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UClimate.cpp" FORMNAME="frmClimate" UNITNAME="UClimate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UCalcParam.cpp" FORMNAME="frmCalcParam" UNITNAME="UCalcParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UEstadistico.cpp" FORMNAME="frmEstadistico" UNITNAME="UEstadistico" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UImportCropParameter.cpp" FORMNAME="frmImportCropParameter" UNITNAME="UImportCropParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlot.cpp" FORMNAME="frmGraphBoxPlot" UNITNAME="UGraphBoxPlot" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlot_DS.cpp" FORMNAME="frmGraphBoxPlot_DS" UNITNAME="UGraphBoxPlot_DS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

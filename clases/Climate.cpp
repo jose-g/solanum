@@ -29,8 +29,11 @@ Climate::Climate(int rec)
  ThermalCond=0;
  z=433;
  G=0.0;
+ a=0.0;
+ b=0.0;
  Albedo=0.23;
  haveSunshine=0;
+ haveCoeff=0;
  tminSelected=0;
  tmaxSelected=0;
  TT=0;
@@ -169,10 +172,13 @@ void Climate::CleanVariables()
   Hemisphere=1; // 1: Northern    -1:Southern
   z=0;
   G=0;
+  a=0.0;
+  b=0.0;
   Albedo=0;
   Select_Wind_cat=0;
   Select_AP=0;
   haveSunshine=0;
+  haveCoeff=0;
 }
 //------------------------------------------------------------------------------
 void Climate::Clone(Climate* other)
@@ -187,8 +193,11 @@ other->Select_Wind_cat=Select_Wind_cat;
 other->Select_AP=Select_AP;
 other->z=z;
 other->G=G;
+other->a=a;
+other->b=b;
 other->Albedo=Albedo;
 other->haveSunshine=haveSunshine;
+other->haveCoeff=haveCoeff;
 
 for(int i=0;i<RecNum;i++)
 {
@@ -673,7 +682,7 @@ void ClimateFile::Clone(ClimateFile* other)
 void Climate::CalcularET0()
 {
 // Declaracion de variables
-  double Tmax,Tmin,SR,n,P,Lat_deg,Lat_rad,u2,Tx,Tb,To,Th,a,b,PC,ea;
+  double Tmax,Tmin,SR,n,P,Lat_deg,Lat_rad,u2,Tx,Tb,To,Th,PC,ea;
   double Tc,Tav,W,Tac,Te,Rs,N;
   int day;
   double Xl,dp,PAR,eTx,eTm,es,S,Rnoc,TK4,dr,Ds,X,Ws,Ra,Max_Tr,Rso,Rnoc_rel,Rnol,Rn;
@@ -689,6 +698,44 @@ void Climate::CalcularET0()
   Hemisphere=Hemisphere;
   Lat_deg=(Lat_Degrees+Lat_Minutes/60.0+Lat_Seconds/(60.0*60.0))*Hemisphere;
   Lat_rad=Lat_deg*(pi/180.0);
+
+  if(haveCoeff==0)
+  {
+  switch(Select_AP)
+  {
+    case 1:
+      a=0.29;
+      b=0.42;
+    break;
+    case 2:
+      a=0.211;
+      b=0.467;
+    break;
+    case 3:
+      a=0.231;
+      b=0.521;
+    break;
+    case 4:
+      a=0.397;
+      b=0.379;
+    break;
+    case 5:
+      a=0.378;
+      b=0.438;
+    break;
+    case 6:
+      a=0.282;
+      b=0.562;
+    break;
+    case 7:
+      a=0.301;
+      b=0.377;
+    break;
+    default:
+    break;
+  };
+  }
+
   switch(Select_Wind_cat)
   {
     case 1:
@@ -724,39 +771,6 @@ void Climate::CalcularET0()
     break;
   };
 
-  switch(Select_AP)
-  {
-    case 1:
-      a=0.29;
-      b=0.42;
-    break;
-    case 2:
-      a=0.211;
-      b=0.467;
-    break;
-    case 3:
-      a=0.231;
-      b=0.521;
-    break;
-    case 4:
-      a=0.397;
-      b=0.379;
-    break;
-    case 5:
-      a=0.378;
-      b=0.438;
-    break;
-    case 6:
-      a=0.282;
-      b=0.562;
-    break;
-    case 7:
-      a=0.301;
-      b=0.377;
-    break;
-    default:
-    break;
-  };
   PC=(Cp*P)/(E*L);
   day=0;  // falta definir
   Xl=0.0;

@@ -45,11 +45,12 @@ USEFORM("UReportGraphMenuPG.cpp", frmReportGraphMenuPG);
 USEFORM("UCalcET0.cpp", frmCalcET0);
 USEFORM("UClimatePG.cpp", frmClimatePG);
 USEFORM("UClimateAM.cpp", frmClimateAM);
-USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
 USEFORM("UClimate.cpp", frmClimate);
 USEFORM("UCalcParam.cpp", frmCalcParam);
 USEFORM("UEstadistico.cpp", frmEstadistico);
 USEFORM("UImportCropParameter.cpp", frmImportCropParameter);
+USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
+USEFORM("UGraphBoxPlot_DS.cpp", frmGraphBoxPlot_DS);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

@@ -35,6 +35,7 @@
      double G;
      double Albedo;
      int haveSunshine;
+     int haveCoeff;
      void Clone(Climate*);
      double* tminSelected;
      double* tmaxSelected;
@@ -45,6 +46,8 @@
      int setTmax(double*,int);
      int setTT(double*,int);
      bool saveTT(char*);
+     double a;
+     double b;
    private:
   };
   class ClimateFile : public Climate

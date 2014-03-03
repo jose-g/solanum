@@ -66,6 +66,12 @@ __published:	// IDE-managed Components
         TCheckBox *chbSunshine;
         TButton *butSaveET0;
         TSaveDialog *sdResult;
+        TGroupBox *gbCoeff;
+        TCheckBox *chbCoeff;
+        TEdit *Edit1;
+        TEdit *Edit4;
+        TEdit *edCoeffA;
+        TEdit *edCoeffB;
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
@@ -77,6 +83,7 @@ __published:	// IDE-managed Components
         void __fastcall butGenerateET0Click(TObject *Sender);
         void __fastcall chbSunshineClick(TObject *Sender);
         void __fastcall butSaveET0Click(TObject *Sender);
+        void __fastcall chbCoeffClick(TObject *Sender);
 private:	// User declarations
         bool Validate();
         TEdit* FindDataError(int*);

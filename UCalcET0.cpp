@@ -99,6 +99,9 @@ void TfrmCalcET0::CopyValuesToCondTemp()
    condTemp->Select_Wind_cat=cond->Select_Wind_cat;
    condTemp->ThermalCond=cond->ThermalCond;
    condTemp->Select_AP=cond->Select_AP;
+   condTemp->haveCoeff=cond->haveCoeff;
+   condTemp->a=cond->a;
+   condTemp->b=cond->b;
 }
 //---------------------------------------------------------------------------
 void TfrmCalcET0::PutValuesOnForm()
@@ -108,6 +111,8 @@ void TfrmCalcET0::PutValuesOnForm()
    edMaxTemp->Text=condTemp->TitTMax;
    edRad->Text=condTemp->TitRad;
    edSunshine->Text=condTemp->TitSunshine;
+   edCoeffA->Text=condTemp->a;
+   edCoeffB->Text=condTemp->b;
 
    if(condTemp->RecNum==0)
    {
@@ -159,6 +164,16 @@ void TfrmCalcET0::PutValuesOnForm()
      chbSunshine->Checked=false;
      edSunshine->Enabled=false;
      cmdSunshine->Enabled=false;
+   }
+   if(condTemp->haveCoeff==1)
+   {
+     cbSelect_AP->Enabled=false;
+     chbCoeff->Checked=true;
+   }
+   else
+   {
+     cbSelect_AP->Enabled=true;
+     chbCoeff->Checked=false;
    }
 }
 //---------------------------------------------------------------------------
@@ -262,6 +277,24 @@ TEdit* TfrmCalcET0::FindDataError(int* _cod)
     *_cod=2; // 2: No es un valor real
     return edAlbedo;
   }
+  try
+  {
+    datod=edCoeffA->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edCoeffA;
+  }
+  try
+  {
+    datod=edCoeffB->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edCoeffB;
+  }
   return edLatDegree;
 }
 //---------------------------------------------------------------------------
@@ -327,6 +360,19 @@ void TfrmCalcET0::SaveData()
    {
      cond->haveSunshine=0;
    }
+
+   cond->a=edCoeffA->Text.ToDouble();
+   cond->b=edCoeffB->Text.ToDouble();
+
+   if(chbCoeff->Checked)
+   {
+     cond->haveCoeff=1;
+   }
+   else
+   {
+     cond->haveCoeff=0;
+   }
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmCalcET0::FormClose(TObject *Sender,
@@ -444,6 +490,18 @@ void __fastcall TfrmCalcET0::butGenerateET0Click(TObject *Sender)
    {
      condTemp->haveSunshine=0;
    }
+   if(chbCoeff->Checked)
+   {
+     condTemp->haveCoeff=1;
+     condTemp->a=edCoeffA->Text.ToDouble();
+     condTemp->b=edCoeffB->Text.ToDouble();
+   }
+   else
+   {
+     condTemp->haveCoeff=0;
+     condTemp->a=0.0;
+     condTemp->b=0.0;
+   }
    condTemp->CalcularET0();
    sgClimate->RowCount=condTemp->RecNum+2;
    for(int i=1;i<=condTemp->RecNum;i++)
@@ -481,6 +539,23 @@ void __fastcall TfrmCalcET0::butSaveET0Click(TObject *Sender)
     {
     Application->MessageBox("Information about Evapotranspiration and Sunshine were saved!", "Successful!", MB_OK);
     }
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmCalcET0::chbCoeffClick(TObject *Sender)
+{
+  if(chbCoeff->Checked)
+  {
+     edCoeffA->Enabled=true;
+     edCoeffB->Enabled=true;
+     cbSelect_AP->Enabled=false;
+  }
+  else
+  {
+     edCoeffA->Enabled=false;
+     edCoeffB->Enabled=false;
+     cbSelect_AP->Enabled=true;
   }
 }
 //---------------------------------------------------------------------------

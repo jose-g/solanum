@@ -2024,11 +2024,11 @@ object frmAbout: TfrmAbout
     Height = 454
     TabOrder = 1
     object Label1: TLabel
-      Left = 156
+      Left = 158
       Top = 20
-      Width = 187
+      Width = 168
       Height = 27
-      Caption = 'SOLANUM v2.3.5'
+      Caption = 'SOLANUM v2.4'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 4210816
       Font.Height = -23
