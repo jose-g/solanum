@@ -33,12 +33,12 @@ void __fastcall TfrmGraphBoxPlot::FormShow(TObject *Sender)
   string line;
   char chnumrep[20];
   char data1[20];
+  char data2[20];
   int numrep;
   double valor;
   int day;
   double gci_sim_s,gai_sim_s;
   AnsiString titulo;
-//  tch1->Series[0]->Clear();
   double max=0.0;
   int contScenario=0;
   for(i=1;!in.eof();i++)
@@ -53,20 +53,17 @@ void __fastcall TfrmGraphBoxPlot::FormShow(TObject *Sender)
     box[contScenario]->WhiskerPen->Color=clYellow;
     tch1->AddSeries(box[contScenario]);
     tch1->Series[contScenario]->Clear();
+
     for(int idato=0;idato<numrep;idato++)
     {
       getline(in,line,'\n');
-      fscanf(pFile,"%s\n",&data1);
+      fscanf(pFile,"%s %s\n",&data1,&data2);
       valor=strtod(data1,NULL);
       tch1->Series[contScenario]->Add(valor,contScenario+1,clRed);
-//      tch1->Series[contScenario]->Add(valor,"hola",clRed);
     }
     contScenario++;
-//    titulo=AnsiString(i);
   }
-//  tch1->Series[0]->
   in.close();
   fclose(pFile);
-//  Edit1->Text=i-1;
 }
 //---------------------------------------------------------------------------

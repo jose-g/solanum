@@ -3,11 +3,8 @@
 #include <io.h>
 #pragma hdrstop
 #include "UReportGraphMenuTwoSeries.h"
-//#include "UGraph2TwoSeries.h"
-//#include "UGraph3TwoSeries.h"
-//#include "UGraph4TwoSeries.h"
 #include "UGraph6TwoSeries.h"
-#include "UGraphBoxPlot.h"
+#include "UGraphBoxPlot_DS.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -109,7 +106,7 @@ void __fastcall TfrmReportGraphMenuTwoSeries::Button5Click(TObject *Sender)
   }
   else
   {
-    TfrmGraphBoxPlot *frm = new TfrmGraphBoxPlot(this);
+    TfrmGraphBoxPlot_DS *frm = new TfrmGraphBoxPlot_DS(this);
     frm->EnterInformation(cond->rBoxPlotfty);
     frm->ShowModal();
     delete frm;

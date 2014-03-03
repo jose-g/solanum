@@ -112,6 +112,7 @@
   void CalcularTT(double*,double*);
   double GetMedian(double*,int);
   double ult_fty[100];
+  double ult_fty2[100];
   double ExpFreshYield;
   double MinFreshYield;
   double MaxFreshYield;

@@ -1153,9 +1153,6 @@ int Simulation::CalculatesAfterSimulation()
       double sumatoria=0.0;
       for(int irep=0;irep<time->repetitions;irep++)
       {
-        double borrar1=fty[irep][iday];
-        double borrar2=Xfty[iday];
-
         diffEstX[irep]=fty[irep][iday]-Xfty[iday];
         diffEstXPow2[irep]=pow(diffEstX[irep],2);
         sumatoria=sumatoria+diffEstXPow2[irep];
@@ -1325,12 +1322,15 @@ int Simulation::SaveOutputs()
   // ordenar vector antes de guardar en archivo
   std::vector<double> myvector (ult_fty, ult_fty+time->repetitions);
   sort (myvector.begin(), myvector.end(), myobject);
+  // vector rendimiento potencial
+  std::vector<double> myvectorPot (ult_fty2, ult_fty2+time->repetitions);
+  sort (myvectorPot.begin(), myvectorPot.end(), myobject);
   //
   fprintf(streamBoxPlotfty,"%i\n",time->repetitions);
   for(int irep=0;irep<time->repetitions;irep++)
   {
 //    fprintf(streamBoxPlotfty,"%f\n",float(ult_fty[irep]));
-    fprintf(streamBoxPlotfty,"%f\n",float(myvector[irep]));
+    fprintf(streamBoxPlotfty,"%f %f\n",float(myvector[irep]),float(myvectorPot[irep]));
   }
 //
   fclose(stream1);
@@ -1977,9 +1977,7 @@ void Simulation::CleanVectorObserved()
 int Simulation::simulate()
 {
 Just_simulate3();
-//NumberScenario++;
 CalculatesAfterSimulation();
-//SaveOutputs();
 return 0;
 }
 //------------------------------------------------------------------------------
@@ -2830,11 +2828,12 @@ d=t50-te;
       switch (idModel)  // 1: Potential Growth , 2:Drought , 3:Nitrogen Stress , 4:Frost
       {
         case 1 : ult_fty[isim]=fty[isim][time->duration-1];
-        break;
+                 break;
         case 2 : ult_fty[isim]=ftyw[isim][time->duration-1];
-        break;
+                 ult_fty2[isim]=fty[isim][time->duration-1];
+                 break;
         case 3 : ult_fty[isim]=ftyn[isim][time->duration-1];
-        break;
+                 break;
         case 4 : ult_fty[isim]=ftyf[isim][time->duration-1];
       }
 
