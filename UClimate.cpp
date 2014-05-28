@@ -9,6 +9,7 @@
 #include "UCampo.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "GIFImage"
 #pragma resource "*.dfm"
 TfrmClimate *frmClimate;
 //---------------------------------------------------------------------------
@@ -297,77 +298,6 @@ void TfrmClimate::SaveData()
    }
 }
 //---------------------------------------------------------------------------
-void __fastcall TfrmClimate::cmdOpenClimateClick(TObject *Sender)
-{
-  if(odClimate->Execute())
-  {
-     FileData *util=new FileData();
-     int numTemp=0;
-     if(odClimate->FilterIndex==1)
-     {
-       numTemp = util->GetFieldsNameFromCSVFile(ListTemp,odClimate->FileName.c_str());
-     }
-     if(odClimate->FilterIndex==2)
-     {
-       numTemp = util->GetFieldsName(ListTemp,odClimate->FileName.c_str());
-     }
-     delete util;
-     // si se captura los titulos
-if(numTemp>0)
-{
-     FileData *util=new FileData();
-     if(odClimate->FilterIndex==1)
-     {
-       num = util->GetFieldsNameFromCSVFile(List,odClimate->FileName.c_str());
-     }
-     if(odClimate->FilterIndex==2)
-     {
-       num = util->GetFieldsName(List,odClimate->FileName.c_str());
-     }
-     delete util;
-     
-   edPathFile -> Text = odClimate->FileName;
-   strcpy(condTemp->FileName,odClimate->FileName.c_str());
-
-   condTemp->CleanTitles();
-   edDay  -> Text = "";
-   edMonth  -> Text = "";
-   edYear  -> Text = "";
-   edMinTemp  -> Text = "";
-   edMaxTemp  -> Text = "";
-   edPrecip   -> Text = "";
-   edRad      -> Text = "";
-   edET      -> Text = "";
-   edIrri      -> Text = "";
-   edSoilTemp      -> Text = "";
-   edSunshine      -> Text = "";
-   condTemp->CleanVectorClimate();
-
-   if(odClimate->FilterIndex==1)
-   {
-     condTemp->RecNum=condTemp->CountRegistersFromCSVFile(condTemp->FileName);
-   }
-   if(odClimate->FilterIndex==2)
-   {
-     condTemp->RecNum=condTemp->CountRegisters(condTemp->FileName);
-   }
-   sgClimate->RowCount=condTemp->RecNum+2;
-   for(int i=2;i<=sgClimate->RowCount;i++)
-   {
-     for(int j=1;j<=12;j++)
-     {
-       sgClimate->Cells[j][i]="";
-     }
-     sgClimate->Cells[0][i]=i-1;
-   }
-}
-else
-{
-  Application->MessageBox("No information on the climate file!", "Warning!", MB_OK);
-}
-}
-}
-//---------------------------------------------------------------------------
 void __fastcall TfrmClimate::cmdMinTempClick(TObject *Sender)
 {
   TfrmCampo *frm = new TfrmCampo(this);
@@ -590,4 +520,152 @@ void __fastcall TfrmClimate::cmdYearClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TfrmClimate::butLoadClimateDatabaseClick(TObject *Sender)
+{
+  AnsiString archivo;
+  if(odClimateSetting->Execute())
+  {
+     FileData *util=new FileData();
+     if(odClimateSetting->FilterIndex==1)
+     {
+       num = util->GetFieldsNameFromCSVFile(List,odClimateSetting->FileName.c_str());
+     }
+     delete util;
+
+    archivo=odClimateSetting->FileName;
+    strcpy(condTemp->FileName,archivo.c_str());
+    condTemp->loadClimateSettingCSVFile(archivo.c_str());
+
+    edPathFile->Text=archivo;
+
+
+    edDay->Text=condTemp->TitDay;
+    edMonth->Text=condTemp->TitMonth;
+    edYear->Text=condTemp->TitYear;
+    edMinTemp->Text=condTemp->TitTMin;
+    edMaxTemp->Text=condTemp->TitTMax;
+    edPrecip->Text=condTemp->TitPrec;
+    edRad->Text=condTemp->TitRad;
+    edET->Text=condTemp->TitET;
+    edIrri->Text=condTemp->TitIrri;
+    edSoilTemp->Text=condTemp->TitSoilTemp;
+    edSunshine->Text=condTemp->TitSunshine;
+
+   if(condTemp->RecNum==0)
+   {
+     sgClimate->RowCount=3;
+   }
+   else
+   {
+     sgClimate->RowCount=condTemp->RecNum+2;
+   }
+
+   for(int i=1;i<=condTemp->RecNum;i++)
+   {
+     sgClimate->RowHeights[i+1] = 18;
+     sgClimate->Cells[0][i+1]   = i;
+     sgClimate->Cells[1][i+1]   = condTemp->Day[i-1];
+     sgClimate->Cells[2][i+1]   = condTemp->Month[i-1];
+     sgClimate->Cells[3][i+1]   = condTemp->Year[i-1];
+     sgClimate->Cells[5][i+1]   = condTemp->MinTemp[i-1];
+     sgClimate->Cells[6][i+1]   = condTemp->MaxTemp[i-1];
+     sgClimate->Cells[7][i+1]   = condTemp->Precipit[i-1];
+     sgClimate->Cells[8][i+1]   = condTemp->Radiation[i-1];
+     sgClimate->Cells[9][i+1]   = condTemp->ET[i-1];
+     sgClimate->Cells[10][i+1]   = condTemp->Irri[i-1];
+     sgClimate->Cells[11][i+1]   = condTemp->SoilTemp[i-1];
+     sgClimate->Cells[12][i+1]   = FormatFloat("00.00",condTemp->Sunshine[i-1]);
+   }
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmClimate::butSaveClimateDatabaseClick(TObject *Sender)
+{
+  AnsiString NomArchivo;
+  bool exito=false;
+  if(sdSave->Execute())
+  {
+    NomArchivo=sdSave->FileName;
+    exito=condTemp->saveClimateSettingCSVFile(NomArchivo.c_str());
+    if(exito)
+    {
+      Application->MessageBox("Information about climate setting were saved!", "Successful!", MB_OK);
+    }
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmClimate::butImportClimateDataClick(TObject *Sender)
+{
+  if(odClimate->Execute())
+  {
+     FileData *util=new FileData();
+     int numTemp=0;
+     if(odClimate->FilterIndex==1)
+     {
+       numTemp = util->GetFieldsNameFromCSVFile(ListTemp,odClimate->FileName.c_str());
+     }
+     if(odClimate->FilterIndex==2)
+     {
+       numTemp = util->GetFieldsName(ListTemp,odClimate->FileName.c_str());
+     }
+     delete util;
+     // si se captura los titulos
+if(numTemp>0)
+{
+     FileData *util=new FileData();
+     if(odClimate->FilterIndex==1)
+     {
+       num = util->GetFieldsNameFromCSVFile(List,odClimate->FileName.c_str());
+     }
+     if(odClimate->FilterIndex==2)
+     {
+       num = util->GetFieldsName(List,odClimate->FileName.c_str());
+     }
+     delete util;
+
+   edPathFile -> Text = odClimate->FileName;
+   strcpy(condTemp->FileName,odClimate->FileName.c_str());
+
+   condTemp->CleanTitles();
+   edDay  -> Text = "";
+   edMonth  -> Text = "";
+   edYear  -> Text = "";
+   edMinTemp  -> Text = "";
+   edMaxTemp  -> Text = "";
+   edPrecip   -> Text = "";
+   edRad      -> Text = "";
+   edET      -> Text = "";
+   edIrri      -> Text = "";
+   edSoilTemp      -> Text = "";
+   edSunshine      -> Text = "";
+   condTemp->CleanVectorClimate();
+
+   if(odClimate->FilterIndex==1)
+   {
+     condTemp->RecNum=condTemp->CountRegistersFromCSVFile(condTemp->FileName);
+   }
+   if(odClimate->FilterIndex==2)
+   {
+     condTemp->RecNum=condTemp->CountRegisters(condTemp->FileName);
+   }
+   sgClimate->RowCount=condTemp->RecNum+2;
+   for(int i=2;i<=sgClimate->RowCount;i++)
+   {
+     for(int j=1;j<=12;j++)
+     {
+       sgClimate->Cells[j][i]="";
+     }
+     sgClimate->Cells[0][i]=i-1;
+   }
+}
+else
+{
+  Application->MessageBox("No information on the climate file!", "Warning!", MB_OK);
+}
+}
+}
+//---------------------------------------------------------------------------
 

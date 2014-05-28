@@ -104,6 +104,7 @@ void TfrmCropParameterPG::PutValuesOnForm()
   }
 //   cbCrop->ItemIndex=cond->SelectedCrop;
    edNameCrop->Text=cond->cropname;
+   edPlantDensity->Text=cond->plant->N;
    edMaxgc->Text=cond->plant->fcl;
    edIniLig->Text=cond->plant->F0;
    edIniGro->Text=cond->plant->R0;
@@ -278,6 +279,16 @@ TEdit* TfrmCropParameterPG::FindDataError(int* _cod)
   int datoi=0;
   try
   {
+    datod=edPlantDensity->Text.ToDouble();
+  }
+  catch(...)
+  {
+    *_cod=2; // 2: No es un valor real
+    return edPlantDensity;
+  }
+  
+  try
+  {
     datod=edMaxgc->Text.ToDouble();
   }
   catch(...)
@@ -439,6 +450,7 @@ void TfrmCropParameterPG::SaveData()
 {
    cond->SelectedCrop = sgCrop->Row-2;
    strcpy(cond->cropname,edNameCrop->Text.c_str());
+   cond->plant->N=edPlantDensity->Text.ToDouble();   
    cond->plant->fcl=edMaxgc->Text.ToDouble();
    cond->plant->F0=edIniLig->Text.ToDouble();
    cond->plant->R0=edIniGro->Text.ToDouble();

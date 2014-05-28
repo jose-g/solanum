@@ -5,11 +5,11 @@
 //---------------------------------------------------------------------------
 USEFORM("ULogo.cpp", frmLogo);
 USEFORM("UMenu.cpp", frmMenu);
-USEFORM("UMainPG.cpp", frmMainPG);
+USEFORM("UMainPG_AMY.cpp", frmMainPG_AMY);
 USEFORM("UMainNS.cpp", frmMainNS);
 USEFORM("clases\UReportGraphMenuTwoSeries.cpp", frmReportGraphMenuTwoSeries);
 USEFORM("UReportTXTMenu.cpp", frmReportTXTMenu);
-USEFORM("UReportTXT.cpp", frmReportTXT);
+USEFORM("UReportTableMYA_PG.cpp", frmReportTableMYA_PG);
 USEFORM("USimulationTime.cpp", frmSimulationTime);
 USEFORM("UAbout.cpp", frmAbout);
 USEFORM("UCampo.cpp", frmCampo);
@@ -49,8 +49,11 @@ USEFORM("UClimate.cpp", frmClimate);
 USEFORM("UCalcParam.cpp", frmCalcParam);
 USEFORM("UEstadistico.cpp", frmEstadistico);
 USEFORM("UImportCropParameter.cpp", frmImportCropParameter);
-USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
+USEFORM("UGraphBoxPlotMYA.cpp", frmGraphBoxPlotMYA);
 USEFORM("UGraphBoxPlot_DS.cpp", frmGraphBoxPlot_DS);
+USEFORM("UMainPG.cpp", frmMainPG);
+USEFORM("UReportTXT.cpp", frmReportTXT);
+USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

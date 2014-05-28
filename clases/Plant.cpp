@@ -21,7 +21,7 @@ void Plant::CleanVariables()
   t50  =0.0;
   LUE  =0.0;
   EDay =0;
-  v    =0.0;
+  v    =0.075; // by default is 0.075
   t0   =0.0;
 }
 void Plant::Clone(Plant* other)

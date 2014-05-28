@@ -3,48 +3,48 @@ object frmAbout: TfrmAbout
   Top = 214
   BorderStyle = bsDialog
   Caption = 'About model'
-  ClientHeight = 692
-  ClientWidth = 501
+  ClientHeight = 589
+  ClientWidth = 478
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Label14: TLabel
-    Left = 20
-    Top = 463
-    Width = 68
-    Height = 16
+    Left = 56
+    Top = 384
+    Width = 57
+    Height = 13
     Caption = 'Contact us :'
   end
   object Label15: TLabel
-    Left = 20
-    Top = 482
-    Width = 326
-    Height = 16
+    Left = 56
+    Top = 400
+    Width = 258
+    Height = 13
     Caption = 'Production Systems and the Environment Sub-Program'
   end
   object Label16: TLabel
-    Left = 20
-    Top = 502
-    Width = 152
-    Height = 16
+    Left = 56
+    Top = 416
+    Width = 124
+    Height = 13
     Caption = 'R.QUIROZ@CGIAR.ORG'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
-    Font.Height = -15
+    Font.Height = -12
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsUnderline]
     ParentFont = False
   end
   object Image2: TImage
-    Left = 28
-    Top = 556
+    Left = 23
+    Top = 460
     Width = 100
     Height = 100
     AutoSize = True
@@ -991,8 +991,8 @@ object frmAbout: TfrmAbout
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   end
   object Image3: TImage
-    Left = 144
-    Top = 536
+    Left = 133
+    Top = 444
     Width = 234
     Height = 134
     AutoSize = True
@@ -1942,20 +1942,20 @@ object frmAbout: TfrmAbout
       FADAF4EBD6BEE8D34D1A69A34D3469A6BFFFD9}
   end
   object GroupBox2: TGroupBox
-    Left = 394
-    Top = 579
-    Width = 96
-    Height = 92
+    Left = 384
+    Top = 502
+    Width = 78
+    Height = 75
     Caption = 'GroupBox2'
     TabOrder = 0
     object SpeedButton4: TSpeedButton
-      Left = 27
-      Top = 37
-      Width = 43
-      Height = 43
+      Left = 22
+      Top = 30
+      Width = 35
+      Height = 35
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       Glyph.Data = {
@@ -1976,10 +1976,10 @@ object frmAbout: TfrmAbout
       OnClick = SpeedButton4Click
     end
     object RichEdit2: TRichEdit
-      Left = 15
-      Top = 6
-      Width = 70
-      Height = 27
+      Left = 12
+      Top = 5
+      Width = 57
+      Height = 22
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
@@ -1987,7 +1987,7 @@ object frmAbout: TfrmAbout
       Color = clBlack
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentBiDiMode = False
@@ -1996,17 +1996,17 @@ object frmAbout: TfrmAbout
       TabOrder = 1
     end
     object RichEdit1: TRichEdit
-      Left = 10
+      Left = 8
       Top = 0
-      Width = 70
-      Height = 27
+      Width = 57
+      Height = 22
       TabStop = False
       Alignment = taCenter
       BiDiMode = bdLeftToRight
       Color = 12713983
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clMaroon
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       Lines.Strings = (
@@ -2018,230 +2018,230 @@ object frmAbout: TfrmAbout
     end
   end
   object GroupBox1: TGroupBox
-    Left = 10
-    Top = 0
-    Width = 484
-    Height = 454
+    Left = 16
+    Top = 8
+    Width = 449
+    Height = 369
     TabOrder = 1
     object Label1: TLabel
-      Left = 158
-      Top = 20
-      Width = 168
-      Height = 27
-      Caption = 'SOLANUM v2.4'
+      Left = 155
+      Top = 16
+      Width = 139
+      Height = 22
+      Caption = 'SOLANUM v2.5'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 4210816
-      Font.Height = -23
+      Font.Height = -19
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 60
-      Top = 49
-      Width = 354
-      Height = 24
+      Left = 82
+      Top = 40
+      Width = 285
+      Height = 19
       Caption = 'A potato production simulation model'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
-      Font.Height = -20
+      Font.Height = -16
       Font.Name = 'Arial'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 17
-      Top = 98
-      Width = 432
-      Height = 16
+      Left = 38
+      Top = 80
+      Width = 343
+      Height = 13
       Caption = 
         'The design, structure and development of this computer simulatio' +
         'n model'
     end
     object Label4: TLabel
-      Left = 52
-      Top = 117
-      Width = 384
-      Height = 16
+      Left = 66
+      Top = 95
+      Width = 309
+      Height = 13
       Caption = 'was conducted within the Integrated Crop and Systems Research'
     end
     object Label5: TLabel
-      Left = 37
-      Top = 295
-      Width = 198
-      Height = 16
+      Left = 54
+      Top = 240
+      Width = 161
+      Height = 13
       Caption = 'Roberto Quiroz Guerra, Ph.D. (PI) '
     end
     object Label7: TLabel
-      Left = 37
-      Top = 417
-      Width = 161
-      Height = 16
+      Left = 54
+      Top = 339
+      Width = 129
+      Height = 13
       Caption = 'Javier Osorio Leyton, Ph.D.'
     end
     object Label8: TLabel
-      Left = 37
-      Top = 368
-      Width = 171
-      Height = 16
+      Left = 54
+      Top = 299
+      Width = 134
+      Height = 13
       Caption = 'Jos'#233' Guerrero Romero, Eng.'
     end
     object Label9: TLabel
-      Left = 37
-      Top = 343
-      Width = 141
-      Height = 16
+      Left = 54
+      Top = 279
+      Width = 116
+      Height = 13
       Caption = 'Bruno Condori Al'#237', Ph.D.'
     end
     object Label10: TLabel
-      Left = 273
-      Top = 417
-      Width = 111
-      Height = 16
+      Left = 246
+      Top = 339
+      Width = 84
+      Height = 13
       Caption = 'Systems modeling'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label12: TLabel
-      Left = 273
-      Top = 295
-      Width = 192
-      Height = 16
+      Left = 246
+      Top = 240
+      Width = 148
+      Height = 13
       Caption = 'Biochemistry/Systems modeling'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label13: TLabel
-      Left = 273
-      Top = 368
-      Width = 110
-      Height = 16
+      Left = 246
+      Top = 299
+      Width = 87
+      Height = 13
       Caption = 'Computer Science'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 273
-      Top = 343
-      Width = 154
-      Height = 16
+      Left = 246
+      Top = 279
+      Width = 119
+      Height = 13
       Caption = 'Agronomy/Crop modeling'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label11: TLabel
-      Left = 37
-      Top = 319
-      Width = 134
-      Height = 16
+      Left = 54
+      Top = 259
+      Width = 106
+      Height = 13
       Caption = 'Carolina Barreda, M.S.'
     end
     object Label17: TLabel
-      Left = 273
-      Top = 319
-      Width = 192
-      Height = 16
+      Left = 246
+      Top = 259
+      Width = 147
+      Height = 13
       Caption = 'Agronomy/Applied meteorology'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label18: TLabel
-      Left = 37
-      Top = 393
-      Width = 157
-      Height = 16
+      Left = 54
+      Top = 319
+      Width = 126
+      Height = 13
       Caption = 'Carla Gavil'#225'n Fortoul, M.S.'
     end
     object Label22: TLabel
-      Left = 30
-      Top = 256
-      Width = 293
-      Height = 16
+      Left = 48
+      Top = 208
+      Width = 240
+      Height = 13
       Caption = 'CIP-Integrated Crop and System Research'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Label27: TLabel
-      Left = 32
-      Top = 135
-      Width = 431
-      Height = 16
+      Left = 50
+      Top = 110
+      Width = 341
+      Height = 13
       Caption = 
         ' global program / Production Systems and the Environment Sub-Pro' +
         'gram'
     end
     object Label19: TLabel
-      Left = 273
-      Top = 393
-      Width = 141
-      Height = 16
+      Left = 246
+      Top = 319
+      Width = 111
+      Height = 13
       Caption = 'Agronomy/Soil Science'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
     end
     object Label23: TLabel
-      Left = 38
-      Top = 155
-      Width = 408
-      Height = 16
+      Left = 55
+      Top = 126
+      Width = 331
+      Height = 13
       Caption = 
         'of the International Potato Center.  The work was financially su' +
         'pported'
     end
     object Label24: TLabel
-      Left = 46
-      Top = 175
-      Width = 396
-      Height = 16
+      Left = 61
+      Top = 142
+      Width = 318
+      Height = 13
       Caption = 'by the Canadian International Development Agency and the CGIAR'
     end
     object Label26: TLabel
-      Left = 23
-      Top = 194
-      Width = 446
-      Height = 16
+      Left = 43
+      Top = 158
+      Width = 354
+      Height = 13
       Caption = 
         'research Programs on root, tubers and bananas (RTB), and climate' +
         ' change'
     end
     object Label29: TLabel
-      Left = 132
-      Top = 214
-      Width = 225
-      Height = 16
+      Left = 131
+      Top = 174
+      Width = 179
+      Height = 13
       Caption = 'agriculture and food security (CCAFS).'
     end
     object Panel1: TPanel
-      Left = 14
-      Top = 18
+      Left = 35
+      Top = 15
       Width = 36
       Height = 36
       AutoSize = True
@@ -2251,8 +2251,8 @@ object frmAbout: TfrmAbout
       object Image1: TImage
         Left = 2
         Top = 2
-        Width = 40
-        Height = 40
+        Width = 32
+        Height = 32
         AutoSize = True
         Picture.Data = {
           055449636F6E0000010001002020000001000800A80800001600000028000000

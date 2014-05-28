@@ -1,9 +1,9 @@
 object frmCropParameterNS: TfrmCropParameterNS
-  Left = 419
-  Top = 13
+  Left = 665
+  Top = 93
   BorderStyle = bsDialog
   Caption = 'Crop parameter'
-  ClientHeight = 902
+  ClientHeight = 831
   ClientWidth = 762
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -42,8 +42,8 @@ object frmCropParameterNS: TfrmCropParameterNS
     Visible = False
   end
   object cmdCancel: TBitBtn
-    Left = 561
-    Top = 858
+    Left = 553
+    Top = 786
     Width = 93
     Height = 31
     Caption = '&Cancel'
@@ -69,8 +69,8 @@ object frmCropParameterNS: TfrmCropParameterNS
     NumGlyphs = 2
   end
   object cmdApply: TBitBtn
-    Left = 660
-    Top = 858
+    Left = 652
+    Top = 786
     Width = 92
     Height = 31
     Caption = '&Apply'
@@ -100,7 +100,7 @@ object frmCropParameterNS: TfrmCropParameterNS
     Left = 10
     Top = 345
     Width = 365
-    Height = 286
+    Height = 248
     Caption = '  Leaf Area  '
     TabOrder = 0
     object RichEdit7: TRichEdit
@@ -408,7 +408,7 @@ object frmCropParameterNS: TfrmCropParameterNS
     Left = 384
     Top = 345
     Width = 366
-    Height = 286
+    Height = 248
     Caption = '  Leaf Area  '
     TabOrder = 1
     object RichEdit9: TRichEdit
@@ -608,9 +608,9 @@ object frmCropParameterNS: TfrmCropParameterNS
   end
   object GroupBox3: TGroupBox
     Left = 10
-    Top = 728
+    Top = 696
     Width = 740
-    Height = 119
+    Height = 73
     TabOrder = 2
     object RichEdit14: TRichEdit
       Left = 30
@@ -627,7 +627,7 @@ object frmCropParameterNS: TfrmCropParameterNS
       Font.Style = []
       Lines.Strings = (
         'Average radiation use '
-        'efficiency')
+        'efficiency (RUE)')
       ParentBiDiMode = False
       ParentFont = False
       ReadOnly = True
@@ -900,7 +900,7 @@ object frmCropParameterNS: TfrmCropParameterNS
   end
   object GroupBox4: TGroupBox
     Left = 10
-    Top = 636
+    Top = 604
     Width = 740
     Height = 80
     TabOrder = 15

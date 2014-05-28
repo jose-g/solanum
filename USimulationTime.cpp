@@ -30,12 +30,19 @@ void __fastcall TfrmSimulationTime::cmdSimulateClick(TObject *Sender)
 void TfrmSimulationTime::PutValuesOnForm()
 {
   int anio=0;
-  for(int i=0;i<cond->climate->RecNum;i++)
+  if(cond->idModel==6)
   {
-    if(anio!=cond->climate->Year[i])
+    cbYear->Items->Add("All years");
+  }
+  else
+  {
+    for(int i=0;i<cond->climate->RecNum;i++)
     {
-      cbYear->Items->Add(cond->climate->Year[i]);
-      anio=cond->climate->Year[i];
+      if(anio!=cond->climate->Year[i])
+      {
+        cbYear->Items->Add(cond->climate->Year[i]);
+        anio=cond->climate->Year[i];
+      }
     }
   }
   cbYear->ItemIndex=cond->time->idYear;
@@ -103,7 +110,14 @@ void TfrmSimulationTime::ShowMessageError(int _cod)
 //---------------------------------------------------------------------------
 void TfrmSimulationTime::SaveData()
 {
-  cond->time->YearStart = cbYear->Text.ToInt();
+  if(cond->idModel==6)
+  {
+    cond->time->YearStart = 0;
+  }
+  else
+  {
+    cond->time->YearStart = cbYear->Text.ToInt();
+  }
   cond->time->idYear = cbYear->ItemIndex;
   cond->time->MonthStart = cbMonth->ItemIndex+1;
   cond->time->DayStart   = edDay->Text.ToInt();

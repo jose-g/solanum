@@ -41,6 +41,7 @@ Crop::~Crop()
 void Crop::CleanVariables()
 {
   SelectedCrop=-1;
+  strcpy(cropname,"");
   plant->CleanVariables();
   tuber->CleanVariables();
 }
@@ -168,7 +169,7 @@ void Crop::Clone(Crop* other)
   tuber->Clone(other->tuber);
 }
 //------------------------------------------------------------------------------
-bool Crop::saveParameters(char* pnombre,int cover1p,int GrowthZero,int GrowthZero2)
+bool Crop::saveParameters(char* pnombre,int cover1p,int GrowthZero,int GrowthZero2,double photosen,double photocrit)
 {
   FILE *stream=NULL;
   stream = fopen (pnombre,"w");
@@ -181,7 +182,7 @@ bool Crop::saveParameters(char* pnombre,int cover1p,int GrowthZero,int GrowthZer
 //  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Emergence day","Maximun canopy cover index","Maximum harvest index","1% canopy cover","day at maximum canopy cover value","Tt at maximum tuber growth rate","Inversal rate at the maximum tuber growth","Tt at the end of the growth period","Tt at the maximum canopy cover growth rate","Average light use efficiency","Dry matter concentration");
 //  fprintf(stream,"%i,%lf,%lf,%i,%i,%lf,%lf,%lf,%lf,%lf,%lf\n",plant->EDay,plant->fcl,tuber->M,tuber->cover1p,tuber->GrowthZero,tuber->A,tuber->b,plant->R0,plant->F0,plant->LUE,tuber->DMCont);
   fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n","Name of the crop","Maximun canopy cover index","Tt at the maximum canopy cover growth rate","Tt at the maximum canopy cover value","Maximum harvest index","Tt at maximum tuber partition rate","TT just before the tuber initiation process","Dry matter concentration","Average light use efficiency","Tcr","Tld","Trg","Emergence day","1% canopy cover","day at maximum canopy cover value","day at maximum tuberization","Photoperiod sensitivity","Critical photoperiod");
-  fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i,%i,%i,%i,%lf,%lf\n", cropname,plant->fcl, plant->F0, plant->R0, tuber->M, tuber->A, tuber->b, tuber->DMCont, plant->LUE,tuber->Tcr,tuber->Tld,tuber->Trg, plant->EDay,cover1p,GrowthZero,GrowthZero2,tuber->w,tuber->Pc);
+  fprintf(stream,"%s,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf,%i,%lf,%lf,%i,%i,%i\n", cropname,plant->fcl, plant->F0, plant->R0, tuber->M, tuber->A, tuber->b, tuber->DMCont, plant->LUE,tuber->Tcr,tuber->Tld,tuber->Trg, plant->EDay,photosen,photocrit,cover1p,GrowthZero,GrowthZero2);
   fclose(stream);
   return true;
 }

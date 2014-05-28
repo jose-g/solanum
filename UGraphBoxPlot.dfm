@@ -1,34 +1,35 @@
 object frmGraphBoxPlot: TfrmGraphBoxPlot
   Left = 425
   Top = 172
-  Width = 927
-  Height = 607
+  Width = 757
+  Height = 501
   Caption = 'Boxplot from fresh tuber yield'
   Color = 140
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnShow = FormShow
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object tc1: TTeeCommander
-    Left = 10
-    Top = 10
-    Width = 887
-    Height = 40
+    Left = 8
+    Top = 8
+    Width = 721
+    Height = 33
     Panel = tch1
     Color = 4868757
     ParentShowHint = False
     TabOrder = 0
   end
   object tch1: TChart
-    Left = 10
-    Top = 50
-    Width = 887
-    Height = 503
+    Left = 8
+    Top = 41
+    Width = 721
+    Height = 408
     BottomWall.Color = 8454143
     Legend.Bevel = bvRaised
     Legend.CheckBoxes = True
@@ -74,15 +75,15 @@ object frmGraphBoxPlot: TfrmGraphBoxPlot
       15
       24)
     object Label8: TLabel
-      Left = 762
-      Top = 22
-      Width = 91
-      Height = 16
+      Left = 619
+      Top = 18
+      Width = 73
+      Height = 13
       Caption = 'All scenarios'
       Color = 3421287
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentColor = False

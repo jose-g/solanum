@@ -126,7 +126,11 @@
   int SaveOutputs();
   double Fx50(double,double,double,double,bool*);
   double bisection(double,double,double,double,double,bool*);
-
-
+  void multiYearAnalysis_PG();
+  double ult_fty_by_year[100][100];
+  int contYear;
+  int totYearToSimulate;
+  int listYear[100];
+  int Module_PotentialGrowth();
   };
 #endif

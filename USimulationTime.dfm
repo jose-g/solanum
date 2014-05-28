@@ -3,30 +3,30 @@ object frmSimulationTime: TfrmSimulationTime
   Top = 230
   BorderStyle = bsDialog
   Caption = 'Simulation'
-  ClientHeight = 448
-  ClientWidth = 406
+  ClientHeight = 364
+  ClientWidth = 330
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnShow = FormShow
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Panel1: TPanel
-    Left = 10
-    Top = 10
-    Width = 383
-    Height = 375
+    Left = 8
+    Top = 8
+    Width = 311
+    Height = 305
     TabOrder = 0
     object Image1: TImage
-      Left = 30
-      Top = 30
-      Width = 40
-      Height = 40
+      Left = 24
+      Top = 24
+      Width = 32
+      Height = 32
       AutoSize = True
       Picture.Data = {
         055449636F6E0000010001002020000001000800A80800001600000028000000
@@ -102,28 +102,28 @@ object frmSimulationTime: TfrmSimulationTime
         00000000}
     end
     object Label1: TLabel
-      Left = 79
-      Top = 39
-      Width = 143
-      Height = 26
+      Left = 64
+      Top = 32
+      Width = 127
+      Height = 24
       Caption = 'Solanum v2.0'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -23
+      Font.Height = -19
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
     end
     object Edit1: TEdit
-      Left = 20
-      Top = 182
-      Width = 221
+      Left = 16
+      Top = 148
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -132,15 +132,15 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Month simulation starts'
     end
     object Edit2: TEdit
-      Left = 20
-      Top = 277
-      Width = 221
+      Left = 16
+      Top = 225
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -149,16 +149,16 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Simulation time (1to 250 days)'
     end
     object edTime: TEdit
-      Left = 250
-      Top = 277
-      Width = 110
+      Left = 203
+      Top = 225
+      Width = 90
       Height = 24
       TabOrder = 3
     end
     object cbMonth: TComboBox
-      Left = 250
-      Top = 182
-      Width = 110
+      Left = 203
+      Top = 148
+      Width = 90
       Height = 19
       Style = csOwnerDrawFixed
       ItemHeight = 13
@@ -178,15 +178,15 @@ object frmSimulationTime: TfrmSimulationTime
         'December')
     end
     object Edit3: TEdit
-      Left = 20
-      Top = 230
-      Width = 221
+      Left = 16
+      Top = 187
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -195,22 +195,22 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Day simulation starts (Planting date)'
     end
     object edDay: TEdit
-      Left = 250
-      Top = 230
-      Width = 110
+      Left = 203
+      Top = 187
+      Width = 90
       Height = 24
       TabOrder = 1
     end
     object Edit4: TEdit
-      Left = 20
-      Top = 89
-      Width = 221
+      Left = 16
+      Top = 72
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -219,48 +219,48 @@ object frmSimulationTime: TfrmSimulationTime
       Text = 'Location'
     end
     object edLocation: TEdit
-      Left = 250
-      Top = 89
-      Width = 110
+      Left = 203
+      Top = 72
+      Width = 90
       Height = 24
       TabOrder = 0
     end
     object Edit5: TEdit
-      Left = 20
-      Top = 135
-      Width = 221
+      Left = 16
+      Top = 110
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
       ReadOnly = True
       TabOrder = 8
-      Text = 'Year simulation starts'
+      Text = 'Year simulation'
     end
     object cbYear: TComboBox
-      Left = 250
-      Top = 135
-      Width = 110
+      Left = 203
+      Top = 110
+      Width = 90
       Height = 19
       Style = csOwnerDrawFixed
       ItemHeight = 13
       TabOrder = 9
     end
     object Edit6: TEdit
-      Left = 20
+      Left = 16
       Top = 0
-      Width = 198
+      Width = 161
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -270,9 +270,9 @@ object frmSimulationTime: TfrmSimulationTime
       Visible = False
     end
     object cbThermal: TComboBox
-      Left = 226
+      Left = 184
       Top = 0
-      Width = 110
+      Width = 89
       Height = 19
       Style = csOwnerDrawFixed
       ItemHeight = 13
@@ -284,22 +284,22 @@ object frmSimulationTime: TfrmSimulationTime
         'Warm')
     end
     object edNumSim: TEdit
-      Left = 250
-      Top = 325
-      Width = 110
+      Left = 203
+      Top = 264
+      Width = 90
       Height = 24
       TabOrder = 12
     end
     object Edit8: TEdit
-      Left = 20
-      Top = 325
-      Width = 221
+      Left = 16
+      Top = 264
+      Width = 180
       Height = 24
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
@@ -309,10 +309,10 @@ object frmSimulationTime: TfrmSimulationTime
     end
   end
   object cmdCancel: TBitBtn
-    Left = 196
-    Top = 405
-    Width = 93
-    Height = 31
+    Left = 159
+    Top = 329
+    Width = 76
+    Height = 25
     Caption = '&Cancel'
     ModalResult = 2
     TabOrder = 1
@@ -336,10 +336,10 @@ object frmSimulationTime: TfrmSimulationTime
     NumGlyphs = 2
   end
   object cmdSimulate: TBitBtn
-    Left = 295
-    Top = 405
-    Width = 92
-    Height = 31
+    Left = 240
+    Top = 329
+    Width = 74
+    Height = 25
     Caption = '&Simulate'
     Default = True
     ModalResult = 1

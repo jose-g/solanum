@@ -13,6 +13,8 @@
 #include "clases\Climate.h"
 #include "clases\FileUtility.h"
 #include <Menus.hpp>
+#include "GIFImage.hpp"
+#include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TfrmClimate : public TForm
 {
@@ -21,7 +23,6 @@ __published:	// IDE-managed Components
         TBitBtn *cmdApply;
         TEdit *Edit2;
         TEdit *edPathFile;
-        TSpeedButton *cmdOpenClimate;
         TStringGrid *sgClimate;
         TEdit *Edit5;
         TEdit *Edit6;
@@ -57,11 +58,16 @@ __published:	// IDE-managed Components
         TEdit *Edit9;
         TEdit *edSunshine;
         TSpeedButton *cmdSunshine;
+        TSaveDialog *sdSave;
+        TOpenDialog *odClimateSetting;
+        TBevel *Bevel1;
+        TBitBtn *butImportClimateData;
+        TBitBtn *butLoadClimateDatabase;
+        TBitBtn *butSaveClimateDatabase;
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);
-        void __fastcall cmdOpenClimateClick(TObject *Sender);
         void __fastcall cmdMinTempClick(TObject *Sender);
         void __fastcall cmdMaxTempClick(TObject *Sender);
         void __fastcall cmdPrecipClick(TObject *Sender);
@@ -73,6 +79,9 @@ __published:	// IDE-managed Components
         void __fastcall cmdMonthClick(TObject *Sender);
         void __fastcall cmdYearClick(TObject *Sender);
         void __fastcall cmdSunshineClick(TObject *Sender);
+        void __fastcall butLoadClimateDatabaseClick(TObject *Sender);
+        void __fastcall butSaveClimateDatabaseClick(TObject *Sender);
+        void __fastcall butImportClimateDataClick(TObject *Sender);
 private:	// User declarations
         bool Validate();
         TEdit* FindDataError(int*);

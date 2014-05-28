@@ -4,35 +4,35 @@ object frmLogo: TfrmLogo
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Solanum'
-  ClientHeight = 494
-  ClientWidth = 634
+  ClientHeight = 407
+  ClientWidth = 551
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object GroupBox1: TGroupBox
     Left = 0
     Top = 0
-    Width = 634
-    Height = 494
+    Width = 551
+    Height = 407
     Align = alClient
     TabOrder = 0
     object Label3: TLabel
-      Left = 553
-      Top = 462
-      Width = 63
-      Height = 16
+      Left = 481
+      Top = 383
+      Width = 50
+      Height = 13
       Caption = 'Lima, Per'#250
     end
     object Image1: TImage
-      Left = 436
-      Top = 126
+      Left = 378
+      Top = 94
       Width = 100
       Height = 100
       AutoSize = True
@@ -979,8 +979,8 @@ object frmLogo: TfrmLogo
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
     end
     object Image3: TImage
-      Left = 376
-      Top = 236
+      Left = 306
+      Top = 200
       Width = 234
       Height = 134
       AutoSize = True
@@ -1930,10 +1930,10 @@ object frmLogo: TfrmLogo
         FADAF4EBD6BEE8D34D1A69A34D3469A6BFFFD9}
     end
     object Label4: TLabel
-      Left = 24
-      Top = 384
-      Width = 353
-      Height = 89
+      Left = 20
+      Top = 320
+      Width = 286
+      Height = 72
       AutoSize = False
       Caption = 
         'SOLANUM is a  user-friendly crop growth model that simulates tub' +
@@ -1942,49 +1942,49 @@ object frmLogo: TfrmLogo
         'nder potential, water limited, nitrogen limited and frost limit'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -14
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
       WordWrap = True
     end
     object GroupBox2: TGroupBox
-      Left = 22
-      Top = 20
-      Width = 572
-      Height = 85
+      Left = 18
+      Top = 16
+      Width = 519
+      Height = 69
       TabOrder = 0
       object Label1: TLabel
-        Left = 40
-        Top = 30
-        Width = 492
-        Height = 26
+        Left = 54
+        Top = 24
+        Width = 411
+        Height = 22
         Caption = 'SOLANUM : A potato production simulation model'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -23
+        Font.Height = -19
         Font.Name = 'Times New Roman'
         Font.Style = [fsBold, fsItalic]
         ParentFont = False
       end
       object Label2: TLabel
-        Left = 465
-        Top = 59
-        Width = 66
-        Height = 16
-        Caption = 'Version 2.4'
+        Left = 442
+        Top = 48
+        Width = 53
+        Height = 13
+        Caption = 'Version 2.5'
       end
     end
     object cmdContinue: TButton
-      Left = 382
-      Top = 409
-      Width = 218
-      Height = 31
+      Left = 334
+      Top = 348
+      Width = 178
+      Height = 26
       Caption = 'Continue ...'
       Default = True
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = 18
+      Font.Height = 15
       Font.Name = 'Verdana'
       Font.Style = []
       ModalResult = 1
@@ -1993,16 +1993,16 @@ object frmLogo: TfrmLogo
       OnClick = cmdContinueClick
     end
     object GroupBox3: TGroupBox
-      Left = 22
-      Top = 120
-      Width = 345
-      Height = 249
+      Left = 18
+      Top = 98
+      Width = 280
+      Height = 202
       TabOrder = 2
       object Image2: TImage
-        Left = 19
-        Top = 21
-        Width = 307
-        Height = 208
+        Left = 15
+        Top = 17
+        Width = 250
+        Height = 169
         Picture.Data = {
           0A544A504547496D616765746F0000FFD8FFE000104A46494600010101004800
           480000FFDB0043000302020302020303030304030304050805050404050A0707

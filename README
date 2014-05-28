@@ -1,3 +1,11 @@
+Wednesday, May 28, 2014
+Solanum v2.5
+
+* Potential Growth model was isolated
+* default value for v variable (variability) was defined with 0.075
+* bug in memory management, climate form.
+
+
 Monday, March 03, 2014
 Solanum v2.4
 

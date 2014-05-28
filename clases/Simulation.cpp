@@ -30,6 +30,8 @@ Simulation::Simulation(int IDmodel)
   TitObsCC  = new char[255];
 
   NumberScenario=0;
+  contYear=0;
+  totYearToSimulate=0;
   idModel=IDmodel; // 1: Potential Growth , 2:Drought stress , 3:Nitrogen Stress , 4:Frost Stress , 5:All models
 for(int isim=0;isim<100;isim++)
 {
@@ -1343,6 +1345,14 @@ int Simulation::SaveOutputs()
   return 0;
 }
 // --------------------------------------------------------------------------------------------------------
+void Simulation::multiYearAnalysis_PG()
+{
+  for (int i=0;i<time->repetitions;i++)
+  {
+    ult_fty_by_year[i][contYear-1]=ult_fty[i];
+  }
+}
+// --------------------------------------------------------------------------------------------------------
 void Simulation::Estadisticos()
 {
 // selecciono los valores observados y los estimados
@@ -1976,14 +1986,161 @@ void Simulation::CleanVectorObserved()
 //------------------------------------------------------------------------------
 int Simulation::simulate()
 {
-Just_simulate3();
+if(idModel==1 || idModel==6)
+{
+  Module_PotentialGrowth();
+}
+else
+{
+  Just_simulate3();
+}
 CalculatesAfterSimulation();
 return 0;
 }
 //------------------------------------------------------------------------------
+int Simulation::Module_PotentialGrowth()
+{
+randomize();
+for(int isim=0;isim<time->repetitions;isim++)
+{
+  double MinTemp[365];
+  double MaxTemp[365];
+  double TT[365];
+  double sunshine[365];
+  double Radiation[365];
+// locate the record with start date
+  int reg=-1;
+  for(int i=0;i<climate->RecNum;i++)
+  {
+    if(climate->Day[i]==time->DayStart && climate->Month[i]==time->MonthStart && climate->Year[i]==time->YearStart)
+    {
+      reg=i; // get record
+      break;
+    }
+  }
+  if(reg==-1)
+  {
+    return 2; // start date does not exist
+  }
+  int newItem=-1;
+//
+  int numdias=time->duration;
+  double* datTmin=new double[numdias];
+  double* datTmax=new double[numdias];
+  for(int i=reg;i<climate->RecNum;i++)
+  {
+      newItem++;
+      if(newItem<365)
+      {
+        if(newItem<time->duration)
+        {
+          datTmin[newItem]=climate->MinTemp[i];
+          datTmax[newItem]=climate->MaxTemp[i];
+        }
+        MinTemp[newItem]= climate->MinTemp[i];
+        MaxTemp[newItem]= climate->MaxTemp[i];
+        sunshine[newItem]= climate->Sunshine[i];
+        Radiation[newItem]= climate->Radiation[i];
+      }
+  }
+  CalcularTT(datTmin,datTmax);
+
+  delete []datTmin;
+  delete []datTmax;
+  for(int i=0;i<numdias;i++)
+  {
+      TT[i]   = climate->TT[i];
+  }
+// inputs
+  double DMcont=crop->tuber->DMCont;
+  double A_0=crop->tuber->M;
+  double Tu_0=crop->tuber->A;
+  double b=crop->tuber->b;
+  double RUE=crop->plant->LUE;
+  int EDay=crop->plant->EDay;
+  double v=crop->plant->v; // by default is 0.075, change in Plant class and DefaultCondition() method of ManageDataPotato class
+  double wmax=crop->plant->fcl;
+  double tm=crop->plant->F0;
+  double te=crop->plant->R0;
+
+  double Pc = 18;
+  double TDM = 1.0E-37;
+  double cTII = 0;
+  double Tac = 1.0E-05;
+  bool bsearch_tt=true;
+  double tt=0.0;
+  double w = 0.2;
+  double Tb_0 = 4;
+  double Tu_1 = 28;
+  double To_0 = 15;
+  double a = (double)(log(2))/log((double)(Tu_1-Tb_0)/(To_0-Tb_0));
+  int PDay=-1;
+  double rnd=random(5001);
+  rnd=rnd/5000;
+  double rdm = (double)(log((double)(1+rnd)/(1-rnd)))/1.82; // log: es logaritmo natural
+  double verificar_densidad = 4.17;
+  for(int i=0;i<time->duration;i++)
+  {
+      double canopy = wmax*exp(-((double)(tm)/(Tac*verificar_densidad)))*(1+(double)(te-Tac)/(te-tm))*pow((double)(Tac)/te,(double)(te)/(te-tm));
+      double canopy1 = rdm*v*canopy+canopy;
+      double Part = A_0*exp(-(exp((double)(-(Tac-Tu_0))/b)));
+      double DTY1 = TDM*Part;
+      tt = TT[i];
+      double tt_fixed;
+      if(cTII>20.0 && bsearch_tt)
+      {
+         tt_fixed=tt;
+         bsearch_tt=false;
+      }
+      else
+      {
+         tt_fixed=0;
+      }
+      double Tu_cTII;
+      if(bsearch_tt)
+      {
+        Tu_cTII=1.0;
+      }
+      else
+      {
+        Tu_cTII=(tt_fixed+b)/Tu_0;
+      }
+      double Part_cTII = A_0*exp(-(exp((double)(-(Tac-Tu_0*Tu_cTII))/b)));
+      double HI_cTII = (cTII<=20?0:Part_cTII);
+      double DTY2 = TDM*HI_cTII;
+      double DTY = (Tu_cTII<=1?DTY1:DTY2);
+      double FTY = (double)(DTY)/DMcont;
+
+      double Tmax = MaxTemp[i];
+      double Tmin = MinTemp[i];
+
+      double Tav = (double)(Tmax+Tmin)/2;
+      Tac = tt;
+      double Tindex = (Tav<Tb_0?0:(Tav>Tu_1?0:(double)(2*pow(Tav-Tb_0,a)*pow(To_0-Tb_0,a)-pow(Tav-Tb_0,2*a))/pow(To_0-Tb_0,2*a)));
+      double PAR = Radiation[i]*0.5;
+      double N = sunshine[i];
+      double Pindex = (N>Pc?exp(-(w*(N-Pc))):1);
+      double TII = Tindex*Pindex;
+
+      PDay++;
+      double DAE = (PDay>=EDay?PDay-EDay:0);
+      double CC = (DAE<=0?0:(canopy1>0?canopy1:pow(10,-6)));
+      double dW = (double)(RUE*CC*PAR)/100;
+      /*    SALIDAS    */
+      tdm[isim][i]=TDM;
+      dty[isim][i]=DTY;
+      fty[isim][i]=FTY;
+      cc[isim][i]=CC;
+
+      TDM = TDM+dW;
+      cTII = cTII+TII;
+  }
+  ult_fty[isim]=fty[isim][time->duration-1];
+}
+}
+//------------------------------------------------------------------------------
 int Simulation::Just_simulate3()
 {
-
 randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 { // begin for isim
@@ -2825,7 +2982,7 @@ d=t50-te;
         cTII = cTII+TII;
 //  FIN de updatemodel(0, 1)    1>=phase
   } // end for i
-      switch (idModel)  // 1: Potential Growth , 2:Drought , 3:Nitrogen Stress , 4:Frost
+      switch (idModel)  // 1: Potential Growth , 2:Drought , 3:Nitrogen Stress , 4:Frost , 5:All models, 6:Potential growth - Multi-year Analysis
       {
         case 1 : ult_fty[isim]=fty[isim][time->duration-1];
                  break;
@@ -2835,6 +2992,8 @@ d=t50-te;
         case 3 : ult_fty[isim]=ftyn[isim][time->duration-1];
                  break;
         case 4 : ult_fty[isim]=ftyf[isim][time->duration-1];
+                 break;
+        case 6 : ult_fty[isim]=fty[isim][time->duration-1];
       }
 
 } // end for isim

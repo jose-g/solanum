@@ -81,5 +81,7 @@
       int CountRegistersFromCSVFile(char*);
       void CleanTitles();
       void Clone(ClimateFile*);
+      bool saveClimateSettingCSVFile(char*);
+      bool loadClimateSettingCSVFile(char*);
  };
 #endif

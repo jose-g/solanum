@@ -31,6 +31,7 @@ __published:	// IDE-managed Components
         TGroupBox *GroupBox2;
         TImage *Image1;
         TLabel *Label1;
+        TCheckBox *chbMYA;
         void __fastcall cmdExitClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
         void __fastcall FormShow(TObject *Sender);

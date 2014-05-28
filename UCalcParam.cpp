@@ -1045,7 +1045,7 @@ void __fastcall TfrmCalcParam::butSaveParClick(TObject *Sender)
   {
     NomArchivo=sdResult->FileName;
     strcpy(cond->crop->cropname,edNameCrop->Text.c_str());
-    exito=cond->crop->saveParameters(NomArchivo.c_str(),edcover1p->Text.ToInt(),edGrowthZero->Text.ToInt(),edGrowthZero2->Text.ToInt());
+    exito=cond->crop->saveParameters(NomArchivo.c_str(),edcover1p->Text.ToInt(),edGrowthZero->Text.ToInt(),edGrowthZero2->Text.ToInt(),edPhotoSen->Text.ToDouble(),edPhotoCrit->Text.ToDouble());
     if(exito)
     {
       Application->MessageBox("Information about parameters was saved!", "Successful!", MB_OK);

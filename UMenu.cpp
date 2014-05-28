@@ -8,11 +8,13 @@
 #include "UMainDS.h"
 #include "UMainNS.h"
 #include "UMainFS.h"
+#include "UMainPG_AMY.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TfrmMenu *frmMenu;
 TfrmMainPG* MainPG;
+TfrmMainPG_AMY* MainPG_AMY;
 TfrmMainDS* MainDS;
 TfrmMainNS* MainNS;
 TfrmMainAM* MainAM;
@@ -87,6 +89,7 @@ void __fastcall TfrmMenu::cmdApplyClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfrmMenu::sbPGClick(TObject *Sender)
 {
+  rbPG->Checked=true;
   if(MainDS!=0)
   {
     delete MainDS;
@@ -107,24 +110,65 @@ void __fastcall TfrmMenu::sbPGClick(TObject *Sender)
     delete MainAM;
     MainAM=0;
   }
-  if(MainPG!=0)
+  if(chbMYA->Checked)
   {
-     this->Visible=false;
-     MainPG->Enabled=true;
+    if(MainPG!=0)
+    {
+      delete MainPG;
+      MainPG=0;
+    }
   }
   else
   {
-    MainPG=new TfrmMainPG(this,prjSolanum);
-    this->Visible=false;
+    if(MainPG_AMY!=0)
+    {
+      delete MainPG_AMY;
+      MainPG_AMY=0;
+    }
   }
+// aqui me quede
+  if(chbMYA->Checked)
+  {
+    if(MainPG_AMY!=0)
+    {
+       this->Visible=false;
+       MainPG_AMY->Enabled=true;
+    }
+    else
+    {
+      MainPG_AMY=new TfrmMainPG_AMY(this,prjSolanum);
+      this->Visible=false;
+    }
+  }
+  else
+  {
+    if(MainPG!=0)
+    {
+       this->Visible=false;
+       MainPG->Enabled=true;
+    }
+    else
+    {
+      MainPG=new TfrmMainPG(this,prjSolanum);
+      this->Visible=false;
+    }
+  }
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmMenu::sbDSClick(TObject *Sender)
 {
+  rbDS->Checked=true;
+
   if(MainPG!=0)
   {
     delete MainPG;
     MainPG=0;
+  }
+  if(MainPG_AMY!=0)
+  {
+    delete MainPG_AMY;
+    MainPG_AMY=0;
   }
   if(MainNS!=0)
   {
@@ -160,6 +204,11 @@ void TfrmMenu::CerrarTodo()
      delete MainPG;
      MainPG=0;
   }
+  if(MainPG_AMY!=0)
+  {
+    delete MainPG_AMY;
+    MainPG_AMY=0;
+  }
   if(MainDS!=0)
   {
      delete MainDS;
@@ -185,6 +234,7 @@ void TfrmMenu::CerrarTodo()
 //---------------------------------------------------------------------------
 void __fastcall TfrmMenu::sbNSClick(TObject *Sender)
 {
+  rbNS->Checked=true;
   if(MainDS!=0)
   {
     delete MainDS;
@@ -194,6 +244,11 @@ void __fastcall TfrmMenu::sbNSClick(TObject *Sender)
   {
     delete MainPG;
     MainPG=0;
+  }
+  if(MainPG_AMY!=0)
+  {
+    delete MainPG_AMY;
+    MainPG_AMY=0;
   }
   if(MainAM!=0)
   {
@@ -219,6 +274,7 @@ void __fastcall TfrmMenu::sbNSClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TfrmMenu::sbOtherClick(TObject *Sender)
 {
+  rbAM->Checked=true;
   if(MainDS!=0)
   {
     delete MainDS;
@@ -233,6 +289,11 @@ void __fastcall TfrmMenu::sbOtherClick(TObject *Sender)
   {
     delete MainPG;
     MainPG=0;
+  }
+  if(MainPG_AMY!=0)
+  {
+    delete MainPG_AMY;
+    MainPG_AMY=0;
   }
   if(MainFS!=0)
   {
@@ -255,6 +316,7 @@ void __fastcall TfrmMenu::sbOtherClick(TObject *Sender)
 
 void __fastcall TfrmMenu::sbFSClick(TObject *Sender)
 {
+  rbFS->Checked=true;
   if(MainDS!=0)
   {
     delete MainDS;
@@ -269,6 +331,11 @@ void __fastcall TfrmMenu::sbFSClick(TObject *Sender)
   {
     delete MainPG;
     MainPG=0;
+  }
+  if(MainPG_AMY!=0)
+  {
+    delete MainPG_AMY;
+    MainPG_AMY=0;
   }
   if(MainAM!=0)
   {
@@ -287,4 +354,5 @@ void __fastcall TfrmMenu::sbFSClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
 

@@ -7,7 +7,7 @@ object frmMainDS: TfrmMainDS
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Menu = MainMenu1
@@ -16,20 +16,20 @@ object frmMainDS: TfrmMainDS
   WindowState = wsMaximized
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 778
+    Width = 780
     Height = 2
     Align = alTop
   end
   object Image1: TImage
     Left = 0
-    Top = 55
-    Width = 778
-    Height = 411
+    Top = 45
+    Width = 780
+    Height = 433
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765CCCE0A00FFD8FFE000104A46494600010201004800
@@ -22172,16 +22172,16 @@ object frmMainDS: TfrmMainDS
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 778
-    Height = 53
+    Width = 780
+    Height = 43
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object sbNew: TSpeedButton
       Left = 2
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'New conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22209,10 +22209,10 @@ object frmMainDS: TfrmMainDS
       OnClick = New1Click
     end
     object sbOpen: TSpeedButton
-      Left = 55
+      Left = 45
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Open file of conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22241,10 +22241,10 @@ object frmMainDS: TfrmMainDS
       OnClick = Open1Click
     end
     object sbSave: TSpeedButton
-      Left = 108
+      Left = 88
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Save conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22272,10 +22272,10 @@ object frmMainDS: TfrmMainDS
       OnClick = Save1Click
     end
     object SpeedButton1: TSpeedButton
-      Left = 170
+      Left = 138
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Example conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22303,10 +22303,10 @@ object frmMainDS: TfrmMainDS
       OnClick = Getdemo1Click
     end
     object SpeedButton2: TSpeedButton
-      Left = 231
+      Left = 188
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Climate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22334,10 +22334,10 @@ object frmMainDS: TfrmMainDS
       OnClick = climate1Click
     end
     object SpeedButton3: TSpeedButton
-      Left = 284
+      Left = 231
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Crop parameter'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22411,10 +22411,10 @@ object frmMainDS: TfrmMainDS
       OnClick = CropParameter1Click
     end
     object SpeedButton5: TSpeedButton
-      Left = 409
+      Left = 332
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Simulate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22442,10 +22442,10 @@ object frmMainDS: TfrmMainDS
       OnClick = Simulate1Click
     end
     object SpeedButton6: TSpeedButton
-      Left = 529
+      Left = 430
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Text reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22473,10 +22473,10 @@ object frmMainDS: TfrmMainDS
       OnClick = SpeedButton6Click
     end
     object SpeedButton7: TSpeedButton
-      Left = 582
+      Left = 473
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Graph reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22504,10 +22504,10 @@ object frmMainDS: TfrmMainDS
       OnClick = SpeedButton7Click
     end
     object SpeedButton8: TSpeedButton
-      Left = 644
+      Left = 523
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Exit'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22581,10 +22581,10 @@ object frmMainDS: TfrmMainDS
       OnClick = SpeedButton8Click
     end
     object SpeedButton9: TSpeedButton
-      Left = 341
-      Top = 4
-      Width = 49
-      Height = 49
+      Left = 277
+      Top = 3
+      Width = 40
+      Height = 40
       Hint = 'Soil parameter'
       Glyph.Data = {
         A60C0000424DA60C00000000000036040000280000002D0000002D0000000100
@@ -22694,10 +22694,10 @@ object frmMainDS: TfrmMainDS
       OnClick = SpeedButton9Click
     end
     object sbMenu: TSpeedButton
-      Left = 713
+      Left = 579
       Top = 2
-      Width = 105
-      Height = 50
+      Width = 86
+      Height = 40
       Hint = 'Exit'
       Caption = 'Modules'
       Glyph.Data = {
@@ -22753,10 +22753,10 @@ object frmMainDS: TfrmMainDS
       OnClick = sbMenuClick
     end
     object sbEstadistico: TSpeedButton
-      Left = 476
+      Left = 387
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Statistics'
       Glyph.Data = {
         76070000424D76070000000000003600000028000000150000001D0000000100
@@ -22826,8 +22826,8 @@ object frmMainDS: TfrmMainDS
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 466
-    Width = 778
+    Top = 478
+    Width = 780
     Height = 23
     Panels = <
       item

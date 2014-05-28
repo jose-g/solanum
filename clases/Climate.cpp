@@ -261,7 +261,7 @@ ClimateFile::~ClimateFile()
 {
  if (FileName != 0)
  {
-  delete [ ]FileName;
+  delete []FileName;
   FileName=0;
  }
  if (TitTMin != 0)
@@ -440,25 +440,30 @@ data.close();
 return OrdenCampo;
 }
 //------------------------------------------------------------------------------
-int ClimateFile::GetColumnData(char* FileName,char* FieldName,double* vect)
+int ClimateFile::GetColumnData(char* fn,char* FieldName,double* vect)
 {
-  int pos=DeterminePosition(FileName,FieldName);
+  int cont=0;
+  int pos=DeterminePosition(fn,FieldName);
+  if(pos==0)
+  {
+    return cont;
+  }
+
   FILE *pFile=0;
-  pFile = fopen (FileName,"r");
+  pFile = fopen (fn,"r");
   if (pFile==0)
   {
      fclose(pFile);
      return -1; // problema al abrir el archivo
   }
   fclose(pFile);
-  ifstream in(FileName);
+  ifstream in(fn);
   string linea;
   vector<string> v;
   string buffer;
   char* pEnd=0;
   int i,j=0,ContCol=0;
   getline(in,linea,'\n');
-  int cont=0;
   for(i=1;!in.eof();i++)
   {
       getline(in,linea,'\n');
@@ -484,15 +489,19 @@ int ClimateFile::GetColumnData(char* FileName,char* FieldName,double* vect)
   return cont;
 }
 //------------------------------------------------------------------------------
-int ClimateFile::GetColumnDataFromCSVFile(char* FileName,char* FieldName,double* vect)
+int ClimateFile::GetColumnDataFromCSVFile(char* fn,char* FieldName,double* vect)
 {
-  int pos=DeterminePositionFromCSVFile(FileName,FieldName);
+  int numelem=0;
+  int pos=DeterminePositionFromCSVFile(fn,FieldName);
+  if(pos==0)
+  {
+    return numelem;
+  }
   int cont;
-  std::ifstream  data(FileName);
+  std::ifstream  data(fn);
   int num;
   std::string line;
   std::getline(data,line); // la primera linea no debe contabilizarse ya que es cabecera
-  int numelem=0;
   while(std::getline(data,line))
   {
     std::stringstream  lineStream(line);
@@ -516,22 +525,22 @@ int ClimateFile::GetColumnDataFromCSVFile(char* FileName,char* FieldName,double*
   return numelem;
 }
 //------------------------------------------------------------------------------
-int ClimateFile::GetColumnData(char* FileName,char* FieldName,double* vect,int* cant)
+int ClimateFile::GetColumnData(char* fn,char* FieldName,double* vect,int* cant)
 {
-  int pos=DeterminePosition(FileName,FieldName);
+  int pos=DeterminePosition(fn,FieldName);
   if(pos==0)
   {
     return -2;
   }
   FILE *pFile=0;
-  pFile = fopen (FileName,"r");
+  pFile = fopen (fn,"r");
   if (pFile==0)
   {
      fclose(pFile);
      return -1; // problema al abrir el archivo
   }
   fclose(pFile);
-  ifstream in(FileName);
+  ifstream in(fn);
   string linea;
   vector<string> v;
   string buffer;
@@ -572,46 +581,50 @@ int posicion=nombre.Pos(".");
 int longitud=nombre.Length();
 int caract=longitud-posicion;
 AnsiString ext=nombre.SubString(posicion+1,caract);
+
+char* filename=new char[255];
+strcpy(filename,FileName);
 if(ext=="prn")
 {
-  RecNum=CountRegisters(FileName);
-  GetColumnData(FileName , TitTMin , MinTemp  );
-  GetColumnData(FileName , TitTMax , MaxTemp  );
-  GetColumnData(FileName , TitPrec , Precipit );
-  GetColumnData(FileName , TitRad  , Radiation);
-  GetColumnData(FileName , TitET  , ET);
-  GetColumnData(FileName , TitIrri  , Irri);
-  GetColumnData(FileName , TitSoilTemp  , SoilTemp);
-  GetColumnData(FileName , TitSunshine  , Sunshine);
-  GetColumnData(FileName , TitDay  , Day);
-  GetColumnData(FileName , TitMonth  , Month);
-  GetColumnData(FileName , TitYear  , Year);
-  GetColumnData(FileName , TitObs  , Obs);
-  GetColumnData(FileName , TitObsCC  , ObsCC);
+  RecNum=CountRegisters(filename);
+  GetColumnData(filename , TitTMin , MinTemp  );
+  GetColumnData(filename , TitTMax , MaxTemp  );
+  GetColumnData(filename , TitPrec , Precipit );
+  GetColumnData(filename , TitRad  , Radiation);
+  GetColumnData(filename , TitET  , ET);
+  GetColumnData(filename , TitIrri  , Irri);
+  GetColumnData(filename , TitSoilTemp  , SoilTemp);
+  GetColumnData(filename , TitSunshine  , Sunshine);
+  GetColumnData(filename , TitDay  , Day);
+  GetColumnData(filename , TitMonth  , Month);
+  GetColumnData(filename , TitYear  , Year);
+  GetColumnData(filename , TitObs  , Obs);
+  GetColumnData(filename , TitObsCC  , ObsCC);
 }
 if(ext=="csv")
 {
-  RecNum=CountRegistersFromCSVFile(FileName);
-  GetColumnDataFromCSVFile(FileName , TitTMin , MinTemp  );
-  GetColumnDataFromCSVFile(FileName , TitTMax , MaxTemp  );
-  GetColumnDataFromCSVFile(FileName , TitPrec , Precipit );
-  GetColumnDataFromCSVFile(FileName , TitRad  , Radiation);
-  GetColumnDataFromCSVFile(FileName , TitET  , ET);
-  GetColumnDataFromCSVFile(FileName , TitIrri  , Irri);
-  GetColumnDataFromCSVFile(FileName , TitSoilTemp  , SoilTemp);
-  GetColumnDataFromCSVFile(FileName , TitSunshine  , Sunshine);
-  GetColumnDataFromCSVFile(FileName , TitDay  , Day);
-  GetColumnDataFromCSVFile(FileName , TitMonth  , Month);
-  GetColumnDataFromCSVFile(FileName , TitYear  , Year);
-  GetColumnDataFromCSVFile(FileName , TitObs  , Obs);
-  GetColumnDataFromCSVFile(FileName , TitObsCC  , ObsCC);
+  RecNum=CountRegistersFromCSVFile(filename);
+  GetColumnDataFromCSVFile(filename , TitTMin , MinTemp  );
+  GetColumnDataFromCSVFile(filename , TitTMax , MaxTemp  );
+  GetColumnDataFromCSVFile(filename , TitPrec , Precipit );
+  GetColumnDataFromCSVFile(filename , TitRad  , Radiation);
+  GetColumnDataFromCSVFile(filename , TitET  , ET);
+  GetColumnDataFromCSVFile(filename , TitIrri  , Irri);
+  GetColumnDataFromCSVFile(filename , TitSoilTemp  , SoilTemp);
+  GetColumnDataFromCSVFile(filename , TitSunshine  , Sunshine);
+  GetColumnDataFromCSVFile(filename , TitDay  , Day);
+  GetColumnDataFromCSVFile(filename , TitMonth  , Month);
+  GetColumnDataFromCSVFile(filename , TitYear  , Year);
+  GetColumnDataFromCSVFile(filename , TitObs  , Obs);
+  GetColumnDataFromCSVFile(filename , TitObsCC  , ObsCC);
 }
+delete []filename;
 }
 //------------------------------------------------------------------------------
-int ClimateFile::CountRegistersFromCSVFile(char* FileName)
+int ClimateFile::CountRegistersFromCSVFile(char* fn)
 {
   int cont=0;
-  std::ifstream  data(FileName);
+  std::ifstream  data(fn);
   int num;
   std::string line;
   std::getline(data,line); // la primera linea no debe contabilizarse ya que es cabecera
@@ -624,9 +637,9 @@ int ClimateFile::CountRegistersFromCSVFile(char* FileName)
   return cont;
 }
 //------------------------------------------------------------------------------
-int ClimateFile::CountRegisters(char* FileName)
+int ClimateFile::CountRegisters(char* fn)
 {
-  ifstream in(FileName);
+  ifstream in(fn);
   string linea;
   vector<string> v;
   string buffer;
@@ -677,6 +690,127 @@ void ClimateFile::Clone(ClimateFile* other)
   strcpy (other->TitObs,TitObs);
   strcpy (other->TitObsCC,TitObsCC);
   Climate::Clone(this);
+}
+//------------------------------------------------------------------------------
+bool ClimateFile::saveClimateSettingCSVFile(char* pnombre)
+{
+  FILE *stream=0;
+  stream = fopen (pnombre,"w");
+  if (stream==0)
+  {
+     fclose(stream);
+     return false; // problema al abrir el archivo
+  }
+  rewind(stream);
+//titles
+// verifico si el titulo es vacio se le pone un titulo por defecto
+  if(*TitDay == '\0')
+  {
+    strcpy(TitDay,"Day");
+  }
+  if(*TitMonth == '\0')
+  {
+    strcpy(TitMonth,"Month");
+  }
+  if(*TitYear == '\0')
+  {
+    strcpy(TitYear,"Year");
+  }
+  if(*TitTMin == '\0')
+  {
+    strcpy(TitTMin,"Tmin");
+  }
+  if(*TitTMax == '\0')
+  {
+    strcpy(TitTMax,"Tmax");
+  }
+  if(*TitPrec == '\0')
+  {
+    strcpy(TitPrec,"Prec");
+  }
+  if(*TitRad == '\0')
+  {
+    strcpy(TitRad,"Rad");
+  }
+  if(*TitET == '\0')
+  {
+    strcpy(TitET,"ETo");
+  }
+  if(*TitIrri == '\0')
+  {
+    strcpy(TitIrri,"Irri");
+  }
+  if(*TitSoilTemp == '\0')
+  {
+    strcpy(TitSoilTemp,"Tsoi");
+  }
+  if(*TitSunshine == '\0')
+  {
+    strcpy(TitSunshine,"sunsh");
+  }
+  fprintf(stream,"%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n",TitDay,TitMonth,TitYear,TitTMin,TitTMax,TitPrec,TitRad,TitET,TitIrri,TitSoilTemp,TitSunshine);
+  for(int i=0;i<RecNum;i++)
+  {
+    fprintf(stream,"%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f\n",Day[i],Month[i],Year[i],MinTemp[i],MaxTemp[i],Precipit[i],Radiation[i],ET[i],Irri[i],SoilTemp[i],Sunshine[i]);
+  }
+  fclose(stream);
+  return true; // se abrio correctamente el archivo y se guardo los datos
+}
+//------------------------------------------------------------------------------
+bool ClimateFile::loadClimateSettingCSVFile(char* pnombre)
+{
+// this procedure just load titles
+std::ifstream  data(pnombre);
+int contLinea=0;
+int contDatos;
+int num;
+std::string line;
+//while(std::getline(data,line))
+//{
+  std::getline(data,line);
+  std::stringstream  lineStream(line);
+  std::string        cell;
+  contLinea++;
+  contDatos=0;
+  while(std::getline(lineStream,cell,','))
+  {
+    // Aqui obtenemos una celda
+    contDatos++;
+    num=strlen(cell.c_str());
+    char* dato = new char[ num + 1 ];
+    strcpy(dato,cell.c_str());
+    if(contLinea==1) // datos de clima
+    {
+      switch (contDatos)
+      {
+        case 1 : strcpy(TitDay,dato);
+        break;
+        case 2 : strcpy(TitMonth,dato);
+        break;
+        case 3 : strcpy(TitYear,dato);
+        break;
+        case 4 : strcpy(TitTMin,dato);
+        break;
+        case 5 : strcpy(TitTMax,dato);
+        break;
+        case 6 : strcpy(TitPrec,dato);
+        break;
+        case 7 : strcpy(TitRad,dato);
+        break;
+        case 8 : strcpy(TitET,dato);
+        break;
+        case 9 : strcpy(TitIrri,dato);
+        break;
+        case 10 : strcpy(TitSoilTemp,dato);
+        break;
+        case 11 : strcpy(TitSunshine,dato);
+      }
+    }
+  }
+  LoadClimateInformation();
+//}
+data.close();
+  return true; // se abrio correctamente el archivo y se levanto los datos
 }
 //------------------------------------------------------------------------------
 void Climate::CalcularET0()

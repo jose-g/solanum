@@ -1,34 +1,34 @@
 object frmMenu: TfrmMenu
-  Left = 490
-  Top = 325
+  Left = 674
+  Top = 197
   BorderStyle = bsDialog
   Caption = 'Solanum'
-  ClientHeight = 369
-  ClientWidth = 594
+  ClientHeight = 300
+  ClientWidth = 483
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object GroupBox1: TGroupBox
-    Left = 20
-    Top = 10
-    Width = 188
-    Height = 296
+    Left = 16
+    Top = 8
+    Width = 153
+    Height = 241
     Caption = '  Models '
     TabOrder = 0
     object sbPG: TSpeedButton
-      Left = 15
-      Top = 63
-      Width = 28
-      Height = 27
+      Left = 12
+      Top = 51
+      Width = 23
+      Height = 22
       Glyph.Data = {
         66060000424D6606000000000000360000002800000017000000160000000100
         18000000000030060000202E0000202E00000000000000000000D8E9ECD8E9EC
@@ -85,10 +85,10 @@ object frmMenu: TfrmMenu
       OnClick = sbPGClick
     end
     object sbDS: TSpeedButton
-      Left = 15
-      Top = 102
-      Width = 28
-      Height = 27
+      Left = 12
+      Top = 83
+      Width = 23
+      Height = 22
       Glyph.Data = {
         E6040000424DE604000000000000360000002800000014000000140000000100
         180000000000B0040000120B0000120B00000000000000000000D8E9ECD8E9EC
@@ -133,10 +133,10 @@ object frmMenu: TfrmMenu
       OnClick = sbDSClick
     end
     object sbNS: TSpeedButton
-      Left = 15
-      Top = 142
-      Width = 28
-      Height = 27
+      Left = 12
+      Top = 115
+      Width = 23
+      Height = 22
       Enabled = False
       Glyph.Data = {
         E6040000424DE604000000000000360000002800000014000000140000000100
@@ -182,10 +182,10 @@ object frmMenu: TfrmMenu
       OnClick = sbNSClick
     end
     object sbFS: TSpeedButton
-      Left = 15
-      Top = 181
-      Width = 28
-      Height = 27
+      Left = 12
+      Top = 147
+      Width = 23
+      Height = 22
       Glyph.Data = {
         86050000424D8605000000000000320400002800000014000000110000000100
         08000000000054010000120B0000120B0000FF000000FF000000FFFFFF00CCFF
@@ -235,10 +235,10 @@ object frmMenu: TfrmMenu
       OnClick = sbFSClick
     end
     object sbOther: TSpeedButton
-      Left = 15
-      Top = 220
-      Width = 28
-      Height = 27
+      Left = 12
+      Top = 179
+      Width = 23
+      Height = 22
       Glyph.Data = {
         E6040000424DE604000000000000360000002800000014000000140000000100
         180000000000B0040000E7240000E72400000000000000000000D8E9ECD8E9EC
@@ -284,77 +284,85 @@ object frmMenu: TfrmMenu
       OnClick = sbOtherClick
     end
     object rbPG: TRadioButton
-      Left = 49
-      Top = 69
-      Width = 129
-      Height = 21
+      Left = 40
+      Top = 56
+      Width = 105
+      Height = 17
       Caption = 'Potential Growth'
       TabOrder = 0
     end
     object rbDS: TRadioButton
-      Left = 49
-      Top = 108
-      Width = 120
-      Height = 21
+      Left = 40
+      Top = 88
+      Width = 97
+      Height = 17
       Caption = 'Water limited'
       TabOrder = 1
     end
     object rbNS: TRadioButton
-      Left = 49
-      Top = 148
-      Width = 120
-      Height = 21
+      Left = 40
+      Top = 120
+      Width = 97
+      Height = 17
       Caption = 'Nitrogen limited'
       Enabled = False
       TabOrder = 2
     end
     object rbFS: TRadioButton
-      Left = 49
-      Top = 187
-      Width = 100
-      Height = 21
+      Left = 40
+      Top = 152
+      Width = 81
+      Height = 17
       Caption = 'Frost limited'
       TabOrder = 3
     end
     object rbAM: TRadioButton
-      Left = 49
-      Top = 226
-      Width = 120
-      Height = 21
+      Left = 40
+      Top = 184
+      Width = 97
+      Height = 17
       Caption = 'All models'
       TabOrder = 4
       Visible = False
     end
+    object chbMYA: TCheckBox
+      Left = 16
+      Top = 208
+      Width = 113
+      Height = 17
+      Caption = 'Multi-year analysis'
+      TabOrder = 5
+    end
   end
   object cmdExit: TBitBtn
-    Left = 384
-    Top = 325
-    Width = 92
-    Height = 31
+    Left = 312
+    Top = 264
+    Width = 75
+    Height = 25
     Caption = 'Exit'
     TabOrder = 1
     OnClick = cmdExitClick
   end
   object cmdApply: TBitBtn
-    Left = 482
-    Top = 325
-    Width = 93
-    Height = 31
+    Left = 392
+    Top = 264
+    Width = 75
+    Height = 25
     Caption = 'Apply'
     TabOrder = 2
     OnClick = cmdApplyClick
   end
   object GroupBox2: TGroupBox
-    Left = 217
-    Top = 10
-    Width = 365
-    Height = 296
+    Left = 176
+    Top = 8
+    Width = 297
+    Height = 241
     TabOrder = 3
     object Image1: TImage
-      Left = 10
-      Top = 20
-      Width = 346
-      Height = 267
+      Left = 8
+      Top = 16
+      Width = 281
+      Height = 217
       Picture.Data = {
         0A544A504547496D616765B8DF0000FFD8FFE000104A46494600010100000100
         010000FFFE003B43524541544F523A2067642D6A7065672076312E3020287573
@@ -2150,14 +2158,14 @@ object frmMenu: TfrmMenu
       Stretch = True
     end
     object Label1: TLabel
-      Left = 305
-      Top = 266
-      Width = 47
-      Height = 16
+      Left = 248
+      Top = 216
+      Width = 35
+      Height = 13
       Caption = 'Sajama'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
-      Font.Height = -15
+      Font.Height = -12
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False

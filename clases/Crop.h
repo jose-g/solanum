@@ -16,7 +16,7 @@
      void CleanVariables();
      void DefaultValuesForKindOfCrop(int);
      void Clone(Crop*);
-     bool saveParameters(char* pnombre,int,int,int);
+     bool saveParameters(char* pnombre,int,int,int,double,double);
   };
   class Cultivo
   {

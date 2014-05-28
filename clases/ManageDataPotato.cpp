@@ -232,7 +232,8 @@ while(std::getline(data,line))
         case 12 : strcpy(climate->TitYear,dato);
         break;
         case 13 : strcpy(climate->TitObs,dato);
-                  climate->LoadClimateInformation();
+
+        climate->LoadClimateInformation();
       }
     }
     if(contLinea==2) // datos de cultivos

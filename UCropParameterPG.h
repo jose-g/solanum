@@ -75,6 +75,10 @@ __published:	// IDE-managed Components
         TRichEdit *RichEdit22;
         TEdit *edPhotoCrit;
         TRichEdit *RichEdit23;
+        TRichEdit *RichEdit24;
+        TEdit *edPlantDensity;
+        TEdit *Edit3;
+        TRichEdit *RichEdit25;
         void __fastcall cmdCancelClick(TObject *Sender);
         void __fastcall cmdApplyClick(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
