@@ -54,6 +54,7 @@ USEFORM("UGraphBoxPlot_DS.cpp", frmGraphBoxPlot_DS);
 USEFORM("UMainPG.cpp", frmMainPG);
 USEFORM("UReportTXT.cpp", frmReportTXT);
 USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
+USEFORM("USelYear.cpp", frmSelYear);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -62,6 +63,7 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                  Application->Initialize();
                  Application->Title = "Solanum";
                  Application->CreateForm(__classid(TfrmMenu), &frmMenu);
+                 Application->CreateForm(__classid(TfrmSelYear), &frmSelYear);
                  Application->Run();
         }
         catch (Exception &exception)

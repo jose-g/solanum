@@ -48,6 +48,9 @@
      bool saveTT(char*);
      double a;
      double b;
+     int totYear;
+     int listYear[100];
+     void poblate_listYear();
    private:
   };
   class ClimateFile : public Climate

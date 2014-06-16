@@ -117,6 +117,7 @@ void ManageDataPotato::DefaultCondition()
   strcpy(climate->TitSunshine,"sunsh");
   climate->ThermalCond=2; // 1: Cold   2: Temperate     3: Warm
   climate->LoadClimateInformation();
+  climate->poblate_listYear();
   climate->Lat_Degrees=14;
   climate->Lat_Minutes=11;
   climate->Lat_Seconds=34;
@@ -126,6 +127,13 @@ void ManageDataPotato::DefaultCondition()
   climate->Albedo=0.23;
   climate->Select_Wind_cat=1;
   climate->Select_AP=2;
+
+  simulation->totPastYear=2;
+  simulation->totFutureYear=1;
+  simulation->listPastYear[0]=1995;
+  simulation->listPastYear[1]=1996;
+  simulation->listFutureYear[0]=1997;
+  time->repFuture=40;
 
   crop->DefaultValuesForKindOfCrop(0);
   crop->plant->N=4.17; /////

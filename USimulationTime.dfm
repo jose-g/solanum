@@ -118,7 +118,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 16
       Top = 148
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -135,7 +135,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 16
       Top = 225
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -152,7 +152,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 203
       Top = 225
       Width = 90
-      Height = 24
+      Height = 21
       TabOrder = 3
     end
     object cbMonth: TComboBox
@@ -181,7 +181,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 16
       Top = 187
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -198,14 +198,14 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 203
       Top = 187
       Width = 90
-      Height = 24
+      Height = 21
       TabOrder = 1
     end
     object Edit4: TEdit
       Left = 16
       Top = 72
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -222,14 +222,14 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 203
       Top = 72
       Width = 90
-      Height = 24
+      Height = 21
       TabOrder = 0
     end
     object Edit5: TEdit
       Left = 16
       Top = 110
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -255,7 +255,7 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 16
       Top = 0
       Width = 161
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET
@@ -287,14 +287,14 @@ object frmSimulationTime: TfrmSimulationTime
       Left = 203
       Top = 264
       Width = 90
-      Height = 24
+      Height = 21
       TabOrder = 12
     end
     object Edit8: TEdit
       Left = 16
       Top = 264
       Width = 180
-      Height = 24
+      Height = 21
       TabStop = False
       Color = 3696250
       Font.Charset = DEFAULT_CHARSET

@@ -1,3 +1,12 @@
+monday, June 16, 2014
+Solanum v2.6
+
+* Multi-year analysis for growth potential module was implemented, include boxplot graph with information of estimated fresh tuber yield.
+* "years of simulation" form was added to the project, this form allows select past and future years before the simulation.
+* Text report form with information of estimated fresh tuber yield was modified, now support future years.  This applies just Multi-Year Analysis potential growth module.
+* "years of simulation" combobox was disabled from simulation form, now the years of simulation are defined in the "Year selection" form, this applies just Multi-Year Analysis potential growth module.
+* calculation of repetions for future years process was implemented before the simulation process, number of repetions for past years is multiplied by number of past and divided by number of future years, if the outcome is integer, this is assigned to the variable "number of repetitions for future years" and conitnue with the simulation process, but if there is a residue then the process throws a warning message and does not continue with the simulation process.
+ 
 Wednesday, May 28, 2014
 Solanum v2.5
 

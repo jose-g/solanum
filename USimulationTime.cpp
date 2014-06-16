@@ -32,7 +32,7 @@ void TfrmSimulationTime::PutValuesOnForm()
   int anio=0;
   if(cond->idModel==6)
   {
-    cbYear->Items->Add("All years");
+    cbYear->Enabled=false;cbYear->ItemIndex=-1;
   }
   else
   {
@@ -132,6 +132,7 @@ void TfrmSimulationTime::SaveData()
   cond->time->Month=cp2;
 }
 //---------------------------------------------------------------------------
+
 
 
 

@@ -37,6 +37,7 @@ Climate::Climate(int rec)
  tminSelected=0;
  tmaxSelected=0;
  TT=0;
+ totYear=0;
 
  MinTemp=new double[RecNum];
  MaxTemp=new double[RecNum];
@@ -215,6 +216,22 @@ for(int i=0;i<RecNum;i++)
   other->Obs[i]=Obs[i];
   other->ObsCC[i]=ObsCC[i];
 }
+}
+//------------------------------------------------------------------------------
+void Climate::poblate_listYear()
+{
+  int anio=0;
+  int index=0;
+  for(int i=0;i<RecNum;i++)
+  {
+    if(anio!=Year[i])
+    {
+      listYear[index]=Year[i];
+      index++;
+      anio=Year[i];
+    }
+  }
+  totYear=index;
 }
 //------------------------------------------------------------------------------
 //  ClimateFile class

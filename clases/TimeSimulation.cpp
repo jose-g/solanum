@@ -29,6 +29,7 @@ void TimeSimulation::CleanVariables()
   MonthStart = 10;
   duration   = 0;
   repetitions = 20;
+  repFuture=0;
   YearStart=1900;
   idYear=-1;
   strcpy(location,"");
@@ -40,6 +41,7 @@ void TimeSimulation::Clone(TimeSimulation* other)
   other->MonthStart = MonthStart;
   other->duration   = duration;
   other->repetitions   = repetitions;
+  other->repFuture   = repFuture;
   other->YearStart=YearStart;
   other->idYear=idYear;
   strcpy(other->location,location);

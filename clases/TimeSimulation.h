@@ -11,6 +11,7 @@
      int YearStart;
      int idYear;
      int repetitions;
+     int repFuture;
      char* Month;
      char *location;
      void CleanVariables();

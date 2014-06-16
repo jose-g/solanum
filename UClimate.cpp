@@ -296,6 +296,10 @@ void TfrmClimate::SaveData()
      cond->Month[i-1]=condTemp->Month[i-1];
      cond->Year[i-1]=condTemp->Year[i-1];
    }
+// con los datos de clima seteados en el objecto climate, poblamos la lista de años (listYear) invocando el metodo
+// poblate_listYear
+   cond->poblate_listYear();
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmClimate::cmdMinTempClick(TObject *Sender)
