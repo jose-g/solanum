@@ -16,11 +16,12 @@
       UNitrogenAM.obj UGraph6TwoSeries.obj UGraph1AM.obj UGraph2TwoSeries.obj 
       UGraph3TwoSeries.obj UGraph4TwoSeries.obj UGraph5AM.obj UMainFS.obj 
       UCropParameterAM.obj UMainDS.obj UMainAM.obj USoilAM.obj UGraph6AM.obj 
-      UGraph4AM.obj UGraph2AM.obj UGraph3AM.obj UReportGraphMenuPG.obj 
+      UGraph4AM.obj UGraph2AM.obj UGraph3AM.obj UReportGraphMenuMYA.obj 
       UCalcET0.obj UClimatePG.obj UClimateAM.obj clases\Solanum.obj UClimate.obj 
       UCalcParam.obj UEstadistico.obj UImportCropParameter.obj 
-      UGraphBoxPlotMYA.obj UGraphBoxPlot_DS.obj UMainPG.obj UReportTXT.obj 
-      UGraphBoxPlot.obj USelYear.obj"/>
+      UGraphCIinP_MYA.obj UGraphBoxPlot_DS.obj UMainPG.obj UReportTXT.obj 
+      UGraphBoxPlotMYA_Yearly.obj USelYear.obj UReportGraphMenuPG.obj 
+      UGraphBoxPlotMYA.obj UGraphBoxPlot.obj"/>
     <RESFILES value="Solanum2.res"/>
     <DEFFILE value=""/>
     <RESDEPEN value="$(RESFILES) ULogo.dfm UMenu.dfm UMainPG_AMY.dfm UMainNS.dfm 
@@ -32,11 +33,12 @@
       UNitrogenAM.dfm UGraph6TwoSeries.dfm UGraph1AM.dfm UGraph2TwoSeries.dfm 
       UGraph3TwoSeries.dfm UGraph4TwoSeries.dfm UGraph5AM.dfm UMainFS.dfm 
       UCropParameterAM.dfm UMainDS.dfm UMainAM.dfm USoilAM.dfm UGraph6AM.dfm 
-      UGraph4AM.dfm UGraph2AM.dfm UGraph3AM.dfm UReportGraphMenuPG.dfm 
+      UGraph4AM.dfm UGraph2AM.dfm UGraph3AM.dfm UReportGraphMenuMYA.dfm 
       UCalcET0.dfm UClimatePG.dfm UClimateAM.dfm UClimate.dfm UCalcParam.dfm 
-      UEstadistico.dfm UImportCropParameter.dfm UGraphBoxPlotMYA.dfm 
-      UGraphBoxPlot_DS.dfm UMainPG.dfm UReportTXT.dfm UGraphBoxPlot.dfm 
-      USelYear.dfm"/>
+      UEstadistico.dfm UImportCropParameter.dfm UGraphCIinP_MYA.dfm 
+      UGraphBoxPlot_DS.dfm UMainPG.dfm UReportTXT.dfm 
+      UGraphBoxPlotMYA_Yearly.dfm USelYear.dfm UReportGraphMenuPG.dfm 
+      UGraphBoxPlotMYA.dfm UGraphBoxPlot.dfm"/>
     <LIBFILES value=""/>
     <LIBRARIES value="TeeImage7C6.lib TeePro7C6.lib TeeUI7C6.lib Tee7C6.lib bdertl.lib vclx.lib 
       dbrtl.lib vcldb.lib vcldbx.lib rtl.lib vcl.lib"/>
@@ -130,7 +132,7 @@
       <FILE FILENAME="UGraph4AM.cpp" FORMNAME="frmGraph4AM" UNITNAME="UGraph4AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UGraph2AM.cpp" FORMNAME="frmGraph2AM" UNITNAME="UGraph2AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UGraph3AM.cpp" FORMNAME="frmGraph3AM" UNITNAME="UGraph3AM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UReportGraphMenuPG.cpp" FORMNAME="frmReportGraphMenuPG" UNITNAME="UReportGraphMenuPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportGraphMenuMYA.cpp" FORMNAME="frmReportGraphMenuMYA" UNITNAME="UReportGraphMenuMYA" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UCalcET0.cpp" FORMNAME="frmCalcET0" UNITNAME="UCalcET0" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UClimatePG.cpp" FORMNAME="frmClimatePG" UNITNAME="UClimatePG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UClimateAM.cpp" FORMNAME="frmClimateAM" UNITNAME="UClimateAM" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
@@ -139,12 +141,15 @@
       <FILE FILENAME="UCalcParam.cpp" FORMNAME="frmCalcParam" UNITNAME="UCalcParam" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UEstadistico.cpp" FORMNAME="frmEstadistico" UNITNAME="UEstadistico" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UImportCropParameter.cpp" FORMNAME="frmImportCropParameter" UNITNAME="UImportCropParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UGraphBoxPlotMYA.cpp" FORMNAME="frmGraphBoxPlotMYA" UNITNAME="UGraphBoxPlotMYA" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphCIinP_MYA.cpp" FORMNAME="frmGraphCIinP_MYA" UNITNAME="UGraphCIinP_MYA" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UGraphBoxPlot_DS.cpp" FORMNAME="frmGraphBoxPlot_DS" UNITNAME="UGraphBoxPlot_DS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UMainPG.cpp" FORMNAME="frmMainPG" UNITNAME="UMainPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="UReportTXT.cpp" FORMNAME="frmReportTXT" UNITNAME="UReportTXT" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="UGraphBoxPlot.cpp" FORMNAME="frmGraphBoxPlot" UNITNAME="UGraphBoxPlot" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlotMYA_Yearly.cpp" FORMNAME="frmGraphBoxPlotMYA_Yearly" UNITNAME="UGraphBoxPlotMYA_Yearly" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="USelYear.cpp" FORMNAME="frmSelYear" UNITNAME="USelYear" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UReportGraphMenuPG.cpp" FORMNAME="frmReportGraphMenuPG" UNITNAME="UReportGraphMenuPG" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlotMYA.cpp" FORMNAME="frmGraphBoxPlotMYA" UNITNAME="UGraphBoxPlotMYA" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="UGraphBoxPlot.cpp" FORMNAME="frmGraphBoxPlot" UNITNAME="UGraphBoxPlot" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
   </FILELIST>
   <BUILDTOOLS>
   </BUILDTOOLS>

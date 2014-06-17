@@ -1,3 +1,10 @@
+Tuesday, June 17, 2014
+Solanum v2.7
+
+* two graphs with confidence intervals in projection (Past and future fresh tuber yield) were implemented.
+* a yearly boxplot graph was implemented (in reference to fresh tuber yield in the past years)
+* The calculation of repetitions for future years process was modified, now this process suggest a value for "number of runs" in case there is a residue.
+
 monday, June 16, 2014
 Solanum v2.6
 

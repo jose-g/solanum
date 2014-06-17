@@ -1,6 +1,6 @@
 object frmMainPG: TfrmMainPG
-  Left = 204
-  Top = 133
+  Left = 387
+  Top = 386
   Width = 915
   Height = 649
   Caption = 
@@ -9,7 +9,7 @@ object frmMainPG: TfrmMainPG
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
+  Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   Menu = MainMenu1
@@ -18,20 +18,20 @@ object frmMainPG: TfrmMainPG
   WindowState = wsMaximized
   OnClose = FormClose
   OnShow = FormShow
-  PixelsPerInch = 120
-  TextHeight = 16
+  PixelsPerInch = 96
+  TextHeight = 13
   object Bevel1: TBevel
     Left = 0
     Top = 0
-    Width = 897
+    Width = 899
     Height = 2
     Align = alTop
   end
   object Image1: TImage
     Left = 0
-    Top = 55
-    Width = 897
-    Height = 501
+    Top = 45
+    Width = 899
+    Height = 523
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765CCCE0A00FFD8FFE000104A46494600010201004800
@@ -22174,16 +22174,16 @@ object frmMainPG: TfrmMainPG
   object Panel1: TPanel
     Left = 0
     Top = 2
-    Width = 897
-    Height = 53
+    Width = 899
+    Height = 43
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
     object sbNew: TSpeedButton
       Left = 2
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'New conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22211,10 +22211,10 @@ object frmMainPG: TfrmMainPG
       OnClick = New1Click
     end
     object sbOpen: TSpeedButton
-      Left = 55
+      Left = 45
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Open file of conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22243,10 +22243,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Open1Click
     end
     object sbSave: TSpeedButton
-      Left = 108
+      Left = 88
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Save conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22274,10 +22274,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Save1Click
     end
     object SpeedButton1: TSpeedButton
-      Left = 170
+      Left = 138
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Example conditions'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22305,10 +22305,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Getdemo1Click
     end
     object SpeedButton2: TSpeedButton
-      Left = 231
+      Left = 188
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Climate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22336,10 +22336,10 @@ object frmMainPG: TfrmMainPG
       OnClick = climate1Click
     end
     object SpeedButton3: TSpeedButton
-      Left = 284
+      Left = 231
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Crop parameter'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22413,10 +22413,10 @@ object frmMainPG: TfrmMainPG
       OnClick = CropParameter1Click
     end
     object SpeedButton5: TSpeedButton
-      Left = 350
+      Left = 284
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Simulate'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22444,10 +22444,10 @@ object frmMainPG: TfrmMainPG
       OnClick = Simulate1Click
     end
     object SpeedButton6: TSpeedButton
-      Left = 460
+      Left = 374
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Text reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22475,10 +22475,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton6Click
     end
     object SpeedButton7: TSpeedButton
-      Left = 513
+      Left = 417
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Graph reports'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
@@ -22506,10 +22506,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton7Click
     end
     object SpeedButton8: TSpeedButton
-      Left = 575
+      Left = 467
       Top = 2
-      Width = 49
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Exit'
       Glyph.Data = {
         36080000424D3608000000000000360400002800000020000000200000000100
@@ -22583,10 +22583,10 @@ object frmMainPG: TfrmMainPG
       OnClick = SpeedButton8Click
     end
     object sbEstadistico: TSpeedButton
-      Left = 407
+      Left = 331
       Top = 2
-      Width = 50
-      Height = 50
+      Width = 40
+      Height = 40
       Hint = 'Statistics'
       Glyph.Data = {
         76070000424D76070000000000003600000028000000150000001D0000000100
@@ -22654,10 +22654,10 @@ object frmMainPG: TfrmMainPG
       OnClick = sbEstadisticoClick
     end
     object sbMenu: TSpeedButton
-      Left = 654
+      Left = 531
       Top = 2
-      Width = 105
-      Height = 50
+      Width = 86
+      Height = 40
       Hint = 'Exit'
       Caption = 'Modules'
       Glyph.Data = {
@@ -22713,10 +22713,10 @@ object frmMainPG: TfrmMainPG
       OnClick = sbMenuClick
     end
     object butAddScenario: TButton
-      Left = 876
-      Top = 10
-      Width = 93
-      Height = 31
+      Left = 712
+      Top = 8
+      Width = 75
+      Height = 25
       Caption = 'Add scenario'
       TabOrder = 0
       Visible = False
@@ -22725,8 +22725,8 @@ object frmMainPG: TfrmMainPG
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 556
-    Width = 897
+    Top = 568
+    Width = 899
     Height = 23
     Panels = <
       item

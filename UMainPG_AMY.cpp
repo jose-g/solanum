@@ -22,8 +22,8 @@
 #include "UCalcParam.h"
 #include "UEstadistico.h"
 #include "UReportTableMYA_PG.h"
-#include "UGraphBoxPlotMYA.h"
 #include "USelYear.h"
+#include "UReportGraphMenuMYA.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -187,9 +187,22 @@ void __fastcall TfrmMainPG_AMY::Simulate1Click(TObject *Sender)
     totPastYear=cond->simulation->totPastYear;
     totFutureYear=cond->simulation->totFutureYear;
     int res=(numrep*totPastYear)%totFutureYear;
+    int numrepSugerido=0;
     if(res>0)
     {
-      ShowMessage("Number of repetitions for future years does not apply!");
+      int numrepTemp=numrep;
+      for(int i=numrep;i<numrep+totFutureYear;i++)
+      {
+        res=(i*totPastYear)%totFutureYear;
+        if(res==0)
+        {
+          numrepSugerido=i;
+          break;
+        }
+      }
+      AnsiString texto="Number of repetitions do not apply, try with " + AnsiString(numrepSugerido);
+      texto = texto + " repetitions, you can set this value in the box 'Number of runs' in the 'simulation form'.";
+      ShowMessage(texto);
       finished=3;
     }
     else
@@ -363,8 +376,8 @@ void __fastcall TfrmMainPG_AMY::FormClose(TObject *Sender,
 //---------------------------------------------------------------------------
 void __fastcall TfrmMainPG_AMY::SpeedButton7Click(TObject *Sender)
 {
-  TfrmGraphBoxPlotMYA *frm = new TfrmGraphBoxPlotMYA(this);
-  frm->EnterInformation(cond->simulation);
+  TfrmReportGraphMenuMYA *frm = new TfrmReportGraphMenuMYA(this);
+  frm->EnterInformation(cond);
   frm->ShowModal();
   delete frm;
 }

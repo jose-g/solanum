@@ -41,7 +41,7 @@ USEFORM("UGraph6AM.cpp", frmGraph6AM);
 USEFORM("UGraph4AM.cpp", frmGraph4AM);
 USEFORM("UGraph2AM.cpp", frmGraph2AM);
 USEFORM("UGraph3AM.cpp", frmGraph3AM);
-USEFORM("UReportGraphMenuPG.cpp", frmReportGraphMenuPG);
+USEFORM("UReportGraphMenuMYA.cpp", frmReportGraphMenuMYA);
 USEFORM("UCalcET0.cpp", frmCalcET0);
 USEFORM("UClimatePG.cpp", frmClimatePG);
 USEFORM("UClimateAM.cpp", frmClimateAM);
@@ -49,12 +49,15 @@ USEFORM("UClimate.cpp", frmClimate);
 USEFORM("UCalcParam.cpp", frmCalcParam);
 USEFORM("UEstadistico.cpp", frmEstadistico);
 USEFORM("UImportCropParameter.cpp", frmImportCropParameter);
-USEFORM("UGraphBoxPlotMYA.cpp", frmGraphBoxPlotMYA);
+USEFORM("UGraphCIinP_MYA.cpp", frmGraphCIinP_MYA);
 USEFORM("UGraphBoxPlot_DS.cpp", frmGraphBoxPlot_DS);
 USEFORM("UMainPG.cpp", frmMainPG);
 USEFORM("UReportTXT.cpp", frmReportTXT);
-USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
+USEFORM("UGraphBoxPlotMYA_Yearly.cpp", frmGraphBoxPlotMYA_Yearly);
 USEFORM("USelYear.cpp", frmSelYear);
+USEFORM("UReportGraphMenuPG.cpp", frmReportGraphMenuPG);
+USEFORM("UGraphBoxPlotMYA.cpp", frmGraphBoxPlotMYA);
+USEFORM("UGraphBoxPlot.cpp", frmGraphBoxPlot);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
@@ -63,7 +66,6 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
                  Application->Initialize();
                  Application->Title = "Solanum";
                  Application->CreateForm(__classid(TfrmMenu), &frmMenu);
-                 Application->CreateForm(__classid(TfrmSelYear), &frmSelYear);
                  Application->Run();
         }
         catch (Exception &exception)
