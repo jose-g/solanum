@@ -1,6 +1,6 @@
 object frmSelYear: TfrmSelYear
-  Left = 667
-  Top = 258
+  Left = 724
+  Top = 232
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Year selection'

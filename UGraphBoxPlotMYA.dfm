@@ -1,9 +1,9 @@
 object frmGraphBoxPlotMYA: TfrmGraphBoxPlotMYA
-  Left = 402
-  Top = 172
+  Left = 445
+  Top = 229
   Width = 769
   Height = 500
-  Caption = 'Boxplot from fresh tuber yield'
+  Caption = 'Box plot (Past and Future scenarios)'
   Color = 140
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

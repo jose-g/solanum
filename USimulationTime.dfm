@@ -104,9 +104,9 @@ object frmSimulationTime: TfrmSimulationTime
     object Label1: TLabel
       Left = 64
       Top = 32
-      Width = 127
+      Width = 83
       Height = 24
-      Caption = 'Solanum v2.0'
+      Caption = 'Solanum'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19

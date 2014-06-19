@@ -3,7 +3,7 @@ object frmGraphBoxPlotMYA_Yearly: TfrmGraphBoxPlotMYA_Yearly
   Top = 257
   Width = 757
   Height = 501
-  Caption = 'Box Plotting (yearly - just past year)'
+  Caption = 'Box plot (Past scenarios by year)'
   Color = 140
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

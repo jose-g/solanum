@@ -22718,7 +22718,7 @@ object frmMainPG_AMY: TfrmMainPG_AMY
       Top = 2
       Width = 40
       Height = 40
-      Hint = 'Climate'
+      Hint = 'Select past and future years'
       Glyph.Data = {
         76020000424D7602000000000000760000002800000020000000200000000100
         0400000000000002000000000000000000001000000000000000000000000000

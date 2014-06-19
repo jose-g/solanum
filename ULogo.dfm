@@ -1970,9 +1970,9 @@ object frmLogo: TfrmLogo
       object Label2: TLabel
         Left = 442
         Top = 48
-        Width = 53
+        Width = 62
         Height = 13
-        Caption = 'Version 2.7'
+        Caption = 'Version 2.7.1'
       end
     end
     object cmdContinue: TButton

@@ -37,7 +37,7 @@ void __fastcall TfrmReportGraphMenuMYA::Button5Click(TObject *Sender)
 void __fastcall TfrmReportGraphMenuMYA::Button6Click(TObject *Sender)
 {
   TfrmGraphCIinP_MYA *frm = new TfrmGraphCIinP_MYA(this);
-  frm->EnterInformation(cond->simulation,"Confidence interval in projection for past years",1);
+  frm->EnterInformation(cond->simulation,"Confidence interval of the projection for past scenarios",1);
   frm->ShowModal();
   delete frm;
 }
@@ -46,10 +46,9 @@ void __fastcall TfrmReportGraphMenuMYA::Button6Click(TObject *Sender)
 void __fastcall TfrmReportGraphMenuMYA::Button1Click(TObject *Sender)
 {
   TfrmGraphCIinP_MYA *frm = new TfrmGraphCIinP_MYA(this);
-  frm->EnterInformation(cond->simulation,"Confidence interval in projection for future years",2);
+  frm->EnterInformation(cond->simulation,"Confidence interval of the projection for future scenarios",2);
   frm->ShowModal();
   delete frm;
-
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmReportGraphMenuMYA::Button2Click(TObject *Sender)

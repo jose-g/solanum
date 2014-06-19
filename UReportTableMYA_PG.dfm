@@ -1,6 +1,6 @@
 object frmReportTableMYA_PG: TfrmReportTableMYA_PG
-  Left = 33
-  Top = 14
+  Left = 518
+  Top = 301
   BorderStyle = bsDialog
   Caption = 'Report : Fresh tuber yield'
   ClientHeight = 518

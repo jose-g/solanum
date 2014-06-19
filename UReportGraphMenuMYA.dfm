@@ -145,7 +145,7 @@ object frmReportGraphMenuMYA: TfrmReportGraphMenuMYA
       Top = 148
       Width = 330
       Height = 33
-      Caption = 'Confidence interval in projection  (Past years)'
+      Caption = 'Confidence interval of the projection  (Past scenarios)'
       TabOrder = 2
       OnClick = Button6Click
     end
@@ -154,7 +154,7 @@ object frmReportGraphMenuMYA: TfrmReportGraphMenuMYA
       Top = 52
       Width = 330
       Height = 33
-      Caption = 'Box Plotting'
+      Caption = 'Box plot (Past and Future scenarios)'
       TabOrder = 3
       OnClick = Button5Click
     end
@@ -163,7 +163,7 @@ object frmReportGraphMenuMYA: TfrmReportGraphMenuMYA
       Top = 196
       Width = 330
       Height = 33
-      Caption = 'Confidence interval in projection  (Future years)'
+      Caption = 'Confidence interval of the projection  (Future scenarios)'
       TabOrder = 4
       OnClick = Button1Click
     end
@@ -172,7 +172,7 @@ object frmReportGraphMenuMYA: TfrmReportGraphMenuMYA
       Top = 100
       Width = 330
       Height = 33
-      Caption = 'Box Plotting (yearly - just past year)'
+      Caption = 'Box plot (Past scenarios by year)'
       TabOrder = 5
       OnClick = Button2Click
     end
