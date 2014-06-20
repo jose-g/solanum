@@ -27,6 +27,13 @@ __fastcall TfrmGraphBoxPlotMYA::TfrmGraphBoxPlotMYA(TComponent* Owner)
     box[numbox]->Position=numbox+1;
     box[numbox]->Box->Color=0x0080FFFF;
     box[numbox]->WhiskerPen->Color=clYellow;
+    box[numbox]->ExtrOut->Style=psCircle;
+    box[numbox]->ExtrOut->Color=clRed;
+    box[numbox]->ExtrOut->Size=2;
+    box[numbox]->MildOut->Style=psCircle;
+    box[numbox]->MildOut->Color=clYellow;
+    box[numbox]->MildOut->Size=2;
+
     tch1->AddSeries(box[numbox]);
 
     numbox=2;
@@ -34,6 +41,15 @@ __fastcall TfrmGraphBoxPlotMYA::TfrmGraphBoxPlotMYA(TComponent* Owner)
     box[numbox]->Position=numbox+1;
     box[numbox]->Box->Color=0x0080FFFF;
     box[numbox]->WhiskerPen->Color=clYellow;
+    box[numbox]->ExtrOut->Style=psCircle;
+    box[numbox]->ExtrOut->Color=clRed;
+    box[numbox]->ExtrOut->Size=2;
+    box[numbox]->MildOut->Style=psCircle;
+    box[numbox]->MildOut->Color=clYellow;
+    box[numbox]->MildOut->Size=2;
+
+
+
     tch1->AddSeries(box[numbox]);
 }
 //---------------------------------------------------------------------------

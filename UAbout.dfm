@@ -2028,7 +2028,7 @@ object frmAbout: TfrmAbout
       Top = 16
       Width = 155
       Height = 22
-      Caption = 'SOLANUM v2.7.1'
+      Caption = 'SOLANUM v2.7.2'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 4210816
       Font.Height = -19

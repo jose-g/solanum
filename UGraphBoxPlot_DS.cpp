@@ -56,6 +56,12 @@ void TfrmGraphBoxPlot_DS::populateWLGraph()
     box[contScenario]->Position=contScenario+1;
     box[contScenario]->Box->Color=0x0080FFFF;
     box[contScenario]->WhiskerPen->Color=clYellow;
+    box[contScenario]->ExtrOut->Style=psCircle;
+    box[contScenario]->ExtrOut->Color=clRed;
+    box[contScenario]->ExtrOut->Size=2;
+    box[contScenario]->MildOut->Style=psCircle;
+    box[contScenario]->MildOut->Color=clYellow;
+    box[contScenario]->MildOut->Size=2;
     tch1->AddSeries(box[contScenario]);
     tch1->Series[contScenario]->Clear();
 
@@ -99,6 +105,13 @@ void TfrmGraphBoxPlot_DS::populatePGGraph()
     box2[contScenario]->Position=contScenario+1;
     box2[contScenario]->Box->Color=0x0080FFFF;
     box2[contScenario]->WhiskerPen->Color=clYellow;
+    box2[contScenario]->ExtrOut->Style=psCircle;
+    box2[contScenario]->ExtrOut->Color=clRed;
+    box2[contScenario]->ExtrOut->Size=2;
+    box2[contScenario]->MildOut->Style=psCircle;
+    box2[contScenario]->MildOut->Color=clYellow;
+    box2[contScenario]->MildOut->Size=2;
+
     tch2->AddSeries(box2[contScenario]);
     tch2->Series[contScenario]->Clear();
 

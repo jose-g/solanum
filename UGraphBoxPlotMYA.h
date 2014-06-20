@@ -27,7 +27,7 @@ __published:	// IDE-managed Components
         TLabel *Label5;
         void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
-        TBoxSeries* box[2];
+        TBoxSeries* box[3];
         Simulation *sim;
 public:		// User declarations
         __fastcall TfrmGraphBoxPlotMYA(TComponent* Owner);

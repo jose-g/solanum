@@ -51,6 +51,14 @@ void __fastcall TfrmGraphBoxPlot::FormShow(TObject *Sender)
     box[contScenario]->Position=contScenario+1;
     box[contScenario]->Box->Color=0x0080FFFF;
     box[contScenario]->WhiskerPen->Color=clYellow;
+
+    box[contScenario]->ExtrOut->Style=psCircle;
+    box[contScenario]->ExtrOut->Color=clRed;
+    box[contScenario]->ExtrOut->Size=2;
+    box[contScenario]->MildOut->Style=psCircle;
+    box[contScenario]->MildOut->Color=clYellow;
+    box[contScenario]->MildOut->Size=2;
+
     tch1->AddSeries(box[contScenario]);
     tch1->Series[contScenario]->Clear();
 
