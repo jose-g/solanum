@@ -114,7 +114,6 @@ void Simulation::CleanTitles()
 //------------------------------------------------------------------------------
 int Simulation::Just_simulate2()
 {
-randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 { // begin for isim
 
@@ -1551,7 +1550,6 @@ double Simulation::Random()
   double ran=0.0;
   double Z0=0.0,Z1=0.0,Z2=0.0;
   begin:
-  randomize();
   valor=random(50001);
   ran=double(valor)/50000.00;
   Z0=2*ran-1;
@@ -2000,7 +1998,6 @@ return 0;
 //------------------------------------------------------------------------------
 int Simulation::Module_PotentialGrowth()
 {
-randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 {
   double MinTemp[365];
@@ -2141,7 +2138,6 @@ for(int isim=0;isim<time->repetitions;isim++)
 //------------------------------------------------------------------------------
 int Simulation::Just_simulate3()
 {
-randomize();
 for(int isim=0;isim<time->repetitions;isim++)
 { // begin for isim
 double MinTemp[365];

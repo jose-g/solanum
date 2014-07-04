@@ -141,6 +141,7 @@ void __fastcall TfrmMainNS::Simulate1Click(TObject *Sender)
   frm->EnterInformation(cond);
   if(frm->ShowModal()==mrOk)
   {
+    randomize();
     int finished=cond->DoSimulation();
     if(finished==0)
     {

@@ -1,6 +1,8 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #include <fstream>
+#include <vector>
+#include <algorithm>
 #include "sstream.h"
 #pragma hdrstop
 #include "UGraphBoxPlotMYA_Yearly.h"
@@ -10,6 +12,9 @@
 #pragma link "TeeBoxPlot"
 #pragma resource "*.dfm"
 TfrmGraphBoxPlotMYA_Yearly *frmGraphBoxPlotMYA_Yearly;
+struct myclass {
+  bool operator() (double i,double j) { return (i<j);}
+} myobject;
 //---------------------------------------------------------------------------
 __fastcall TfrmGraphBoxPlotMYA_Yearly::TfrmGraphBoxPlotMYA_Yearly(TComponent* Owner)
         : TForm(Owner)
@@ -26,7 +31,7 @@ void __fastcall TfrmGraphBoxPlotMYA_Yearly::FormShow(TObject *Sender)
 {
   tc1->Panel=tch1;
   int contScenario=0;
-  double data;
+  vector<double> data;
   for(int iyear=0;iyear<sim->totPastYear;iyear++)
   {
     box[contScenario]=new TBoxSeries(tch1);
@@ -44,12 +49,19 @@ void __fastcall TfrmGraphBoxPlotMYA_Yearly::FormShow(TObject *Sender)
 
     tch1->AddSeries(box[contScenario]);
     tch1->Series[contScenario]->Clear();
+
     for(int irep=0;irep<sim->time->repetitions;irep++)
     {
-      data=sim->ult_fty_by_year[irep][iyear];
-      tch1->Series[contScenario]->Add(data,contScenario+1,clRed);
+      data.push_back(sim->ult_fty_by_year[irep][iyear]);
+    }
+    sort(data.begin(), data.end(), myobject);
+
+    for(int irep=0;irep<sim->time->repetitions;irep++)
+    {
+      tch1->Series[contScenario]->Add(data[irep],contScenario+1,clRed);
     }
     contScenario++;
+    data.clear();
   }
 
 

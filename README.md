@@ -1,3 +1,9 @@
+Friday, July 4, 2014
+Solanum v2.7.3
+
+* sort function was implemented before populating box graph at frmGraphBoxPlotMYA_Yearly form.
+* randomize function was implemented into Simulate1Click() method at all Main forms.
+
 Tuesday, June 17, 2014
 Solanum v2.7
 

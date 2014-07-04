@@ -154,6 +154,7 @@ void __fastcall TfrmMainPG_AMY::Simulate1Click(TObject *Sender)
   frm->EnterInformation(cond);
   if(frm->ShowModal()==mrOk)
   {
+    randomize();  // semilla para la aleatoriedad
     cond->simulation->contYear=0;
     cond->simulation->NumberScenario++;
 // poblar listYear[]
